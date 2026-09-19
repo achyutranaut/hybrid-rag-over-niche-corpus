@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --color-base: #0A0A0B;
+  --color-surface-1: #111113;
+  --color-surface-2: #18181B;
+  --color-surface-3: #202024;
+  --color-border: #232326;
+  --color-border-subtle: #1C1C1F;
+  --color-text-primary: #F5F3EE;
+  --color-text-muted: #9A9A9F;
+  --color-paper: #F3F0E8;
+  --color-paper-ink: #1A1915;
+  --color-paper-muted: #636159;
+  --color-paper-border: #E2DDD0;
+  --color-attack: #8B7EF8;
+  --color-cve-warn: #F59E0B;
+  --color-cve-crit: #EF4444;
+  --color-valid: #10B981;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-base);
+  color: var(--color-text-primary);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Subtle scientific scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0D0D0F;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #232326;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #36363B;
+}
+
+/* Research Table Architecture */
+.research-table, .cyber-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8125rem;
+  letter-spacing: normal;
+}
+
+.research-table th, .cyber-table th {
+  background-color: #111113;
+  color: #9A9A9F;
+  font-weight: 600;
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid #232326;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+.research-table td, .cyber-table td {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid #18181B;
+  color: #E2E2E6;
+}
+
+.research-table tr:hover, .cyber-table tr:hover {
+  background-color: rgba(24, 24, 27, 0.6);
+}
+
+/* Warm Archival Evidence Paper */
+.evidence-paper {
+  background-color: #F3F0E8;
+  color: #1A1915;
+  border: 1px solid #E2DDD0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.evidence-paper-header {
+  border-bottom: 1px solid #D8D2C2;
+  color: #4D4A42;
+}
+
+.evidence-paper code {
+  background-color: #E8E3D5;
+  color: #111111;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  padding: 0.1rem 0.3rem;
+  border-radius: 2px;
+}
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

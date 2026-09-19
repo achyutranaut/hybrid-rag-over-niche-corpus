@@ -32,6 +32,7 @@ class Citation:
     section: str
     url: str
     source: str
+    doc_id: str = ""
 
 
 @dataclass
@@ -82,7 +83,15 @@ def assemble_context(chunks: list[RetrievedChunk], max_context_tokens: int = 180
                 dropped += 1
                 continue
             citations.append(
-                Citation(marker=marker, chunk_id=c.chunk_id, title=c.title, section=c.section, url=c.url, source=c.source)
+                Citation(
+                    marker=marker,
+                    chunk_id=c.chunk_id,
+                    doc_id=c.parent_doc_id,
+                    title=c.title,
+                    section=c.section,
+                    url=c.url,
+                    source=c.source,
+                )
             )
             text_parts.append(f"[{marker}] {c.text}")
             used.append(c)

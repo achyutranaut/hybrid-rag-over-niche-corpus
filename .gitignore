@@ -5,3 +5,6 @@ __pycache__/
 storage/
 data/processed/*.pkl
 data/raw/enterprise-attack.json
+node_modules/
+dist/
+.env
