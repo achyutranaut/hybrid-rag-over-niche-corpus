@@ -1,0 +1,95 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CybersecurityRAGEvalQuery",
+  "description": "Canonical query schema defined in ARCHITECTURE.md section 23.4. Required for evaluation stages S1-S3.",
+  "type": "object",
+  "properties": {
+    "query_id": {
+      "type": "string",
+      "description": "Unique identifier for the evaluation query, e.g. q-0001"
+    },
+    "query": {
+      "type": "string",
+      "description": "The exact raw user query text"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "exact_identifier",
+        "semantic_paraphrase",
+        "acronym_abbreviation",
+        "cross_corpus",
+        "metadata_filtered",
+        "ambiguous",
+        "multi_hop",
+        "out_of_corpus"
+      ],
+      "description": "Primary query taxonomy classification (1 of 8 classes)"
+    },
+    "subtype": {
+      "type": "string",
+      "description": "Sub-type classification, e.g. bare_id, nl_constraint"
+    },
+    "split": {
+      "type": "string",
+      "enum": [
+        "dev",
+        "test"
+      ]
+    },
+    "provenance": {
+      "type": "string",
+      "enum": [
+        "human",
+        "template",
+        "llm_synthetic",
+        "analyst_phrasing"
+      ]
+    },
+    "corpus_version": {
+      "type": "string",
+      "description": "Content hash binding labels to specific ingested corpus version"
+    },
+    "relevance": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 2
+      },
+      "description": "Graded relevance mapping: document_id -> 0, 1, 2"
+    },
+    "required_sets": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "filters": {
+      "type": "object"
+    },
+    "expect_abstain": {
+      "type": "boolean"
+    },
+    "annotators": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "query_id",
+    "query",
+    "category",
+    "split",
+    "relevance",
+    "expect_abstain"
+  ]
+}

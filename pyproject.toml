@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hybrid-rag-cyber"
+version = "0.1.0"
+description = "Hybrid RAG Over a Niche Cybersecurity Corpus (MITRE ATT&CK + CVE)"
+readme = "ARCHITECTURE.md"
+requires-python = ">=3.10"
+dependencies = [
+    "qdrant-client>=1.19.1",
+    "scikit-learn>=1.6.0",
+    "numpy>=2.1.0",
+    "rank_bm25>=0.2.2",
+    "pydantic>=2.10.0",
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.30.0",
+    "requests>=2.31.0",
+    "pytest>=8.0.0",
+]

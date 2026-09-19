@@ -1,0 +1,678 @@
+{
+  "type": "bundle",
+  "id": "bundle--sample",
+  "objects": [
+    {
+      "type": "x-mitre-tactic",
+      "id": "x-mitre-tactic--persistence",
+      "x_mitre_shortname": "persistence",
+      "name": "Persistence"
+    },
+    {
+      "type": "x-mitre-tactic",
+      "id": "x-mitre-tactic--privilege-escalation",
+      "x_mitre_shortname": "privilege-escalation",
+      "name": "Privilege Escalation"
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--0001",
+      "name": "Technique T1001 Sample Technique",
+      "description": "Adversaries may execute T1001 to achieve persistence or escalate privileges. This is a comprehensive description of security technique T1001 for automated testing.",
+      "x_mitre_platforms": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "persistence"
+        }
+      ],
+      "x_mitre_data_sources": [
+        "Process: Process Creation"
+      ],
+      "x_mitre_is_subtechnique": false,
+      "x_mitre_permissions_required": [
+        "User"
+      ],
+      "x_mitre_detection": "Monitor process command-line arguments and system event logs for anomalies relating to T1001.",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1001",
+          "url": "https://attack.mitre.org/techniques/T1001"
+        }
+      ],
+      "modified": "2023-01-01T00:00:00.000Z"
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--0002",
+      "name": "Technique T1002 Sample Technique",
+      "description": "Adversaries may execute T1002 to achieve persistence or escalate privileges. This is a comprehensive description of security technique T1002 for automated testing.",
+      "x_mitre_platforms": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "persistence"
+        }
+      ],
+      "x_mitre_data_sources": [
+        "Process: Process Creation"
+      ],
+      "x_mitre_is_subtechnique": false,
+      "x_mitre_permissions_required": [
+        "User"
+      ],
+      "x_mitre_detection": "Monitor process command-line arguments and system event logs for anomalies relating to T1002.",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1002",
+          "url": "https://attack.mitre.org/techniques/T1002"
+        }
+      ],
+      "modified": "2023-01-01T00:00:00.000Z"
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--0003",
+      "name": "Technique T1003 Sample Technique",
+      "description": "Adversaries may execute T1003 to achieve persistence or escalate privileges. This is a comprehensive description of security technique T1003 for automated testing.",
+      "x_mitre_platforms": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "persistence"
+        }
+      ],
+      "x_mitre_data_sources": [
+        "Process: Process Creation"
+      ],
+      "x_mitre_is_subtechnique": false,
+      "x_mitre_permissions_required": [
+        "User"
+      ],
+      "x_mitre_detection": "Monitor process command-line arguments and system event logs for anomalies relating to T1003.",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1003",
+          "url": "https://attack.mitre.org/techniques/T1003"
+        }
+      ],
+      "modified": "2023-01-01T00:00:00.000Z"
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--0004",
+      "name": "Technique T1004 Sample Technique",
+      "description": "Adversaries may execute T1004 to achieve persistence or escalate privileges. This is a comprehensive description of security technique T1004 for automated testing.",
+      "x_mitre_platforms": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "persistence"
+        }
+      ],
+      "x_mitre_data_sources": [
+        "Process: Process Creation"
+      ],
+      "x_mitre_is_subtechnique": false,
+      "x_mitre_permissions_required": [
+        "User"
+      ],
+      "x_mitre_detection": "Monitor process command-line arguments and system event logs for anomalies relating to T1004.",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1004",
+          "url": "https://attack.mitre.org/techniques/T1004"
+        }
+      ],
+      "modified": "2023-01-01T00:00:00.000Z"
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--0005",
+      "name": "Technique T1005 Sample Technique",
+      "description": "Adversaries may execute T1005 to achieve persistence or escalate privileges. This is a comprehensive description of security technique T1005 for automated testing.",
+      "x_mitre_platforms": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "persistence"
+        }
+      ],
+      "x_mitre_data_sources": [
+        "Process: Process Creation"
+      ],
+      "x_mitre_is_subtechnique": false,
+      "x_mitre_permissions_required": [
+        "User"
+      ],
+      "x_mitre_detection": "Monitor process command-line arguments and system event logs for anomalies relating to T1005.",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1005",
+          "url": "https://attack.mitre.org/techniques/T1005"
+        }
+      ],
+      "modified": "2023-01-01T00:00:00.000Z"
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--0006",
+      "name": "Technique T1006 Sample Technique",
+      "description": "Adversaries may execute T1006 to achieve persistence or escalate privileges. This is a comprehensive description of security technique T1006 for automated testing.",
+      "x_mitre_platforms": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "persistence"
+        }
+      ],
+      "x_mitre_data_sources": [
+        "Process: Process Creation"
+      ],
+      "x_mitre_is_subtechnique": false,
+      "x_mitre_permissions_required": [
+        "User"
+      ],
+      "x_mitre_detection": "Monitor process command-line arguments and system event logs for anomalies relating to T1006.",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1006",
+          "url": "https://attack.mitre.org/techniques/T1006"
+        }
+      ],
+      "modified": "2023-01-01T00:00:00.000Z"
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--0007",
+      "name": "Technique T1007 Sample Technique",
+      "description": "Adversaries may execute T1007 to achieve persistence or escalate privileges. This is a comprehensive description of security technique T1007 for automated testing.",
+      "x_mitre_platforms": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "persistence"
+        }
+      ],
+      "x_mitre_data_sources": [
+        "Process: Process Creation"
+      ],
+      "x_mitre_is_subtechnique": false,
+      "x_mitre_permissions_required": [
+        "User"
+      ],
+      "x_mitre_detection": "Monitor process command-line arguments and system event logs for anomalies relating to T1007.",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1007",
+          "url": "https://attack.mitre.org/techniques/T1007"
+        }
+      ],
+      "modified": "2023-01-01T00:00:00.000Z"
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--0008",
+      "name": "Technique T1008 Sample Technique",
+      "description": "Adversaries may execute T1008 to achieve persistence or escalate privileges. This is a comprehensive description of security technique T1008 for automated testing.",
+      "x_mitre_platforms": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "persistence"
+        }
+      ],
+      "x_mitre_data_sources": [
+        "Process: Process Creation"
+      ],
+      "x_mitre_is_subtechnique": false,
+      "x_mitre_permissions_required": [
+        "User"
+      ],
+      "x_mitre_detection": "Monitor process command-line arguments and system event logs for anomalies relating to T1008.",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1008",
+          "url": "https://attack.mitre.org/techniques/T1008"
+        }
+      ],
+      "modified": "2023-01-01T00:00:00.000Z"
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--0009",
+      "name": "Technique T1009 Sample Technique",
+      "description": "Adversaries may execute T1009 to achieve persistence or escalate privileges. This is a comprehensive description of security technique T1009 for automated testing.",
+      "x_mitre_platforms": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "persistence"
+        }
+      ],
+      "x_mitre_data_sources": [
+        "Process: Process Creation"
+      ],
+      "x_mitre_is_subtechnique": false,
+      "x_mitre_permissions_required": [
+        "User"
+      ],
+      "x_mitre_detection": "Monitor process command-line arguments and system event logs for anomalies relating to T1009.",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1009",
+          "url": "https://attack.mitre.org/techniques/T1009"
+        }
+      ],
+      "modified": "2023-01-01T00:00:00.000Z"
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--0010",
+      "name": "Technique T1010 Sample Technique",
+      "description": "Adversaries may execute T1010 to achieve persistence or escalate privileges. This is a comprehensive description of security technique T1010 for automated testing.",
+      "x_mitre_platforms": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "persistence"
+        }
+      ],
+      "x_mitre_data_sources": [
+        "Process: Process Creation"
+      ],
+      "x_mitre_is_subtechnique": false,
+      "x_mitre_permissions_required": [
+        "User"
+      ],
+      "x_mitre_detection": "Monitor process command-line arguments and system event logs for anomalies relating to T1010.",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1010",
+          "url": "https://attack.mitre.org/techniques/T1010"
+        }
+      ],
+      "modified": "2023-01-01T00:00:00.000Z"
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--0011",
+      "name": "Technique T1011 Sample Technique",
+      "description": "Adversaries may execute T1011 to achieve persistence or escalate privileges. This is a comprehensive description of security technique T1011 for automated testing.",
+      "x_mitre_platforms": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "persistence"
+        }
+      ],
+      "x_mitre_data_sources": [
+        "Process: Process Creation"
+      ],
+      "x_mitre_is_subtechnique": false,
+      "x_mitre_permissions_required": [
+        "User"
+      ],
+      "x_mitre_detection": "Monitor process command-line arguments and system event logs for anomalies relating to T1011.",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1011",
+          "url": "https://attack.mitre.org/techniques/T1011"
+        }
+      ],
+      "modified": "2023-01-01T00:00:00.000Z"
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--0012",
+      "name": "Technique T1012 Sample Technique",
+      "description": "Adversaries may execute T1012 to achieve persistence or escalate privileges. This is a comprehensive description of security technique T1012 for automated testing.",
+      "x_mitre_platforms": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "persistence"
+        }
+      ],
+      "x_mitre_data_sources": [
+        "Process: Process Creation"
+      ],
+      "x_mitre_is_subtechnique": false,
+      "x_mitre_permissions_required": [
+        "User"
+      ],
+      "x_mitre_detection": "Monitor process command-line arguments and system event logs for anomalies relating to T1012.",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1012",
+          "url": "https://attack.mitre.org/techniques/T1012"
+        }
+      ],
+      "modified": "2023-01-01T00:00:00.000Z"
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--0013",
+      "name": "Technique T1013 Sample Technique",
+      "description": "Adversaries may execute T1013 to achieve persistence or escalate privileges. This is a comprehensive description of security technique T1013 for automated testing.",
+      "x_mitre_platforms": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "persistence"
+        }
+      ],
+      "x_mitre_data_sources": [
+        "Process: Process Creation"
+      ],
+      "x_mitre_is_subtechnique": false,
+      "x_mitre_permissions_required": [
+        "User"
+      ],
+      "x_mitre_detection": "Monitor process command-line arguments and system event logs for anomalies relating to T1013.",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1013",
+          "url": "https://attack.mitre.org/techniques/T1013"
+        }
+      ],
+      "modified": "2023-01-01T00:00:00.000Z"
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--0014",
+      "name": "Technique T1014 Sample Technique",
+      "description": "Adversaries may execute T1014 to achieve persistence or escalate privileges. This is a comprehensive description of security technique T1014 for automated testing.",
+      "x_mitre_platforms": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "persistence"
+        }
+      ],
+      "x_mitre_data_sources": [
+        "Process: Process Creation"
+      ],
+      "x_mitre_is_subtechnique": false,
+      "x_mitre_permissions_required": [
+        "User"
+      ],
+      "x_mitre_detection": "Monitor process command-line arguments and system event logs for anomalies relating to T1014.",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1014",
+          "url": "https://attack.mitre.org/techniques/T1014"
+        }
+      ],
+      "modified": "2023-01-01T00:00:00.000Z"
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--0015",
+      "name": "Technique T1015 Sample Technique",
+      "description": "Adversaries may execute T1015 to achieve persistence or escalate privileges. This is a comprehensive description of security technique T1015 for automated testing.",
+      "x_mitre_platforms": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "persistence"
+        }
+      ],
+      "x_mitre_data_sources": [
+        "Process: Process Creation"
+      ],
+      "x_mitre_is_subtechnique": false,
+      "x_mitre_permissions_required": [
+        "User"
+      ],
+      "x_mitre_detection": "Monitor process command-line arguments and system event logs for anomalies relating to T1015.",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1015",
+          "url": "https://attack.mitre.org/techniques/T1015"
+        }
+      ],
+      "modified": "2023-01-01T00:00:00.000Z"
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--0016",
+      "name": "Technique T1016 Sample Technique",
+      "description": "Adversaries may execute T1016 to achieve persistence or escalate privileges. This is a comprehensive description of security technique T1016 for automated testing.",
+      "x_mitre_platforms": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "persistence"
+        }
+      ],
+      "x_mitre_data_sources": [
+        "Process: Process Creation"
+      ],
+      "x_mitre_is_subtechnique": false,
+      "x_mitre_permissions_required": [
+        "User"
+      ],
+      "x_mitre_detection": "Monitor process command-line arguments and system event logs for anomalies relating to T1016.",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1016",
+          "url": "https://attack.mitre.org/techniques/T1016"
+        }
+      ],
+      "modified": "2023-01-01T00:00:00.000Z"
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--0017",
+      "name": "Technique T1017 Sample Technique",
+      "description": "Adversaries may execute T1017 to achieve persistence or escalate privileges. This is a comprehensive description of security technique T1017 for automated testing.",
+      "x_mitre_platforms": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "persistence"
+        }
+      ],
+      "x_mitre_data_sources": [
+        "Process: Process Creation"
+      ],
+      "x_mitre_is_subtechnique": false,
+      "x_mitre_permissions_required": [
+        "User"
+      ],
+      "x_mitre_detection": "Monitor process command-line arguments and system event logs for anomalies relating to T1017.",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1017",
+          "url": "https://attack.mitre.org/techniques/T1017"
+        }
+      ],
+      "modified": "2023-01-01T00:00:00.000Z"
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--0018",
+      "name": "Technique T1018 Sample Technique",
+      "description": "Adversaries may execute T1018 to achieve persistence or escalate privileges. This is a comprehensive description of security technique T1018 for automated testing.",
+      "x_mitre_platforms": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "persistence"
+        }
+      ],
+      "x_mitre_data_sources": [
+        "Process: Process Creation"
+      ],
+      "x_mitre_is_subtechnique": false,
+      "x_mitre_permissions_required": [
+        "User"
+      ],
+      "x_mitre_detection": "Monitor process command-line arguments and system event logs for anomalies relating to T1018.",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1018",
+          "url": "https://attack.mitre.org/techniques/T1018"
+        }
+      ],
+      "modified": "2023-01-01T00:00:00.000Z"
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--0019",
+      "name": "Technique T1019 Sample Technique",
+      "description": "Adversaries may execute T1019 to achieve persistence or escalate privileges. This is a comprehensive description of security technique T1019 for automated testing.",
+      "x_mitre_platforms": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "persistence"
+        }
+      ],
+      "x_mitre_data_sources": [
+        "Process: Process Creation"
+      ],
+      "x_mitre_is_subtechnique": false,
+      "x_mitre_permissions_required": [
+        "User"
+      ],
+      "x_mitre_detection": "Monitor process command-line arguments and system event logs for anomalies relating to T1019.",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1019",
+          "url": "https://attack.mitre.org/techniques/T1019"
+        }
+      ],
+      "modified": "2023-01-01T00:00:00.000Z"
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--0020",
+      "name": "Technique T1020 Sample Technique",
+      "description": "Adversaries may execute T1020 to achieve persistence or escalate privileges. This is a comprehensive description of security technique T1020 for automated testing.",
+      "x_mitre_platforms": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "persistence"
+        }
+      ],
+      "x_mitre_data_sources": [
+        "Process: Process Creation"
+      ],
+      "x_mitre_is_subtechnique": false,
+      "x_mitre_permissions_required": [
+        "User"
+      ],
+      "x_mitre_detection": "Monitor process command-line arguments and system event logs for anomalies relating to T1020.",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1020",
+          "url": "https://attack.mitre.org/techniques/T1020"
+        }
+      ],
+      "modified": "2023-01-01T00:00:00.000Z"
+    }
+  ]
+}

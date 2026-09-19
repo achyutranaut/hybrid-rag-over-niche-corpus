@@ -1,0 +1,1667 @@
+[
+  {
+    "query_id": "q-0001",
+    "query": "What is CVE-2021-44228 and what makes it dangerous?",
+    "category": "exact_identifier",
+    "subtype": "bare_or_sentence_id",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "cve:CVE-2021-44228"
+    ],
+    "relevance": {
+      "cve:CVE-2021-44228": 2
+    },
+    "relevant_entities": [
+      "CVE-2021-44228",
+      "Log4j",
+      "JNDI"
+    ],
+    "notes": "Exact CVE identifier lookup in sentence."
+  },
+  {
+    "query_id": "q-0002",
+    "query": "Tell me about CVE-2020-1472, the Zerologon vulnerability",
+    "category": "exact_identifier",
+    "subtype": "id_with_colloquial_name",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "cve:CVE-2020-1472"
+    ],
+    "relevance": {
+      "cve:CVE-2020-1472": 2
+    },
+    "relevant_entities": [
+      "CVE-2020-1472",
+      "Netlogon"
+    ],
+    "notes": "Colloquial name with CVE id."
+  },
+  {
+    "query_id": "q-0003",
+    "query": "Explain T1059.001 in detail",
+    "category": "exact_identifier",
+    "subtype": "subtechnique_id",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "attack:T1059.001"
+    ],
+    "relevance": {
+      "attack:T1059.001": 2
+    },
+    "relevant_entities": [
+      "T1059.001",
+      "PowerShell"
+    ],
+    "notes": "Exact sub-technique ID lookup."
+  },
+  {
+    "query_id": "q-0004",
+    "query": "CVE-2017-0144",
+    "category": "exact_identifier",
+    "subtype": "bare_id",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "cve:CVE-2017-0144"
+    ],
+    "relevance": {
+      "cve:CVE-2017-0144": 2
+    },
+    "notes": "Bare CVE ID lookup for EternalBlue SMB flaw."
+  },
+  {
+    "query_id": "q-0005",
+    "query": "T1055.012",
+    "category": "exact_identifier",
+    "subtype": "bare_id",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "attack:T1055.012"
+    ],
+    "relevance": {
+      "attack:T1055.012": 2
+    },
+    "notes": "Bare subtechnique ID for Process Hollowing."
+  },
+  {
+    "query_id": "q-0006",
+    "query": "How does an adversary execute T1053.005 scheduled tasks?",
+    "category": "exact_identifier",
+    "subtype": "id_in_sentence",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "attack:T1053.005"
+    ],
+    "relevance": {
+      "attack:T1053.005": 2
+    },
+    "notes": "Subtechnique ID inside natural language question."
+  },
+  {
+    "query_id": "q-0007",
+    "query": "What sub-techniques are associated with parent technique T1003?",
+    "category": "exact_identifier",
+    "subtype": "id_family",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "attack:T1003",
+      "attack:T1003.001",
+      "attack:T1003.002",
+      "attack:T1003.003",
+      "attack:T1003.004"
+    ],
+    "relevance": {
+      "attack:T1003": 2,
+      "attack:T1003.001": 1,
+      "attack:T1003.002": 1,
+      "attack:T1003.003": 1,
+      "attack:T1003.004": 1
+    },
+    "notes": "Parent ID lookup with confusable sibling family."
+  },
+  {
+    "query_id": "q-0008",
+    "query": "Which CVE in the database is tracked as CWE-125?",
+    "category": "exact_identifier",
+    "subtype": "cwe_lookup",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "cve:CVE-2014-0160"
+    ],
+    "relevance": {
+      "cve:CVE-2014-0160": 2
+    },
+    "notes": "CWE weakness ID lookup mapping to Heartbleed."
+  },
+  {
+    "query_id": "q-0009",
+    "query": "What vulnerability corresponds to CWE-502 deserialization of untrusted data?",
+    "category": "exact_identifier",
+    "subtype": "cwe_lookup",
+    "split": "test",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "cve:CVE-2021-44228"
+    ],
+    "relevance": {
+      "cve:CVE-2021-44228": 2
+    },
+    "notes": "CWE-502 weakness lookup mapping to Log4Shell."
+  },
+  {
+    "query_id": "q-0010",
+    "query": "Tell me about CVE-2021-44832 and how it differs from Log4Shell",
+    "category": "exact_identifier",
+    "subtype": "sibling_id_comparison",
+    "split": "test",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "cve:CVE-2021-44832",
+      "cve:CVE-2021-44228"
+    ],
+    "relevance": {
+      "cve:CVE-2021-44832": 2,
+      "cve:CVE-2021-44228": 1
+    },
+    "notes": "Confusable sibling Log4j CVE."
+  },
+  {
+    "query_id": "q-0011",
+    "query": "How does credential dumping work on Windows?",
+    "category": "semantic_paraphrase",
+    "subtype": "behaviour_to_technique",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "attack:T1003",
+      "attack:T1003.001",
+      "attack:T1003.002",
+      "attack:T1003.003"
+    ],
+    "relevance": {
+      "attack:T1003": 2,
+      "attack:T1003.001": 2,
+      "attack:T1003.002": 2,
+      "attack:T1003.003": 2
+    },
+    "notes": "Conceptual query on Windows credential dumping."
+  },
+  {
+    "query_id": "q-0012",
+    "query": "What is Kerberoasting and which ATT&CK technique covers it?",
+    "category": "semantic_paraphrase",
+    "subtype": "slang_to_technique",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "attack:T1558.003"
+    ],
+    "relevance": {
+      "attack:T1558.003": 2
+    },
+    "notes": "Colloquial technique slang term."
+  },
+  {
+    "query_id": "q-0013",
+    "query": "Describe the BlueKeep RDP vulnerability",
+    "category": "semantic_paraphrase",
+    "subtype": "colloquial_to_cve",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "cve:CVE-2019-0708"
+    ],
+    "relevance": {
+      "cve:CVE-2019-0708": 2
+    },
+    "notes": "Colloquial name to CVE ID."
+  },
+  {
+    "query_id": "q-0014",
+    "query": "What privilege escalation techniques target Windows access tokens?",
+    "category": "semantic_paraphrase",
+    "subtype": "concept_to_technique",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "attack:T1134"
+    ],
+    "relevance": {
+      "attack:T1134": 2
+    },
+    "notes": "Conceptual access token elevation."
+  },
+  {
+    "query_id": "q-0015",
+    "query": "Injecting malicious payload into memory by replacing legitimate code in a suspended process",
+    "category": "semantic_paraphrase",
+    "subtype": "behaviour_to_technique",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "attack:T1055.012"
+    ],
+    "relevance": {
+      "attack:T1055.012": 2
+    },
+    "notes": "Detailed prose description of process hollowing."
+  },
+  {
+    "query_id": "q-0016",
+    "query": "Techniques where attackers hijack the search order of dynamic link libraries",
+    "category": "semantic_paraphrase",
+    "subtype": "behaviour_to_technique",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "attack:T1574.001"
+    ],
+    "relevance": {
+      "attack:T1574.001": 2
+    },
+    "notes": "Prose description of DLL search order hijacking."
+  },
+  {
+    "query_id": "q-0017",
+    "query": "Extracting plaintext credentials or hashes directly from LSASS process memory",
+    "category": "semantic_paraphrase",
+    "subtype": "behaviour_to_technique",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "attack:T1003.001"
+    ],
+    "relevance": {
+      "attack:T1003.001": 2
+    },
+    "notes": "Specific LSASS credential dumping behaviour."
+  },
+  {
+    "query_id": "q-0018",
+    "query": "Adversaries modifying Windows registry keys to execute binaries automatically upon user login",
+    "category": "semantic_paraphrase",
+    "subtype": "behaviour_to_technique",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "attack:T1547.001"
+    ],
+    "relevance": {
+      "attack:T1547.001": 2
+    },
+    "notes": "Registry Run keys / startup folder persistence."
+  },
+  {
+    "query_id": "q-0019",
+    "query": "Remote unauthenticated code execution vulnerability affecting Microsoft Exchange email servers via SSRF",
+    "category": "semantic_paraphrase",
+    "subtype": "description_to_cve",
+    "split": "test",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "cve:CVE-2021-26855"
+    ],
+    "relevance": {
+      "cve:CVE-2021-26855": 2
+    },
+    "notes": "ProxyLogon exchange vulnerability description."
+  },
+  {
+    "query_id": "q-0020",
+    "query": "Severe memory leak bug in OpenSSL TLS heartbeat implementation",
+    "category": "semantic_paraphrase",
+    "subtype": "description_to_cve",
+    "split": "test",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "cve:CVE-2014-0160"
+    ],
+    "relevance": {
+      "cve:CVE-2014-0160": 2
+    },
+    "notes": "Heartbleed memory leak description."
+  },
+  {
+    "query_id": "q-0021",
+    "query": "How do adversaries perform command and control (C2) over commonly used ports?",
+    "category": "acronym_abbreviation",
+    "subtype": "in_glossary_acronym",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "attack:T1071"
+    ],
+    "relevance": {
+      "attack:T1071": 2
+    },
+    "notes": "In-glossary acronym C2."
+  },
+  {
+    "query_id": "q-0022",
+    "query": "Techniques used for local privilege escalation (LPE) in enterprise environments",
+    "category": "acronym_abbreviation",
+    "subtype": "in_glossary_acronym",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "attack:T1068",
+      "attack:T1548"
+    ],
+    "relevance": {
+      "attack:T1068": 2,
+      "attack:T1548": 2
+    },
+    "notes": "In-glossary acronym LPE."
+  },
+  {
+    "query_id": "q-0023",
+    "query": "Which CVE demonstrates pre-authentication RCE in logging frameworks?",
+    "category": "acronym_abbreviation",
+    "subtype": "in_glossary_acronym",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "cve:CVE-2021-44228"
+    ],
+    "relevance": {
+      "cve:CVE-2021-44228": 2
+    },
+    "notes": "In-glossary acronym RCE."
+  },
+  {
+    "query_id": "q-0024",
+    "query": "How do threat actors bypass or disable security tools on endpoints?",
+    "category": "acronym_abbreviation",
+    "subtype": "in_glossary_acronym",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "attack:T1685"
+    ],
+    "relevance": {
+      "attack:T1685": 2
+    },
+    "notes": "Techniques to disable or modify tools."
+  },
+  {
+    "query_id": "q-0025",
+    "query": "Adversary-in-the-middle (AiTM / MITM) techniques for capturing network credentials",
+    "category": "acronym_abbreviation",
+    "subtype": "in_glossary_acronym",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "attack:T1557"
+    ],
+    "relevance": {
+      "attack:T1557": 2
+    },
+    "notes": "In-glossary acronym MITM."
+  },
+  {
+    "query_id": "q-0026",
+    "query": "Attacks targeting Identity and Access Management (IAM) and cloud accounts",
+    "category": "acronym_abbreviation",
+    "subtype": "in_glossary_acronym",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "attack:T1078.004"
+    ],
+    "relevance": {
+      "attack:T1078.004": 2
+    },
+    "notes": "In-glossary acronym IAM."
+  },
+  {
+    "query_id": "q-0027",
+    "query": "Common tactics, techniques, and procedures (TTPs) for initial enterprise compromise",
+    "category": "acronym_abbreviation",
+    "subtype": "in_glossary_acronym",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "attack:T1190",
+      "attack:T1566"
+    ],
+    "relevance": {
+      "attack:T1190": 2,
+      "attack:T1566": 2
+    },
+    "notes": "In-glossary acronym TTPs."
+  },
+  {
+    "query_id": "q-0028",
+    "query": "Server-Side Request Forgery (SSRF) vulnerabilities leading to remote compromise",
+    "category": "acronym_abbreviation",
+    "subtype": "out_of_glossary_acronym",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "cve:CVE-2021-26855"
+    ],
+    "relevance": {
+      "cve:CVE-2021-26855": 2
+    },
+    "notes": "Out-of-glossary acronym SSRF."
+  },
+  {
+    "query_id": "q-0029",
+    "query": "Techniques abusing Living off the Land Binaries (LOLBins) for proxy execution",
+    "category": "acronym_abbreviation",
+    "subtype": "out_of_glossary_acronym",
+    "split": "test",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "attack:T1218"
+    ],
+    "relevance": {
+      "attack:T1218": 2
+    },
+    "notes": "Out-of-glossary acronym LOLBins."
+  },
+  {
+    "query_id": "q-0030",
+    "query": "Bypassing Windows User Account Control (UAC) to elevate privileges",
+    "category": "acronym_abbreviation",
+    "subtype": "out_of_glossary_acronym",
+    "split": "test",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "attack:T1548.002"
+    ],
+    "relevance": {
+      "attack:T1548.002": 2
+    },
+    "notes": "Out-of-glossary acronym UAC."
+  },
+  {
+    "query_id": "q-0031",
+    "query": "Which technique covers exploiting internet-facing applications, and what CVE is an example?",
+    "category": "cross_corpus",
+    "subtype": "technique_to_example_cve",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "attack:T1190",
+      "cve:CVE-2021-44228"
+    ],
+    "required_sets": [
+      [
+        "attack:T1190"
+      ],
+      [
+        "cve:CVE-2021-44228"
+      ]
+    ],
+    "relevance": {
+      "attack:T1190": 2,
+      "cve:CVE-2021-44228": 2
+    },
+    "notes": "Cross-corpus link: T1190 with Log4j CVE."
+  },
+  {
+    "query_id": "q-0032",
+    "query": "Which ATT&CK technique covers remote service exploitation and which Windows CVE illustrates it?",
+    "category": "cross_corpus",
+    "subtype": "technique_to_example_cve",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "attack:T1210",
+      "cve:CVE-2017-0144"
+    ],
+    "required_sets": [
+      [
+        "attack:T1210"
+      ],
+      [
+        "cve:CVE-2017-0144"
+      ]
+    ],
+    "relevance": {
+      "attack:T1210": 2,
+      "cve:CVE-2017-0144": 2
+    },
+    "notes": "Cross-corpus link: T1210 with EternalBlue CVE."
+  },
+  {
+    "query_id": "q-0033",
+    "query": "What ATT&CK technique corresponds to exploiting vulnerabilities for privilege escalation such as Zerologon?",
+    "category": "cross_corpus",
+    "subtype": "cve_to_technique",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "attack:T1068",
+      "cve:CVE-2020-1472"
+    ],
+    "required_sets": [
+      [
+        "attack:T1068"
+      ],
+      [
+        "cve:CVE-2020-1472"
+      ]
+    ],
+    "relevance": {
+      "attack:T1068": 2,
+      "cve:CVE-2020-1472": 2
+    },
+    "notes": "Cross-corpus link: Zerologon with T1068."
+  },
+  {
+    "query_id": "q-0034",
+    "query": "Compare the remote exploitation vector in CVE-2019-0708 with ATT&CK technique T1210",
+    "category": "cross_corpus",
+    "subtype": "cross_corpus_comparison",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "cve:CVE-2019-0708",
+      "attack:T1210"
+    ],
+    "required_sets": [
+      [
+        "cve:CVE-2019-0708"
+      ],
+      [
+        "attack:T1210"
+      ]
+    ],
+    "relevance": {
+      "cve:CVE-2019-0708": 2,
+      "attack:T1210": 2
+    },
+    "notes": "BlueKeep RDP flaw and T1210."
+  },
+  {
+    "query_id": "q-0035",
+    "query": "Which ATT&CK technique describes exploiting public web applications like the Apache Struts flaw CVE-2017-5638?",
+    "category": "cross_corpus",
+    "subtype": "cve_to_technique",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "attack:T1190",
+      "cve:CVE-2017-5638"
+    ],
+    "required_sets": [
+      [
+        "attack:T1190"
+      ],
+      [
+        "cve:CVE-2017-5638"
+      ]
+    ],
+    "relevance": {
+      "attack:T1190": 2,
+      "cve:CVE-2017-5638": 2
+    },
+    "notes": "Struts CVE-2017-5638 with T1190."
+  },
+  {
+    "query_id": "q-0036",
+    "query": "Exploitation of print spooler services (PrintNightmare CVE-2021-34527) and its corresponding privilege escalation technique",
+    "category": "cross_corpus",
+    "subtype": "cve_to_technique",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "cve:CVE-2021-34527",
+      "attack:T1068"
+    ],
+    "required_sets": [
+      [
+        "cve:CVE-2021-34527"
+      ],
+      [
+        "attack:T1068"
+      ]
+    ],
+    "relevance": {
+      "cve:CVE-2021-34527": 2,
+      "attack:T1068": 2
+    },
+    "notes": "PrintNightmare with T1068."
+  },
+  {
+    "query_id": "q-0037",
+    "query": "Atlassian Confluence OGNL injection CVE-2022-26134 and the public-facing application exploitation technique",
+    "category": "cross_corpus",
+    "subtype": "cve_to_technique",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "cve:CVE-2022-26134",
+      "attack:T1190"
+    ],
+    "required_sets": [
+      [
+        "cve:CVE-2022-26134"
+      ],
+      [
+        "attack:T1190"
+      ]
+    ],
+    "relevance": {
+      "cve:CVE-2022-26134": 2,
+      "attack:T1190": 2
+    },
+    "notes": "Confluence OGNL with T1190."
+  },
+  {
+    "query_id": "q-0038",
+    "query": "Which ATT&CK technique addresses information disclosure vulnerabilities like Heartbleed CVE-2014-0160?",
+    "category": "cross_corpus",
+    "subtype": "cve_to_technique",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "attack:T1592",
+      "cve:CVE-2014-0160"
+    ],
+    "required_sets": [
+      [
+        "cve:CVE-2014-0160"
+      ]
+    ],
+    "relevance": {
+      "attack:T1592": 1,
+      "cve:CVE-2014-0160": 2
+    },
+    "notes": "Heartbleed info disclosure."
+  },
+  {
+    "query_id": "q-0039",
+    "query": "F5 BIG-IP iControl REST vulnerability CVE-2021-22986 mapped to public application exploitation",
+    "category": "cross_corpus",
+    "subtype": "cve_to_technique",
+    "split": "test",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "cve:CVE-2021-22986",
+      "attack:T1190"
+    ],
+    "required_sets": [
+      [
+        "cve:CVE-2021-22986"
+      ],
+      [
+        "attack:T1190"
+      ]
+    ],
+    "relevance": {
+      "cve:CVE-2021-22986": 2,
+      "attack:T1190": 2
+    },
+    "notes": "F5 iControl with T1190."
+  },
+  {
+    "query_id": "q-0040",
+    "query": "MOVEit Transfer SQL injection CVE-2023-34362 as an instance of exploiting internet-facing applications",
+    "category": "cross_corpus",
+    "subtype": "cve_to_technique",
+    "split": "test",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "cve:CVE-2023-34362",
+      "attack:T1190"
+    ],
+    "required_sets": [
+      [
+        "cve:CVE-2023-34362"
+      ],
+      [
+        "attack:T1190"
+      ]
+    ],
+    "relevance": {
+      "cve:CVE-2023-34362": 2,
+      "attack:T1190": 2
+    },
+    "notes": "MOVEit SQLi with T1190."
+  },
+  {
+    "query_id": "q-0041",
+    "query": "List persistence techniques specifically applicable to macOS",
+    "category": "metadata_filtered",
+    "subtype": "nl_constraint",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "attack:T1543.004",
+      "attack:T1037.005"
+    ],
+    "filters": {
+      "tactics": [
+        "Persistence"
+      ],
+      "platforms": [
+        "macOS"
+      ]
+    },
+    "relevance": {
+      "attack:T1543.004": 2,
+      "attack:T1037.005": 2
+    },
+    "notes": "Metadata constraint: macOS + persistence (Launch Daemon, Startup Items)."
+  },
+  {
+    "query_id": "q-0042",
+    "query": "Scheduled cron jobs and task execution techniques on Linux platforms",
+    "category": "metadata_filtered",
+    "subtype": "nl_constraint",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "attack:T1053.003"
+    ],
+    "filters": {
+      "platforms": [
+        "Linux"
+      ]
+    },
+    "relevance": {
+      "attack:T1053.003": 2
+    },
+    "notes": "Metadata constraint: Linux cron."
+  },
+  {
+    "query_id": "q-0043",
+    "query": "Registry autostart persistence mechanisms on Windows",
+    "category": "metadata_filtered",
+    "subtype": "nl_constraint",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "attack:T1547.001"
+    ],
+    "filters": {
+      "tactics": [
+        "persistence"
+      ],
+      "platforms": [
+        "Windows"
+      ]
+    },
+    "relevance": {
+      "attack:T1547.001": 2
+    },
+    "notes": "Metadata constraint: Windows + persistence."
+  },
+  {
+    "query_id": "q-0044",
+    "query": "What CVE vulnerabilities in the database have a CRITICAL CVSS severity score?",
+    "category": "metadata_filtered",
+    "subtype": "severity_filter",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "cve:CVE-2021-44228",
+      "cve:CVE-2019-0708",
+      "cve:CVE-2016-10033"
+    ],
+    "filters": {
+      "cvss_severity": [
+        "CRITICAL"
+      ],
+      "source": [
+        "cve_nvd"
+      ]
+    },
+    "relevance": {
+      "cve:CVE-2021-44228": 2,
+      "cve:CVE-2019-0708": 2,
+      "cve:CVE-2016-10033": 2
+    },
+    "notes": "Metadata constraint: CRITICAL CVSS."
+  },
+  {
+    "query_id": "q-0045",
+    "query": "Vulnerabilities with HIGH severity CVSS ratings",
+    "category": "metadata_filtered",
+    "subtype": "severity_filter",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "cve:CVE-2014-0160",
+      "cve:CVE-2017-0144",
+      "cve:CVE-2020-0601"
+    ],
+    "filters": {
+      "cvss_severity": [
+        "HIGH"
+      ],
+      "source": [
+        "cve_nvd"
+      ]
+    },
+    "relevance": {
+      "cve:CVE-2014-0160": 2,
+      "cve:CVE-2017-0144": 2,
+      "cve:CVE-2020-0601": 2
+    },
+    "notes": "Metadata constraint: HIGH CVSS."
+  },
+  {
+    "query_id": "q-0046",
+    "query": "Initial access techniques targeting enterprise cloud environments",
+    "category": "metadata_filtered",
+    "subtype": "tactic_filter",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "attack:T1078.004",
+      "attack:T1190"
+    ],
+    "filters": {
+      "tactics": [
+        "initial-access"
+      ]
+    },
+    "relevance": {
+      "attack:T1078.004": 2,
+      "attack:T1190": 2
+    },
+    "notes": "Metadata constraint: initial-access tactic."
+  },
+  {
+    "query_id": "q-0047",
+    "query": "Defense impairment techniques modifying or disabling security tools",
+    "category": "metadata_filtered",
+    "subtype": "tactic_filter",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "attack:T1685"
+    ],
+    "filters": {
+      "tactics": [
+        "Defense Impairment"
+      ]
+    },
+    "relevance": {
+      "attack:T1685": 2
+    },
+    "notes": "Metadata constraint: Defense Impairment tactic."
+  },
+  {
+    "query_id": "q-0048",
+    "query": "Credential dumping techniques targeting Windows Active Directory NTDS",
+    "category": "metadata_filtered",
+    "subtype": "tactic_platform_filter",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "attack:T1003.003"
+    ],
+    "filters": {
+      "tactics": [
+        "credential-access"
+      ],
+      "platforms": [
+        "Windows"
+      ]
+    },
+    "relevance": {
+      "attack:T1003.003": 2
+    },
+    "notes": "Metadata constraint: credential-access + Windows."
+  },
+  {
+    "query_id": "q-0049",
+    "query": "Privilege escalation techniques exploiting setuid and setgid binaries on Unix",
+    "category": "metadata_filtered",
+    "subtype": "platform_filter",
+    "split": "test",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "attack:T1548.001"
+    ],
+    "filters": {
+      "platforms": [
+        "Linux",
+        "macOS"
+      ],
+      "tactics": [
+        "privilege-escalation"
+      ]
+    },
+    "relevance": {
+      "attack:T1548.001": 2
+    },
+    "notes": "Metadata constraint: setuid on Unix."
+  },
+  {
+    "query_id": "q-0050",
+    "query": "Vulnerabilities associated with directory traversal weakness CWE-22",
+    "category": "metadata_filtered",
+    "subtype": "cwe_filter",
+    "split": "test",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "cve:CVE-2019-11510",
+      "cve:CVE-2018-13379",
+      "cve:CVE-2021-21972"
+    ],
+    "filters": {
+      "cwe_ids": [
+        "CWE-22"
+      ]
+    },
+    "relevance": {
+      "cve:CVE-2019-11510": 2,
+      "cve:CVE-2018-13379": 2,
+      "cve:CVE-2021-21972": 2
+    },
+    "notes": "Metadata constraint: CWE-22 in payload."
+  },
+  {
+    "query_id": "q-0051",
+    "query": "injection",
+    "category": "ambiguous",
+    "subtype": "single_word_polysemous",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "attack:T1055",
+      "attack:T1055.001",
+      "attack:T1055.012"
+    ],
+    "relevance": {
+      "attack:T1055": 2,
+      "attack:T1055.001": 2,
+      "attack:T1055.012": 2
+    },
+    "notes": "Polysemous term: process injection vs code injection."
+  },
+  {
+    "query_id": "q-0052",
+    "query": "dumping",
+    "category": "ambiguous",
+    "subtype": "single_word_polysemous",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "attack:T1003",
+      "attack:T1003.001",
+      "attack:T1003.002"
+    ],
+    "relevance": {
+      "attack:T1003": 2,
+      "attack:T1003.001": 2,
+      "attack:T1003.002": 2
+    },
+    "notes": "Polysemous term: memory dumping vs credential dumping."
+  },
+  {
+    "query_id": "q-0053",
+    "query": "phishing",
+    "category": "ambiguous",
+    "subtype": "single_word_polysemous",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "attack:T1566",
+      "attack:T1566.001",
+      "attack:T1566.002"
+    ],
+    "relevance": {
+      "attack:T1566": 2,
+      "attack:T1566.001": 2,
+      "attack:T1566.002": 2
+    },
+    "notes": "Generic term spanning multiple phishing techniques."
+  },
+  {
+    "query_id": "q-0054",
+    "query": "spoofing",
+    "category": "ambiguous",
+    "subtype": "single_word_polysemous",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "attack:T1557",
+      "attack:T1566.001"
+    ],
+    "relevance": {
+      "attack:T1557": 2,
+      "attack:T1566.001": 1
+    },
+    "notes": "Network spoofing vs email spoofing."
+  },
+  {
+    "query_id": "q-0055",
+    "query": "Log4j",
+    "category": "ambiguous",
+    "subtype": "single_term_product",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "cve:CVE-2021-44228",
+      "cve:CVE-2021-44832"
+    ],
+    "relevance": {
+      "cve:CVE-2021-44228": 2,
+      "cve:CVE-2021-44832": 2
+    },
+    "notes": "Ambiguous product name spanning multiple CVE records."
+  },
+  {
+    "query_id": "q-0056",
+    "query": "persistence",
+    "category": "ambiguous",
+    "subtype": "generic_tactic_term",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "attack:T1547",
+      "attack:T1543"
+    ],
+    "relevance": {
+      "attack:T1547": 2,
+      "attack:T1543": 2
+    },
+    "notes": "Generic tactic term covering multiple autostart mechanisms."
+  },
+  {
+    "query_id": "q-0057",
+    "query": "proxy",
+    "category": "ambiguous",
+    "subtype": "dual_meaning_term",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "attack:T1090",
+      "cve:CVE-2021-26855"
+    ],
+    "relevance": {
+      "attack:T1090": 2,
+      "cve:CVE-2021-26855": 1
+    },
+    "notes": "Network proxy vs ProxyLogon exploit."
+  },
+  {
+    "query_id": "q-0058",
+    "query": "token",
+    "category": "ambiguous",
+    "subtype": "generic_concept_term",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "attack:T1134",
+      "attack:T1134.001"
+    ],
+    "relevance": {
+      "attack:T1134": 2,
+      "attack:T1134.001": 2
+    },
+    "notes": "Windows access token vs security token."
+  },
+  {
+    "query_id": "q-0059",
+    "query": "exfiltration",
+    "category": "ambiguous",
+    "subtype": "generic_tactic_term",
+    "split": "test",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "attack:T1041",
+      "attack:T1048"
+    ],
+    "relevance": {
+      "attack:T1041": 2,
+      "attack:T1048": 2
+    },
+    "notes": "Generic tactic term for data exfiltration."
+  },
+  {
+    "query_id": "q-0060",
+    "query": "elevation",
+    "category": "ambiguous",
+    "subtype": "generic_action_term",
+    "split": "test",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "attack:T1068",
+      "attack:T1548"
+    ],
+    "relevance": {
+      "attack:T1068": 2,
+      "attack:T1548": 2
+    },
+    "notes": "Generic term for privilege elevation."
+  },
+  {
+    "query_id": "q-0061",
+    "query": "What parent technique defines credential access on Windows and what sub-technique covers LSASS?",
+    "category": "multi_hop",
+    "subtype": "parent_subtechnique_link",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "attack:T1003",
+      "attack:T1003.001"
+    ],
+    "required_sets": [
+      [
+        "attack:T1003"
+      ],
+      [
+        "attack:T1003.001"
+      ]
+    ],
+    "relevance": {
+      "attack:T1003": 2,
+      "attack:T1003.001": 2
+    },
+    "notes": "Multi-document link: parent T1003 and sub-technique T1003.001."
+  },
+  {
+    "query_id": "q-0062",
+    "query": "How does PowerShell script execution (T1059.001) relate to Command and Scripting Interpreter (T1059)?",
+    "category": "multi_hop",
+    "subtype": "parent_subtechnique_link",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "attack:T1059",
+      "attack:T1059.001"
+    ],
+    "required_sets": [
+      [
+        "attack:T1059"
+      ],
+      [
+        "attack:T1059.001"
+      ]
+    ],
+    "relevance": {
+      "attack:T1059": 2,
+      "attack:T1059.001": 2
+    },
+    "notes": "Multi-document link: T1059 and T1059.001."
+  },
+  {
+    "query_id": "q-0063",
+    "query": "Contrast LSASS memory dumping with SAM database registry credential extraction",
+    "category": "multi_hop",
+    "subtype": "sibling_subtechnique_link",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "attack:T1003.001",
+      "attack:T1003.002"
+    ],
+    "required_sets": [
+      [
+        "attack:T1003.001"
+      ],
+      [
+        "attack:T1003.002"
+      ]
+    ],
+    "relevance": {
+      "attack:T1003.001": 2,
+      "attack:T1003.002": 2
+    },
+    "notes": "Multi-document comparison of sibling sub-techniques."
+  },
+  {
+    "query_id": "q-0064",
+    "query": "How do Dynamic Link Library Injection (T1055.001) and Process Hollowing (T1055.012) share parent injection mechanics?",
+    "category": "multi_hop",
+    "subtype": "sibling_subtechnique_link",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "attack:T1055",
+      "attack:T1055.001",
+      "attack:T1055.012"
+    ],
+    "required_sets": [
+      [
+        "attack:T1055.001"
+      ],
+      [
+        "attack:T1055.012"
+      ]
+    ],
+    "relevance": {
+      "attack:T1055": 2,
+      "attack:T1055.001": 2,
+      "attack:T1055.012": 2
+    },
+    "notes": "Multi-document injection comparison."
+  },
+  {
+    "query_id": "q-0065",
+    "query": "What initial access technique does CVE-2021-44228 exploit and what persistence mechanism could be installed?",
+    "category": "multi_hop",
+    "subtype": "cve_to_technique_chain",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "cve:CVE-2021-44228",
+      "attack:T1190",
+      "attack:T1547.001"
+    ],
+    "required_sets": [
+      [
+        "cve:CVE-2021-44228"
+      ],
+      [
+        "attack:T1190"
+      ]
+    ],
+    "relevance": {
+      "cve:CVE-2021-44228": 2,
+      "attack:T1190": 2,
+      "attack:T1547.001": 1
+    },
+    "notes": "Multi-hop exploit to persistence chain."
+  },
+  {
+    "query_id": "q-0066",
+    "query": "Describe how scheduled tasks are created via at/schtasks on Windows and cron on Unix",
+    "category": "multi_hop",
+    "subtype": "cross_platform_subtechniques",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "attack:T1053.003",
+      "attack:T1053.005"
+    ],
+    "required_sets": [
+      [
+        "attack:T1053.003"
+      ],
+      [
+        "attack:T1053.005"
+      ]
+    ],
+    "relevance": {
+      "attack:T1053.003": 2,
+      "attack:T1053.005": 2
+    },
+    "notes": "Multi-document cross-platform subtechnique comparison."
+  },
+  {
+    "query_id": "q-0067",
+    "query": "Spearphishing attachments (T1566.001) leading to malicious user execution of office files",
+    "category": "multi_hop",
+    "subtype": "technique_execution_chain",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "attack:T1566.001",
+      "attack:T1204.002"
+    ],
+    "required_sets": [
+      [
+        "attack:T1566.001"
+      ],
+      [
+        "attack:T1204.002"
+      ]
+    ],
+    "relevance": {
+      "attack:T1566.001": 2,
+      "attack:T1204.002": 2
+    },
+    "notes": "Phishing to malicious file execution link."
+  },
+  {
+    "query_id": "q-0068",
+    "query": "How does EternalBlue (CVE-2017-0144) enable SMB lateral movement (T1210) across an enterprise domain?",
+    "category": "multi_hop",
+    "subtype": "cve_to_lateral_movement",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "cve:CVE-2017-0144",
+      "attack:T1210"
+    ],
+    "required_sets": [
+      [
+        "cve:CVE-2017-0144"
+      ],
+      [
+        "attack:T1210"
+      ]
+    ],
+    "relevance": {
+      "cve:CVE-2017-0144": 2,
+      "attack:T1210": 2
+    },
+    "notes": "EternalBlue linking to T1210."
+  },
+  {
+    "query_id": "q-0069",
+    "query": "How does Kerberoasting (T1558.003) feed into Pass the Hash (T1550.002) for privilege elevation?",
+    "category": "multi_hop",
+    "subtype": "tactic_chaining",
+    "split": "test",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "attack:T1558.003",
+      "attack:T1550.002"
+    ],
+    "required_sets": [
+      [
+        "attack:T1558.003"
+      ],
+      [
+        "attack:T1550.002"
+      ]
+    ],
+    "relevance": {
+      "attack:T1558.003": 2,
+      "attack:T1550.002": 2
+    },
+    "notes": "Credential access to lateral movement chain."
+  },
+  {
+    "query_id": "q-0070",
+    "query": "Explain the relationship between access token impersonation (T1134.001) and parent token manipulation (T1134)",
+    "category": "multi_hop",
+    "subtype": "parent_subtechnique_link",
+    "split": "test",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": false,
+    "expected_doc_ids": [
+      "attack:T1134",
+      "attack:T1134.001"
+    ],
+    "required_sets": [
+      [
+        "attack:T1134"
+      ],
+      [
+        "attack:T1134.001"
+      ]
+    ],
+    "relevance": {
+      "attack:T1134": 2,
+      "attack:T1134.001": 2
+    },
+    "notes": "Parent T1134 and subtechnique T1134.001."
+  },
+  {
+    "query_id": "q-0071",
+    "query": "Tell me about CVE-2099-00001 zero-day exploit",
+    "category": "out_of_corpus",
+    "subtype": "nonexistent_cve_id",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": true,
+    "expected_doc_ids": [],
+    "relevance": {},
+    "notes": "Nonexistent CVE ID."
+  },
+  {
+    "query_id": "q-0072",
+    "query": "How do threat actors execute attack pattern T9999?",
+    "category": "out_of_corpus",
+    "subtype": "nonexistent_technique_id",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": true,
+    "expected_doc_ids": [],
+    "relevance": {},
+    "notes": "Nonexistent ATT&CK technique ID."
+  },
+  {
+    "query_id": "q-0073",
+    "query": "Explain the ROWHAMMER electrical disturbance attack on DDR4 memory",
+    "category": "out_of_corpus",
+    "subtype": "absent_hardware_security_topic",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": true,
+    "expected_doc_ids": [],
+    "relevance": {},
+    "notes": "Hardware security topic absent from corpus."
+  },
+  {
+    "query_id": "q-0074",
+    "query": "How does Ethereum smart contract reentrancy work?",
+    "category": "out_of_corpus",
+    "subtype": "blockchain_topic_outside_corpus",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": true,
+    "expected_doc_ids": [],
+    "relevance": {},
+    "notes": "Blockchain smart contract topic."
+  },
+  {
+    "query_id": "q-0075",
+    "query": "What is the best recipe for baking sourdough bread?",
+    "category": "out_of_corpus",
+    "subtype": "non_security_topic",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": true,
+    "expected_doc_ids": [],
+    "relevance": {},
+    "notes": "Completely non-security baking query."
+  },
+  {
+    "query_id": "q-0076",
+    "query": "What is the capital city of Australia?",
+    "category": "out_of_corpus",
+    "subtype": "general_knowledge_topic",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": true,
+    "expected_doc_ids": [],
+    "relevance": {},
+    "notes": "General knowledge geography query."
+  },
+  {
+    "query_id": "q-0077",
+    "query": "Explain the architectural details of the RISC-V instruction set",
+    "category": "out_of_corpus",
+    "subtype": "computer_architecture_outside_corpus",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": true,
+    "expected_doc_ids": [],
+    "relevance": {},
+    "notes": "Microprocessor instruction set architecture."
+  },
+  {
+    "query_id": "q-0078",
+    "query": "How to configure Kubernetes Ingress with Traefik proxy controller",
+    "category": "out_of_corpus",
+    "subtype": "devops_tooling_outside_corpus",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": true,
+    "expected_doc_ids": [],
+    "relevance": {},
+    "notes": "DevOps infrastructure tooling."
+  },
+  {
+    "query_id": "q-0079",
+    "query": "Details on CVE-2025-99999 remote code execution vulnerability",
+    "category": "out_of_corpus",
+    "subtype": "future_nonexistent_cve",
+    "split": "test",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": true,
+    "expected_doc_ids": [],
+    "relevance": {},
+    "notes": "Future nonexistent CVE."
+  },
+  {
+    "query_id": "q-0080",
+    "query": "How do quantum computers execute Shor's algorithm to factor primes?",
+    "category": "out_of_corpus",
+    "subtype": "physics_cryptography_outside_corpus",
+    "split": "test",
+    "provenance": "analyst_phrasing",
+    "corpus_version": "sha256:cdcc7258098ffa61",
+    "expect_abstain": true,
+    "expected_doc_ids": [],
+    "relevance": {},
+    "notes": "Quantum computation algorithm."
+  }
+]

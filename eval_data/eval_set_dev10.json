@@ -1,0 +1,155 @@
+[
+  {
+    "query_id": "q-0001",
+    "query": "What is CVE-2021-44228 and what makes it dangerous?",
+    "category": "exact_identifier",
+    "subtype": "bare_or_sentence_id",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "expect_abstain": false,
+    "expected_doc_ids": ["cve:CVE-2021-44228"],
+    "relevance": {
+      "cve:CVE-2021-44228": 2
+    },
+    "relevant_entities": ["CVE-2021-44228", "Log4j", "JNDI"],
+    "notes": "Exact CVE identifier lookup -- dense embeddings without lexical signal tend to retrieve a different CVE with similar prose (log4j-style deserialization language overlaps with other Java CVEs)."
+  },
+  {
+    "query_id": "q-0002",
+    "query": "Tell me about CVE-2020-1472, the Zerologon vulnerability",
+    "category": "exact_identifier",
+    "subtype": "id_with_colloquial_name",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "expect_abstain": false,
+    "expected_doc_ids": ["cve:CVE-2020-1472"],
+    "relevance": {
+      "cve:CVE-2020-1472": 2
+    },
+    "relevant_entities": ["CVE-2020-1472", "Netlogon"],
+    "notes": "Colloquial name (Zerologon) not present in our normalized text -- tests whether hybrid still finds it via the CVE id token."
+  },
+  {
+    "query_id": "q-0003",
+    "query": "Explain T1059.001 in detail",
+    "category": "exact_identifier",
+    "subtype": "subtechnique_id",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "expect_abstain": false,
+    "expected_doc_ids": ["attack:T1059.001"],
+    "relevance": {
+      "attack:T1059.001": 2
+    },
+    "relevant_entities": ["T1059.001", "PowerShell"],
+    "notes": "Exact sub-technique ID lookup; T1059 (parent) and other T1059.x siblings are plausible dense-retrieval confusions."
+  },
+  {
+    "query_id": "q-0004",
+    "query": "How does credential dumping work on Windows?",
+    "category": "semantic_paraphrase",
+    "subtype": "behaviour_to_technique",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "expect_abstain": false,
+    "expected_doc_ids": ["attack:T1003", "attack:T1003.001", "attack:T1003.002", "attack:T1003.003"],
+    "relevance": {
+      "attack:T1003": 2,
+      "attack:T1003.001": 2,
+      "attack:T1003.002": 2,
+      "attack:T1003.003": 2
+    },
+    "relevant_entities": ["LSASS", "SAM", "NTDS", "T1003"],
+    "notes": "Conceptual query with no explicit identifier -- good case for query expansion (LSASS/SAM/NTDS) and dense semantic matching."
+  },
+  {
+    "query_id": "q-0005",
+    "query": "What weakness type (CWE) is associated with the Log4Shell vulnerability?",
+    "category": "semantic_paraphrase",
+    "subtype": "colloquial_to_metadata",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "expect_abstain": false,
+    "expected_doc_ids": ["cve:CVE-2021-44228"],
+    "relevance": {
+      "cve:CVE-2021-44228": 2
+    },
+    "relevant_entities": ["CWE-502", "CWE-400", "CWE-20"],
+    "notes": "Tests metadata-adjacent retrieval -- the CWE ids live in payload metadata, not just body text."
+  },
+  {
+    "query_id": "q-0006",
+    "query": "What is Kerberoasting and which ATT&CK technique covers it?",
+    "category": "semantic_paraphrase",
+    "subtype": "slang_to_technique",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "expect_abstain": false,
+    "expected_doc_ids": ["attack:T1558.003"],
+    "relevance": {
+      "attack:T1558.003": 2
+    },
+    "relevant_entities": ["Kerberoasting", "T1558.003", "Kerberos"],
+    "notes": "Domain slang term (Kerberoasting) mapped to a formal technique ID -- tests whether corpus text itself contains the colloquial term."
+  },
+  {
+    "query_id": "q-0007",
+    "query": "Describe the BlueKeep RDP vulnerability",
+    "category": "semantic_paraphrase",
+    "subtype": "colloquial_to_cve",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "expect_abstain": false,
+    "expected_doc_ids": ["cve:CVE-2019-0708"],
+    "relevance": {
+      "cve:CVE-2019-0708": 2
+    },
+    "relevant_entities": ["CVE-2019-0708", "RDP", "BlueKeep"],
+    "notes": "Another colloquial-name-to-CVE-id case."
+  },
+  {
+    "query_id": "q-0008",
+    "query": "What privilege escalation techniques target Windows access tokens?",
+    "category": "semantic_paraphrase",
+    "subtype": "concept_to_technique",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "expect_abstain": false,
+    "expected_doc_ids": ["attack:T1134"],
+    "relevance": {
+      "attack:T1134": 2
+    },
+    "relevant_entities": ["T1134", "access token", "privilege escalation"],
+    "notes": "Conceptual query; multiple T1134.x sub-techniques are plausible partial matches, tests recall breadth."
+  },
+  {
+    "query_id": "q-0009",
+    "query": "What CVSS severity was assigned to the Heartbleed bug?",
+    "category": "semantic_paraphrase",
+    "subtype": "colloquial_to_metadata",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "expect_abstain": false,
+    "expected_doc_ids": ["cve:CVE-2014-0160"],
+    "relevance": {
+      "cve:CVE-2014-0160": 2
+    },
+    "relevant_entities": ["CVE-2014-0160", "Heartbleed", "OpenSSL"],
+    "notes": "Older CVE (2014) -- tests parser robustness against pre-CVSSv3.1 / missing-metrics records (see cve_parser.py defensive field access)."
+  },
+  {
+    "query_id": "q-0010",
+    "query": "How do adversaries perform command and control (C2) over commonly used ports?",
+    "category": "acronym_abbreviation",
+    "subtype": "in_glossary_acronym",
+    "split": "dev",
+    "provenance": "analyst_phrasing",
+    "expect_abstain": false,
+    "expected_doc_ids": ["attack:T1071"],
+    "relevance": {
+      "attack:T1071": 2
+    },
+    "relevant_entities": ["T1071", "C2", "command and control"],
+    "notes": "Tests acronym expansion (C2 -> 'command and control') actually improving recall over the raw acronym."
+  }
+]

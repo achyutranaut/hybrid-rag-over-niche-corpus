@@ -1,0 +1,4767 @@
+{
+  "metadata": {
+    "experiment_name": "E4_query_understanding",
+    "split": "test",
+    "query_count": 16,
+    "corpus_hash": "sha256:cdcc7258098ffa61",
+    "eval_dataset_hash": "sha256:04d88add147344c2",
+    "git_commit": "uncommitted_initial",
+    "python_version": "3.13.5",
+    "platform": "macOS-27.0-arm64-arm-64bit-Mach-O",
+    "device": "cpu",
+    "random_seed": 42,
+    "timestamp_utc": "2026-09-19T11:07:23.458088+00:00",
+    "model_identifier": "tfidf_svd_local",
+    "configuration": {
+      "baseline_arm": "hybrid_raw_no_expansion",
+      "test_arms": [
+        "hybrid_acronym_expansion_only",
+        "hybrid_identifier_autofilter_only",
+        "hybrid_identifier_router_only",
+        "hybrid_full_qu"
+      ]
+    }
+  },
+  "summary": {
+    "hybrid_raw_no_expansion": {
+      "recall@5": 0.8571,
+      "recall@10": 0.8571,
+      "precision@5": 0.2714,
+      "mrr": 0.881,
+      "ndcg@5": 0.8323,
+      "hit_rate@5": 1.0,
+      "avg_latency_ms": 44.6
+    },
+    "hybrid_acronym_expansion_only": {
+      "recall@5": 0.8571,
+      "recall@10": 0.8571,
+      "precision@5": 0.2714,
+      "mrr": 0.881,
+      "ndcg@5": 0.8323,
+      "hit_rate@5": 1.0,
+      "avg_latency_ms": 41.7
+    },
+    "hybrid_identifier_autofilter_only": {
+      "recall@5": 0.8214,
+      "recall@10": 0.8571,
+      "precision@5": 0.2571,
+      "mrr": 0.881,
+      "ndcg@5": 0.799,
+      "hit_rate@5": 1.0,
+      "avg_latency_ms": 49.6
+    },
+    "hybrid_identifier_router_only": {
+      "recall@5": 0.8571,
+      "recall@10": 0.8571,
+      "precision@5": 0.2714,
+      "mrr": 0.881,
+      "ndcg@5": 0.8323,
+      "hit_rate@5": 1.0,
+      "avg_latency_ms": 39.0
+    },
+    "hybrid_full_qu": {
+      "recall@5": 0.8214,
+      "recall@10": 0.8214,
+      "precision@5": 0.2571,
+      "mrr": 0.881,
+      "ndcg@5": 0.8047,
+      "hit_rate@5": 1.0,
+      "avg_latency_ms": 37.6
+    },
+    "sparse_no_expansion": {
+      "recall@5": 0.8571,
+      "recall@10": 0.8571,
+      "precision@5": 0.2714,
+      "mrr": 0.8357,
+      "ndcg@5": 0.801,
+      "hit_rate@5": 1.0,
+      "avg_latency_ms": 28.3
+    },
+    "sparse_with_expansion": {
+      "recall@5": 0.8571,
+      "recall@10": 0.8571,
+      "precision@5": 0.2714,
+      "mrr": 0.8357,
+      "ndcg@5": 0.801,
+      "hit_rate@5": 1.0,
+      "avg_latency_ms": 28.2
+    },
+    "dense_no_expansion": {
+      "recall@5": 0.75,
+      "recall@10": 0.7857,
+      "precision@5": 0.2429,
+      "mrr": 0.7148,
+      "ndcg@5": 0.6685,
+      "hit_rate@5": 0.9286,
+      "avg_latency_ms": 12.9
+    },
+    "dense_with_expansion": {
+      "recall@5": 0.75,
+      "recall@10": 0.7857,
+      "precision@5": 0.2429,
+      "mrr": 0.7148,
+      "ndcg@5": 0.6685,
+      "hit_rate@5": 0.9286,
+      "avg_latency_ms": 14.2
+    }
+  },
+  "per_class_summary": {
+    "hybrid_raw_no_expansion": {
+      "acronym_abbreviation": {
+        "count": 2,
+        "recall@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      "ambiguous": {
+        "count": 2,
+        "recall@5": 0.5,
+        "mrr": 0.4167,
+        "ndcg@5": 0.3467
+      },
+      "cross_corpus": {
+        "count": 2,
+        "recall@5": 0.75,
+        "mrr": 1.0,
+        "ndcg@5": 0.8066
+      },
+      "exact_identifier": {
+        "count": 2,
+        "recall@5": 0.75,
+        "mrr": 1.0,
+        "ndcg@5": 0.8066
+      },
+      "metadata_filtered": {
+        "count": 2,
+        "recall@5": 1.0,
+        "mrr": 0.75,
+        "ndcg@5": 0.8664
+      },
+      "multi_hop": {
+        "count": 2,
+        "recall@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      "semantic_paraphrase": {
+        "count": 2,
+        "recall@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    },
+    "hybrid_acronym_expansion_only": {
+      "acronym_abbreviation": {
+        "count": 2,
+        "recall@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      "ambiguous": {
+        "count": 2,
+        "recall@5": 0.5,
+        "mrr": 0.4167,
+        "ndcg@5": 0.3467
+      },
+      "cross_corpus": {
+        "count": 2,
+        "recall@5": 0.75,
+        "mrr": 1.0,
+        "ndcg@5": 0.8066
+      },
+      "exact_identifier": {
+        "count": 2,
+        "recall@5": 0.75,
+        "mrr": 1.0,
+        "ndcg@5": 0.8066
+      },
+      "metadata_filtered": {
+        "count": 2,
+        "recall@5": 1.0,
+        "mrr": 0.75,
+        "ndcg@5": 0.8664
+      },
+      "multi_hop": {
+        "count": 2,
+        "recall@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      "semantic_paraphrase": {
+        "count": 2,
+        "recall@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    },
+    "hybrid_identifier_autofilter_only": {
+      "acronym_abbreviation": {
+        "count": 2,
+        "recall@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      "ambiguous": {
+        "count": 2,
+        "recall@5": 0.5,
+        "mrr": 0.4167,
+        "ndcg@5": 0.3467
+      },
+      "cross_corpus": {
+        "count": 2,
+        "recall@5": 0.5,
+        "mrr": 1.0,
+        "ndcg@5": 0.6131
+      },
+      "exact_identifier": {
+        "count": 2,
+        "recall@5": 0.75,
+        "mrr": 1.0,
+        "ndcg@5": 0.8066
+      },
+      "metadata_filtered": {
+        "count": 2,
+        "recall@5": 1.0,
+        "mrr": 0.75,
+        "ndcg@5": 0.8664
+      },
+      "multi_hop": {
+        "count": 2,
+        "recall@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 0.9599
+      },
+      "semantic_paraphrase": {
+        "count": 2,
+        "recall@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    },
+    "hybrid_identifier_router_only": {
+      "acronym_abbreviation": {
+        "count": 2,
+        "recall@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      "ambiguous": {
+        "count": 2,
+        "recall@5": 0.5,
+        "mrr": 0.4167,
+        "ndcg@5": 0.3467
+      },
+      "cross_corpus": {
+        "count": 2,
+        "recall@5": 0.75,
+        "mrr": 1.0,
+        "ndcg@5": 0.8066
+      },
+      "exact_identifier": {
+        "count": 2,
+        "recall@5": 0.75,
+        "mrr": 1.0,
+        "ndcg@5": 0.8066
+      },
+      "metadata_filtered": {
+        "count": 2,
+        "recall@5": 1.0,
+        "mrr": 0.75,
+        "ndcg@5": 0.8664
+      },
+      "multi_hop": {
+        "count": 2,
+        "recall@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      "semantic_paraphrase": {
+        "count": 2,
+        "recall@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    },
+    "hybrid_full_qu": {
+      "acronym_abbreviation": {
+        "count": 2,
+        "recall@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      "ambiguous": {
+        "count": 2,
+        "recall@5": 0.5,
+        "mrr": 0.4167,
+        "ndcg@5": 0.3467
+      },
+      "cross_corpus": {
+        "count": 2,
+        "recall@5": 0.5,
+        "mrr": 1.0,
+        "ndcg@5": 0.6131
+      },
+      "exact_identifier": {
+        "count": 2,
+        "recall@5": 0.75,
+        "mrr": 1.0,
+        "ndcg@5": 0.8066
+      },
+      "metadata_filtered": {
+        "count": 2,
+        "recall@5": 1.0,
+        "mrr": 0.75,
+        "ndcg@5": 0.8664
+      },
+      "multi_hop": {
+        "count": 2,
+        "recall@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      "semantic_paraphrase": {
+        "count": 2,
+        "recall@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    },
+    "sparse_no_expansion": {
+      "acronym_abbreviation": {
+        "count": 2,
+        "recall@5": 1.0,
+        "mrr": 0.75,
+        "ndcg@5": 0.8155
+      },
+      "ambiguous": {
+        "count": 2,
+        "recall@5": 0.5,
+        "mrr": 0.35,
+        "ndcg@5": 0.312
+      },
+      "cross_corpus": {
+        "count": 2,
+        "recall@5": 0.75,
+        "mrr": 1.0,
+        "ndcg@5": 0.8066
+      },
+      "exact_identifier": {
+        "count": 2,
+        "recall@5": 0.75,
+        "mrr": 1.0,
+        "ndcg@5": 0.8066
+      },
+      "metadata_filtered": {
+        "count": 2,
+        "recall@5": 1.0,
+        "mrr": 0.75,
+        "ndcg@5": 0.8664
+      },
+      "multi_hop": {
+        "count": 2,
+        "recall@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      "semantic_paraphrase": {
+        "count": 2,
+        "recall@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    },
+    "sparse_with_expansion": {
+      "acronym_abbreviation": {
+        "count": 2,
+        "recall@5": 1.0,
+        "mrr": 0.75,
+        "ndcg@5": 0.8155
+      },
+      "ambiguous": {
+        "count": 2,
+        "recall@5": 0.5,
+        "mrr": 0.35,
+        "ndcg@5": 0.312
+      },
+      "cross_corpus": {
+        "count": 2,
+        "recall@5": 0.75,
+        "mrr": 1.0,
+        "ndcg@5": 0.8066
+      },
+      "exact_identifier": {
+        "count": 2,
+        "recall@5": 0.75,
+        "mrr": 1.0,
+        "ndcg@5": 0.8066
+      },
+      "metadata_filtered": {
+        "count": 2,
+        "recall@5": 1.0,
+        "mrr": 0.75,
+        "ndcg@5": 0.8664
+      },
+      "multi_hop": {
+        "count": 2,
+        "recall@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      "semantic_paraphrase": {
+        "count": 2,
+        "recall@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    },
+    "dense_no_expansion": {
+      "acronym_abbreviation": {
+        "count": 2,
+        "recall@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      "ambiguous": {
+        "count": 2,
+        "recall@5": 0.5,
+        "mrr": 0.3333,
+        "ndcg@5": 0.3066
+      },
+      "cross_corpus": {
+        "count": 2,
+        "recall@5": 0.5,
+        "mrr": 1.0,
+        "ndcg@5": 0.6131
+      },
+      "exact_identifier": {
+        "count": 2,
+        "recall@5": 0.25,
+        "mrr": 0.1705,
+        "ndcg@5": 0.132
+      },
+      "metadata_filtered": {
+        "count": 2,
+        "recall@5": 1.0,
+        "mrr": 0.75,
+        "ndcg@5": 0.8561
+      },
+      "multi_hop": {
+        "count": 2,
+        "recall@5": 1.0,
+        "mrr": 0.75,
+        "ndcg@5": 0.7719
+      },
+      "semantic_paraphrase": {
+        "count": 2,
+        "recall@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    },
+    "dense_with_expansion": {
+      "acronym_abbreviation": {
+        "count": 2,
+        "recall@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      "ambiguous": {
+        "count": 2,
+        "recall@5": 0.5,
+        "mrr": 0.3333,
+        "ndcg@5": 0.3066
+      },
+      "cross_corpus": {
+        "count": 2,
+        "recall@5": 0.5,
+        "mrr": 1.0,
+        "ndcg@5": 0.6131
+      },
+      "exact_identifier": {
+        "count": 2,
+        "recall@5": 0.25,
+        "mrr": 0.1705,
+        "ndcg@5": 0.132
+      },
+      "metadata_filtered": {
+        "count": 2,
+        "recall@5": 1.0,
+        "mrr": 0.75,
+        "ndcg@5": 0.8561
+      },
+      "multi_hop": {
+        "count": 2,
+        "recall@5": 1.0,
+        "mrr": 0.75,
+        "ndcg@5": 0.7719
+      },
+      "semantic_paraphrase": {
+        "count": 2,
+        "recall@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    }
+  },
+  "glossary_slice_summary": {
+    "hybrid_raw_no_expansion": {
+      "in_glossary_acronym": {
+        "count": 0,
+        "recall@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@5": 0.0
+      },
+      "out_of_glossary_acronym": {
+        "count": 2,
+        "recall@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    },
+    "hybrid_acronym_expansion_only": {
+      "in_glossary_acronym": {
+        "count": 0,
+        "recall@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@5": 0.0
+      },
+      "out_of_glossary_acronym": {
+        "count": 2,
+        "recall@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    },
+    "hybrid_identifier_autofilter_only": {
+      "in_glossary_acronym": {
+        "count": 0,
+        "recall@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@5": 0.0
+      },
+      "out_of_glossary_acronym": {
+        "count": 2,
+        "recall@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    },
+    "hybrid_identifier_router_only": {
+      "in_glossary_acronym": {
+        "count": 0,
+        "recall@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@5": 0.0
+      },
+      "out_of_glossary_acronym": {
+        "count": 2,
+        "recall@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    },
+    "hybrid_full_qu": {
+      "in_glossary_acronym": {
+        "count": 0,
+        "recall@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@5": 0.0
+      },
+      "out_of_glossary_acronym": {
+        "count": 2,
+        "recall@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    },
+    "sparse_no_expansion": {
+      "in_glossary_acronym": {
+        "count": 0,
+        "recall@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@5": 0.0
+      },
+      "out_of_glossary_acronym": {
+        "count": 2,
+        "recall@5": 1.0,
+        "mrr": 0.75,
+        "ndcg@5": 0.8155
+      }
+    },
+    "sparse_with_expansion": {
+      "in_glossary_acronym": {
+        "count": 0,
+        "recall@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@5": 0.0
+      },
+      "out_of_glossary_acronym": {
+        "count": 2,
+        "recall@5": 1.0,
+        "mrr": 0.75,
+        "ndcg@5": 0.8155
+      }
+    },
+    "dense_no_expansion": {
+      "in_glossary_acronym": {
+        "count": 0,
+        "recall@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@5": 0.0
+      },
+      "out_of_glossary_acronym": {
+        "count": 2,
+        "recall@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    },
+    "dense_with_expansion": {
+      "in_glossary_acronym": {
+        "count": 0,
+        "recall@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@5": 0.0
+      },
+      "out_of_glossary_acronym": {
+        "count": 2,
+        "recall@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    }
+  },
+  "paired_statistics_vs_baseline": {
+    "hybrid_acronym_expansion_only": {
+      "recall@5": {
+        "mean_delta": 0.0,
+        "median_delta": 0.0,
+        "ci_95": [
+          0.0,
+          0.0
+        ],
+        "wilcoxon_p": 1.0,
+        "cohen_d": 0.0,
+        "crosses_zero": true,
+        "improved": 0,
+        "degraded": 0,
+        "unchanged": 14,
+        "per_class": {
+          "acronym_abbreviation": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "ambiguous": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "cross_corpus": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "exact_identifier": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "metadata_filtered": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "multi_hop": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "semantic_paraphrase": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          }
+        }
+      },
+      "mrr": {
+        "mean_delta": 0.0,
+        "median_delta": 0.0,
+        "ci_95": [
+          0.0,
+          0.0
+        ],
+        "wilcoxon_p": 1.0,
+        "cohen_d": 0.0,
+        "crosses_zero": true,
+        "improved": 0,
+        "degraded": 0,
+        "unchanged": 14,
+        "per_class": {
+          "acronym_abbreviation": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "ambiguous": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "cross_corpus": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "exact_identifier": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "metadata_filtered": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "multi_hop": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "semantic_paraphrase": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          }
+        }
+      },
+      "ndcg@5": {
+        "mean_delta": 0.0,
+        "median_delta": 0.0,
+        "ci_95": [
+          0.0,
+          0.0
+        ],
+        "wilcoxon_p": 1.0,
+        "cohen_d": 0.0,
+        "crosses_zero": true,
+        "improved": 0,
+        "degraded": 0,
+        "unchanged": 14,
+        "per_class": {
+          "acronym_abbreviation": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "ambiguous": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "cross_corpus": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "exact_identifier": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "metadata_filtered": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "multi_hop": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "semantic_paraphrase": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          }
+        }
+      }
+    },
+    "hybrid_identifier_autofilter_only": {
+      "recall@5": {
+        "mean_delta": -0.03571428571428571,
+        "median_delta": 0.0,
+        "ci_95": [
+          -0.10714285714285714,
+          0.0
+        ],
+        "wilcoxon_p": 0.31731050786291415,
+        "cohen_d": -0.2672612419124244,
+        "crosses_zero": true,
+        "improved": 0,
+        "degraded": 1,
+        "unchanged": 13,
+        "per_class": {
+          "acronym_abbreviation": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "ambiguous": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "cross_corpus": {
+            "mean_delta": -0.25,
+            "median_delta": -0.25
+          },
+          "exact_identifier": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "metadata_filtered": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "multi_hop": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "semantic_paraphrase": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          }
+        }
+      },
+      "mrr": {
+        "mean_delta": 0.0,
+        "median_delta": 0.0,
+        "ci_95": [
+          0.0,
+          0.0
+        ],
+        "wilcoxon_p": 1.0,
+        "cohen_d": 0.0,
+        "crosses_zero": true,
+        "improved": 0,
+        "degraded": 0,
+        "unchanged": 14,
+        "per_class": {
+          "acronym_abbreviation": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "ambiguous": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "cross_corpus": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "exact_identifier": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "metadata_filtered": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "multi_hop": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "semantic_paraphrase": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          }
+        }
+      },
+      "ndcg@5": {
+        "mean_delta": -0.03336657272045386,
+        "median_delta": 0.0,
+        "ci_95": [
+          -0.09436548881480356,
+          0.0
+        ],
+        "wilcoxon_p": 0.17971249487899976,
+        "cohen_d": -0.3209405806644754,
+        "crosses_zero": true,
+        "improved": 0,
+        "degraded": 2,
+        "unchanged": 12,
+        "per_class": {
+          "acronym_abbreviation": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "ambiguous": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "cross_corpus": {
+            "mean_delta": -0.19342640361727081,
+            "median_delta": -0.19342640361727081
+          },
+          "exact_identifier": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "metadata_filtered": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "multi_hop": {
+            "mean_delta": -0.04013960542590622,
+            "median_delta": -0.04013960542590622
+          },
+          "semantic_paraphrase": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          }
+        }
+      }
+    },
+    "hybrid_identifier_router_only": {
+      "recall@5": {
+        "mean_delta": 0.0,
+        "median_delta": 0.0,
+        "ci_95": [
+          0.0,
+          0.0
+        ],
+        "wilcoxon_p": 1.0,
+        "cohen_d": 0.0,
+        "crosses_zero": true,
+        "improved": 0,
+        "degraded": 0,
+        "unchanged": 14,
+        "per_class": {
+          "acronym_abbreviation": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "ambiguous": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "cross_corpus": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "exact_identifier": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "metadata_filtered": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "multi_hop": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "semantic_paraphrase": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          }
+        }
+      },
+      "mrr": {
+        "mean_delta": 0.0,
+        "median_delta": 0.0,
+        "ci_95": [
+          0.0,
+          0.0
+        ],
+        "wilcoxon_p": 1.0,
+        "cohen_d": 0.0,
+        "crosses_zero": true,
+        "improved": 0,
+        "degraded": 0,
+        "unchanged": 14,
+        "per_class": {
+          "acronym_abbreviation": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "ambiguous": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "cross_corpus": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "exact_identifier": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "metadata_filtered": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "multi_hop": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "semantic_paraphrase": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          }
+        }
+      },
+      "ndcg@5": {
+        "mean_delta": 0.0,
+        "median_delta": 0.0,
+        "ci_95": [
+          0.0,
+          0.0
+        ],
+        "wilcoxon_p": 1.0,
+        "cohen_d": 0.0,
+        "crosses_zero": true,
+        "improved": 0,
+        "degraded": 0,
+        "unchanged": 14,
+        "per_class": {
+          "acronym_abbreviation": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "ambiguous": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "cross_corpus": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "exact_identifier": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "metadata_filtered": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "multi_hop": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "semantic_paraphrase": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          }
+        }
+      }
+    },
+    "hybrid_full_qu": {
+      "recall@5": {
+        "mean_delta": -0.03571428571428571,
+        "median_delta": 0.0,
+        "ci_95": [
+          -0.10714285714285714,
+          0.0
+        ],
+        "wilcoxon_p": 0.31731050786291415,
+        "cohen_d": -0.2672612419124244,
+        "crosses_zero": true,
+        "improved": 0,
+        "degraded": 1,
+        "unchanged": 13,
+        "per_class": {
+          "acronym_abbreviation": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "ambiguous": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "cross_corpus": {
+            "mean_delta": -0.25,
+            "median_delta": -0.25
+          },
+          "exact_identifier": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "metadata_filtered": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "multi_hop": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "semantic_paraphrase": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          }
+        }
+      },
+      "mrr": {
+        "mean_delta": 0.0,
+        "median_delta": 0.0,
+        "ci_95": [
+          0.0,
+          0.0
+        ],
+        "wilcoxon_p": 1.0,
+        "cohen_d": 0.0,
+        "crosses_zero": true,
+        "improved": 0,
+        "degraded": 0,
+        "unchanged": 14,
+        "per_class": {
+          "acronym_abbreviation": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "ambiguous": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "cross_corpus": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "exact_identifier": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "metadata_filtered": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "multi_hop": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "semantic_paraphrase": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          }
+        }
+      },
+      "ndcg@5": {
+        "mean_delta": -0.02763234337389583,
+        "median_delta": 0.0,
+        "ci_95": [
+          -0.08289703012168749,
+          0.0
+        ],
+        "wilcoxon_p": 0.31731050786291415,
+        "cohen_d": -0.2672612419124244,
+        "crosses_zero": true,
+        "improved": 0,
+        "degraded": 1,
+        "unchanged": 13,
+        "per_class": {
+          "acronym_abbreviation": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "ambiguous": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "cross_corpus": {
+            "mean_delta": -0.19342640361727081,
+            "median_delta": -0.19342640361727081
+          },
+          "exact_identifier": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "metadata_filtered": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "multi_hop": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          },
+          "semantic_paraphrase": {
+            "mean_delta": 0.0,
+            "median_delta": 0.0
+          }
+        }
+      }
+    }
+  },
+  "records": {
+    "hybrid_raw_no_expansion": [
+      {
+        "query_id": "q-0009",
+        "query": "What vulnerability corresponds to CWE-502 deserialization of untrusted data?",
+        "category": "exact_identifier",
+        "subtype": "cwe_lookup",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 79.9,
+        "top_retrieved": [
+          "cve:CVE-2021-44228",
+          "cve:CVE-2023-23397",
+          "cve:CVE-2021-26855",
+          "cve:CVE-2019-0708",
+          "cve:CVE-2022-26134"
+        ]
+      },
+      {
+        "query_id": "q-0010",
+        "query": "Tell me about CVE-2021-44832 and how it differs from Log4Shell",
+        "category": "exact_identifier",
+        "subtype": "sibling_id_comparison",
+        "expect_abstain": false,
+        "recall@5": 0.5,
+        "recall@10": 0.5,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 0.6131471927654584,
+        "hit_rate@5": 1.0,
+        "detected_cves": [
+          "CVE-2021-44832"
+        ],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 47.2,
+        "top_retrieved": [
+          "cve:CVE-2021-44832",
+          "attack:T1606.002",
+          "attack:T1606",
+          "cve:CVE-2021-22986",
+          "cve:CVE-2021-34527"
+        ]
+      },
+      {
+        "query_id": "q-0019",
+        "query": "Remote unauthenticated code execution vulnerability affecting Microsoft Exchange email servers via SSRF",
+        "category": "semantic_paraphrase",
+        "subtype": "description_to_cve",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 46.0,
+        "top_retrieved": [
+          "cve:CVE-2021-26855",
+          "cve:CVE-2019-0708",
+          "cve:CVE-2022-30190",
+          "cve:CVE-2021-22986",
+          "cve:CVE-2021-34527"
+        ]
+      },
+      {
+        "query_id": "q-0020",
+        "query": "Severe memory leak bug in OpenSSL TLS heartbeat implementation",
+        "category": "semantic_paraphrase",
+        "subtype": "description_to_cve",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 42.3,
+        "top_retrieved": [
+          "cve:CVE-2014-0160",
+          "attack:T1555.002",
+          "attack:T1055.005",
+          "attack:T1588.004",
+          "attack:T1587.003"
+        ]
+      },
+      {
+        "query_id": "q-0029",
+        "query": "Techniques abusing Living off the Land Binaries (LOLBins) for proxy execution",
+        "category": "acronym_abbreviation",
+        "subtype": "out_of_glossary_acronym",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 42.1,
+        "top_retrieved": [
+          "attack:T1218",
+          "attack:T1216.002",
+          "attack:T1218.004",
+          "attack:T1216",
+          "attack:T1127"
+        ]
+      },
+      {
+        "query_id": "q-0030",
+        "query": "Bypassing Windows User Account Control (UAC) to elevate privileges",
+        "category": "acronym_abbreviation",
+        "subtype": "out_of_glossary_acronym",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 49.1,
+        "top_retrieved": [
+          "attack:T1548.002",
+          "attack:T1134.004",
+          "attack:T1546.011",
+          "attack:T1574.012",
+          "attack:T1548.003"
+        ]
+      },
+      {
+        "query_id": "q-0039",
+        "query": "F5 BIG-IP iControl REST vulnerability CVE-2021-22986 mapped to public application exploitation",
+        "category": "cross_corpus",
+        "subtype": "cve_to_technique",
+        "expect_abstain": false,
+        "recall@5": 0.5,
+        "recall@10": 0.5,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 0.6131471927654584,
+        "hit_rate@5": 1.0,
+        "detected_cves": [
+          "CVE-2021-22986"
+        ],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 44.9,
+        "top_retrieved": [
+          "cve:CVE-2021-22986",
+          "cve:CVE-2023-34362",
+          "cve:CVE-2022-30190",
+          "cve:CVE-2020-1472",
+          "cve:CVE-2021-21972"
+        ]
+      },
+      {
+        "query_id": "q-0040",
+        "query": "MOVEit Transfer SQL injection CVE-2023-34362 as an instance of exploiting internet-facing applications",
+        "category": "cross_corpus",
+        "subtype": "cve_to_technique",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [
+          "CVE-2023-34362"
+        ],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 43.2,
+        "top_retrieved": [
+          "cve:CVE-2023-34362",
+          "attack:T1190",
+          "cve:CVE-2022-26134",
+          "attack:T1505.001",
+          "attack:T1552.005"
+        ]
+      },
+      {
+        "query_id": "q-0049",
+        "query": "Privilege escalation techniques exploiting setuid and setgid binaries on Unix",
+        "category": "metadata_filtered",
+        "subtype": "platform_filter",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 46.3,
+        "top_retrieved": [
+          "attack:T1548.001",
+          "attack:T1611",
+          "attack:T1546.004",
+          "attack:T1078.003",
+          "attack:T1059.004"
+        ]
+      },
+      {
+        "query_id": "q-0050",
+        "query": "Vulnerabilities associated with directory traversal weakness CWE-22",
+        "category": "metadata_filtered",
+        "subtype": "cwe_filter",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.6,
+        "mrr": 0.5,
+        "ndcg@5": 0.7328286204777911,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 43.1,
+        "top_retrieved": [
+          "cve:CVE-2019-19781",
+          "cve:CVE-2018-13379",
+          "cve:CVE-2019-11510",
+          "cve:CVE-2021-21972",
+          "attack:T1588.006"
+        ]
+      },
+      {
+        "query_id": "q-0059",
+        "query": "exfiltration",
+        "category": "ambiguous",
+        "subtype": "generic_tactic_term",
+        "expect_abstain": false,
+        "recall@5": 0.5,
+        "recall@10": 0.5,
+        "precision@5": 0.2,
+        "mrr": 0.3333333333333333,
+        "ndcg@5": 0.3065735963827292,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 29.3,
+        "top_retrieved": [
+          "attack:T1020",
+          "attack:T1029",
+          "attack:T1041",
+          "attack:T1052.001",
+          "attack:T1567.001"
+        ]
+      },
+      {
+        "query_id": "q-0060",
+        "query": "elevation",
+        "category": "ambiguous",
+        "subtype": "generic_action_term",
+        "expect_abstain": false,
+        "recall@5": 0.5,
+        "recall@10": 0.5,
+        "precision@5": 0.2,
+        "mrr": 0.5,
+        "ndcg@5": 0.38685280723454163,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 28.7,
+        "top_retrieved": [
+          "cve:CVE-2020-1472",
+          "attack:T1548",
+          "cve:CVE-2023-23397",
+          "cve:CVE-2020-0601",
+          "cve:CVE-2023-34362"
+        ]
+      },
+      {
+        "query_id": "q-0069",
+        "query": "How does Kerberoasting (T1558.003) feed into Pass the Hash (T1550.002) for privilege elevation?",
+        "category": "multi_hop",
+        "subtype": "tactic_chaining",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [
+          "T1558.003",
+          "T1550.002"
+        ],
+        "expansion_terms": [],
+        "latency_ms": 42.7,
+        "top_retrieved": [
+          "attack:T1550.002",
+          "attack:T1558.003",
+          "attack:T1550.003",
+          "attack:T1558.002",
+          "cve:CVE-2020-1472"
+        ]
+      },
+      {
+        "query_id": "q-0070",
+        "query": "Explain the relationship between access token impersonation (T1134.001) and parent token manipulation (T1134)",
+        "category": "multi_hop",
+        "subtype": "parent_subtechnique_link",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [
+          "T1134.001",
+          "T1134"
+        ],
+        "expansion_terms": [],
+        "latency_ms": 43.0,
+        "top_retrieved": [
+          "attack:T1134",
+          "attack:T1134.001",
+          "attack:T1134.002",
+          "attack:T1134.003",
+          "attack:T1134.004"
+        ]
+      },
+      {
+        "query_id": "q-0079",
+        "query": "Details on CVE-2025-99999 remote code execution vulnerability",
+        "category": "out_of_corpus",
+        "subtype": "future_nonexistent_cve",
+        "expect_abstain": true,
+        "recall@5": 0.0,
+        "recall@10": 0.0,
+        "precision@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@5": 0.0,
+        "hit_rate@5": 0.0,
+        "detected_cves": [
+          "CVE-2025-99999"
+        ],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 47.0,
+        "top_retrieved": [
+          "cve:CVE-2021-34527",
+          "cve:CVE-2022-30190",
+          "cve:CVE-2021-26855",
+          "cve:CVE-2019-0708",
+          "cve:CVE-2017-0144"
+        ]
+      },
+      {
+        "query_id": "q-0080",
+        "query": "How do quantum computers execute Shor's algorithm to factor primes?",
+        "category": "out_of_corpus",
+        "subtype": "physics_cryptography_outside_corpus",
+        "expect_abstain": true,
+        "recall@5": 0.0,
+        "recall@10": 0.0,
+        "precision@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@5": 0.0,
+        "hit_rate@5": 0.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 39.0,
+        "top_retrieved": [
+          "attack:T1573",
+          "attack:T1573.002",
+          "attack:T1573.001",
+          "attack:T1499.002",
+          "attack:T1111"
+        ]
+      }
+    ],
+    "hybrid_acronym_expansion_only": [
+      {
+        "query_id": "q-0009",
+        "query": "What vulnerability corresponds to CWE-502 deserialization of untrusted data?",
+        "category": "exact_identifier",
+        "subtype": "cwe_lookup",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 43.7,
+        "top_retrieved": [
+          "cve:CVE-2021-44228",
+          "cve:CVE-2023-23397",
+          "cve:CVE-2021-26855",
+          "cve:CVE-2019-0708",
+          "cve:CVE-2022-26134"
+        ]
+      },
+      {
+        "query_id": "q-0010",
+        "query": "Tell me about CVE-2021-44832 and how it differs from Log4Shell",
+        "category": "exact_identifier",
+        "subtype": "sibling_id_comparison",
+        "expect_abstain": false,
+        "recall@5": 0.5,
+        "recall@10": 0.5,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 0.6131471927654584,
+        "hit_rate@5": 1.0,
+        "detected_cves": [
+          "CVE-2021-44832"
+        ],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 42.1,
+        "top_retrieved": [
+          "cve:CVE-2021-44832",
+          "attack:T1606.002",
+          "attack:T1606",
+          "cve:CVE-2021-22986",
+          "cve:CVE-2021-34527"
+        ]
+      },
+      {
+        "query_id": "q-0019",
+        "query": "Remote unauthenticated code execution vulnerability affecting Microsoft Exchange email servers via SSRF",
+        "category": "semantic_paraphrase",
+        "subtype": "description_to_cve",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 46.0,
+        "top_retrieved": [
+          "cve:CVE-2021-26855",
+          "cve:CVE-2019-0708",
+          "cve:CVE-2022-30190",
+          "cve:CVE-2021-22986",
+          "cve:CVE-2021-34527"
+        ]
+      },
+      {
+        "query_id": "q-0020",
+        "query": "Severe memory leak bug in OpenSSL TLS heartbeat implementation",
+        "category": "semantic_paraphrase",
+        "subtype": "description_to_cve",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 44.2,
+        "top_retrieved": [
+          "cve:CVE-2014-0160",
+          "attack:T1555.002",
+          "attack:T1055.005",
+          "attack:T1588.004",
+          "attack:T1587.003"
+        ]
+      },
+      {
+        "query_id": "q-0029",
+        "query": "Techniques abusing Living off the Land Binaries (LOLBins) for proxy execution",
+        "category": "acronym_abbreviation",
+        "subtype": "out_of_glossary_acronym",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 42.5,
+        "top_retrieved": [
+          "attack:T1218",
+          "attack:T1216.002",
+          "attack:T1218.004",
+          "attack:T1216",
+          "attack:T1127"
+        ]
+      },
+      {
+        "query_id": "q-0030",
+        "query": "Bypassing Windows User Account Control (UAC) to elevate privileges",
+        "category": "acronym_abbreviation",
+        "subtype": "out_of_glossary_acronym",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 46.6,
+        "top_retrieved": [
+          "attack:T1548.002",
+          "attack:T1134.004",
+          "attack:T1546.011",
+          "attack:T1574.012",
+          "attack:T1548.003"
+        ]
+      },
+      {
+        "query_id": "q-0039",
+        "query": "F5 BIG-IP iControl REST vulnerability CVE-2021-22986 mapped to public application exploitation",
+        "category": "cross_corpus",
+        "subtype": "cve_to_technique",
+        "expect_abstain": false,
+        "recall@5": 0.5,
+        "recall@10": 0.5,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 0.6131471927654584,
+        "hit_rate@5": 1.0,
+        "detected_cves": [
+          "CVE-2021-22986"
+        ],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 43.9,
+        "top_retrieved": [
+          "cve:CVE-2021-22986",
+          "cve:CVE-2023-34362",
+          "cve:CVE-2022-30190",
+          "cve:CVE-2020-1472",
+          "cve:CVE-2021-21972"
+        ]
+      },
+      {
+        "query_id": "q-0040",
+        "query": "MOVEit Transfer SQL injection CVE-2023-34362 as an instance of exploiting internet-facing applications",
+        "category": "cross_corpus",
+        "subtype": "cve_to_technique",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [
+          "CVE-2023-34362"
+        ],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 44.1,
+        "top_retrieved": [
+          "cve:CVE-2023-34362",
+          "attack:T1190",
+          "cve:CVE-2022-26134",
+          "attack:T1505.001",
+          "attack:T1552.005"
+        ]
+      },
+      {
+        "query_id": "q-0049",
+        "query": "Privilege escalation techniques exploiting setuid and setgid binaries on Unix",
+        "category": "metadata_filtered",
+        "subtype": "platform_filter",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 43.4,
+        "top_retrieved": [
+          "attack:T1548.001",
+          "attack:T1611",
+          "attack:T1546.004",
+          "attack:T1078.003",
+          "attack:T1059.004"
+        ]
+      },
+      {
+        "query_id": "q-0050",
+        "query": "Vulnerabilities associated with directory traversal weakness CWE-22",
+        "category": "metadata_filtered",
+        "subtype": "cwe_filter",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.6,
+        "mrr": 0.5,
+        "ndcg@5": 0.7328286204777911,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 43.5,
+        "top_retrieved": [
+          "cve:CVE-2019-19781",
+          "cve:CVE-2018-13379",
+          "cve:CVE-2019-11510",
+          "cve:CVE-2021-21972",
+          "attack:T1588.006"
+        ]
+      },
+      {
+        "query_id": "q-0059",
+        "query": "exfiltration",
+        "category": "ambiguous",
+        "subtype": "generic_tactic_term",
+        "expect_abstain": false,
+        "recall@5": 0.5,
+        "recall@10": 0.5,
+        "precision@5": 0.2,
+        "mrr": 0.3333333333333333,
+        "ndcg@5": 0.3065735963827292,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 30.0,
+        "top_retrieved": [
+          "attack:T1020",
+          "attack:T1029",
+          "attack:T1041",
+          "attack:T1052.001",
+          "attack:T1567.001"
+        ]
+      },
+      {
+        "query_id": "q-0060",
+        "query": "elevation",
+        "category": "ambiguous",
+        "subtype": "generic_action_term",
+        "expect_abstain": false,
+        "recall@5": 0.5,
+        "recall@10": 0.5,
+        "precision@5": 0.2,
+        "mrr": 0.5,
+        "ndcg@5": 0.38685280723454163,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 28.7,
+        "top_retrieved": [
+          "cve:CVE-2020-1472",
+          "attack:T1548",
+          "cve:CVE-2023-23397",
+          "cve:CVE-2020-0601",
+          "cve:CVE-2023-34362"
+        ]
+      },
+      {
+        "query_id": "q-0069",
+        "query": "How does Kerberoasting (T1558.003) feed into Pass the Hash (T1550.002) for privilege elevation?",
+        "category": "multi_hop",
+        "subtype": "tactic_chaining",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [
+          "T1558.003",
+          "T1550.002"
+        ],
+        "expansion_terms": [],
+        "latency_ms": 42.4,
+        "top_retrieved": [
+          "attack:T1550.002",
+          "attack:T1558.003",
+          "attack:T1550.003",
+          "attack:T1558.002",
+          "cve:CVE-2020-1472"
+        ]
+      },
+      {
+        "query_id": "q-0070",
+        "query": "Explain the relationship between access token impersonation (T1134.001) and parent token manipulation (T1134)",
+        "category": "multi_hop",
+        "subtype": "parent_subtechnique_link",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [
+          "T1134.001",
+          "T1134"
+        ],
+        "expansion_terms": [],
+        "latency_ms": 43.4,
+        "top_retrieved": [
+          "attack:T1134",
+          "attack:T1134.001",
+          "attack:T1134.002",
+          "attack:T1134.003",
+          "attack:T1134.004"
+        ]
+      },
+      {
+        "query_id": "q-0079",
+        "query": "Details on CVE-2025-99999 remote code execution vulnerability",
+        "category": "out_of_corpus",
+        "subtype": "future_nonexistent_cve",
+        "expect_abstain": true,
+        "recall@5": 0.0,
+        "recall@10": 0.0,
+        "precision@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@5": 0.0,
+        "hit_rate@5": 0.0,
+        "detected_cves": [
+          "CVE-2025-99999"
+        ],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 44.1,
+        "top_retrieved": [
+          "cve:CVE-2021-34527",
+          "cve:CVE-2022-30190",
+          "cve:CVE-2021-26855",
+          "cve:CVE-2019-0708",
+          "cve:CVE-2017-0144"
+        ]
+      },
+      {
+        "query_id": "q-0080",
+        "query": "How do quantum computers execute Shor's algorithm to factor primes?",
+        "category": "out_of_corpus",
+        "subtype": "physics_cryptography_outside_corpus",
+        "expect_abstain": true,
+        "recall@5": 0.0,
+        "recall@10": 0.0,
+        "precision@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@5": 0.0,
+        "hit_rate@5": 0.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 38.9,
+        "top_retrieved": [
+          "attack:T1573",
+          "attack:T1573.002",
+          "attack:T1573.001",
+          "attack:T1499.002",
+          "attack:T1111"
+        ]
+      }
+    ],
+    "hybrid_identifier_autofilter_only": [
+      {
+        "query_id": "q-0009",
+        "query": "What vulnerability corresponds to CWE-502 deserialization of untrusted data?",
+        "category": "exact_identifier",
+        "subtype": "cwe_lookup",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 43.7,
+        "top_retrieved": [
+          "cve:CVE-2021-44228",
+          "cve:CVE-2023-23397",
+          "cve:CVE-2021-26855",
+          "cve:CVE-2019-0708",
+          "cve:CVE-2022-26134"
+        ]
+      },
+      {
+        "query_id": "q-0010",
+        "query": "Tell me about CVE-2021-44832 and how it differs from Log4Shell",
+        "category": "exact_identifier",
+        "subtype": "sibling_id_comparison",
+        "expect_abstain": false,
+        "recall@5": 0.5,
+        "recall@10": 1.0,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 0.6131471927654584,
+        "hit_rate@5": 1.0,
+        "detected_cves": [
+          "CVE-2021-44832"
+        ],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 62.5,
+        "top_retrieved": [
+          "cve:CVE-2021-44832",
+          "cve:CVE-2021-34527",
+          "cve:CVE-2023-34362",
+          "cve:CVE-2020-1472",
+          "cve:CVE-2022-30190"
+        ]
+      },
+      {
+        "query_id": "q-0019",
+        "query": "Remote unauthenticated code execution vulnerability affecting Microsoft Exchange email servers via SSRF",
+        "category": "semantic_paraphrase",
+        "subtype": "description_to_cve",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 45.3,
+        "top_retrieved": [
+          "cve:CVE-2021-26855",
+          "cve:CVE-2019-0708",
+          "cve:CVE-2022-30190",
+          "cve:CVE-2021-22986",
+          "cve:CVE-2021-34527"
+        ]
+      },
+      {
+        "query_id": "q-0020",
+        "query": "Severe memory leak bug in OpenSSL TLS heartbeat implementation",
+        "category": "semantic_paraphrase",
+        "subtype": "description_to_cve",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 42.5,
+        "top_retrieved": [
+          "cve:CVE-2014-0160",
+          "attack:T1555.002",
+          "attack:T1055.005",
+          "attack:T1588.004",
+          "attack:T1587.003"
+        ]
+      },
+      {
+        "query_id": "q-0029",
+        "query": "Techniques abusing Living off the Land Binaries (LOLBins) for proxy execution",
+        "category": "acronym_abbreviation",
+        "subtype": "out_of_glossary_acronym",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 42.3,
+        "top_retrieved": [
+          "attack:T1218",
+          "attack:T1216.002",
+          "attack:T1218.004",
+          "attack:T1216",
+          "attack:T1127"
+        ]
+      },
+      {
+        "query_id": "q-0030",
+        "query": "Bypassing Windows User Account Control (UAC) to elevate privileges",
+        "category": "acronym_abbreviation",
+        "subtype": "out_of_glossary_acronym",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 43.8,
+        "top_retrieved": [
+          "attack:T1548.002",
+          "attack:T1134.004",
+          "attack:T1546.011",
+          "attack:T1574.012",
+          "attack:T1548.003"
+        ]
+      },
+      {
+        "query_id": "q-0039",
+        "query": "F5 BIG-IP iControl REST vulnerability CVE-2021-22986 mapped to public application exploitation",
+        "category": "cross_corpus",
+        "subtype": "cve_to_technique",
+        "expect_abstain": false,
+        "recall@5": 0.5,
+        "recall@10": 0.5,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 0.6131471927654584,
+        "hit_rate@5": 1.0,
+        "detected_cves": [
+          "CVE-2021-22986"
+        ],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 59.5,
+        "top_retrieved": [
+          "cve:CVE-2021-22986",
+          "cve:CVE-2023-34362",
+          "cve:CVE-2021-34527",
+          "cve:CVE-2021-26855",
+          "cve:CVE-2021-21972"
+        ]
+      },
+      {
+        "query_id": "q-0040",
+        "query": "MOVEit Transfer SQL injection CVE-2023-34362 as an instance of exploiting internet-facing applications",
+        "category": "cross_corpus",
+        "subtype": "cve_to_technique",
+        "expect_abstain": false,
+        "recall@5": 0.5,
+        "recall@10": 0.5,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 0.6131471927654584,
+        "hit_rate@5": 1.0,
+        "detected_cves": [
+          "CVE-2023-34362"
+        ],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 58.8,
+        "top_retrieved": [
+          "cve:CVE-2023-34362",
+          "cve:CVE-2022-26134",
+          "cve:CVE-2021-22986",
+          "cve:CVE-2018-13379",
+          "cve:CVE-2021-21972"
+        ]
+      },
+      {
+        "query_id": "q-0049",
+        "query": "Privilege escalation techniques exploiting setuid and setgid binaries on Unix",
+        "category": "metadata_filtered",
+        "subtype": "platform_filter",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 42.5,
+        "top_retrieved": [
+          "attack:T1548.001",
+          "attack:T1611",
+          "attack:T1546.004",
+          "attack:T1078.003",
+          "attack:T1059.004"
+        ]
+      },
+      {
+        "query_id": "q-0050",
+        "query": "Vulnerabilities associated with directory traversal weakness CWE-22",
+        "category": "metadata_filtered",
+        "subtype": "cwe_filter",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.6,
+        "mrr": 0.5,
+        "ndcg@5": 0.7328286204777911,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 42.9,
+        "top_retrieved": [
+          "cve:CVE-2019-19781",
+          "cve:CVE-2018-13379",
+          "cve:CVE-2019-11510",
+          "cve:CVE-2021-21972",
+          "attack:T1588.006"
+        ]
+      },
+      {
+        "query_id": "q-0059",
+        "query": "exfiltration",
+        "category": "ambiguous",
+        "subtype": "generic_tactic_term",
+        "expect_abstain": false,
+        "recall@5": 0.5,
+        "recall@10": 0.5,
+        "precision@5": 0.2,
+        "mrr": 0.3333333333333333,
+        "ndcg@5": 0.3065735963827292,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 30.4,
+        "top_retrieved": [
+          "attack:T1020",
+          "attack:T1029",
+          "attack:T1041",
+          "attack:T1052.001",
+          "attack:T1567.001"
+        ]
+      },
+      {
+        "query_id": "q-0060",
+        "query": "elevation",
+        "category": "ambiguous",
+        "subtype": "generic_action_term",
+        "expect_abstain": false,
+        "recall@5": 0.5,
+        "recall@10": 0.5,
+        "precision@5": 0.2,
+        "mrr": 0.5,
+        "ndcg@5": 0.38685280723454163,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 28.5,
+        "top_retrieved": [
+          "cve:CVE-2020-1472",
+          "attack:T1548",
+          "cve:CVE-2023-23397",
+          "cve:CVE-2020-0601",
+          "cve:CVE-2023-34362"
+        ]
+      },
+      {
+        "query_id": "q-0069",
+        "query": "How does Kerberoasting (T1558.003) feed into Pass the Hash (T1550.002) for privilege elevation?",
+        "category": "multi_hop",
+        "subtype": "tactic_chaining",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 0.9197207891481876,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [
+          "T1558.003",
+          "T1550.002"
+        ],
+        "expansion_terms": [],
+        "latency_ms": 68.1,
+        "top_retrieved": [
+          "attack:T1550.002",
+          "attack:T1550.003",
+          "attack:T1558.003",
+          "attack:T1558.002",
+          "attack:T1482"
+        ]
+      },
+      {
+        "query_id": "q-0070",
+        "query": "Explain the relationship between access token impersonation (T1134.001) and parent token manipulation (T1134)",
+        "category": "multi_hop",
+        "subtype": "parent_subtechnique_link",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [
+          "T1134.001",
+          "T1134"
+        ],
+        "expansion_terms": [],
+        "latency_ms": 78.0,
+        "top_retrieved": [
+          "attack:T1134",
+          "attack:T1134.001",
+          "attack:T1134.002",
+          "attack:T1134.003",
+          "attack:T1134.004"
+        ]
+      },
+      {
+        "query_id": "q-0079",
+        "query": "Details on CVE-2025-99999 remote code execution vulnerability",
+        "category": "out_of_corpus",
+        "subtype": "future_nonexistent_cve",
+        "expect_abstain": true,
+        "recall@5": 0.0,
+        "recall@10": 0.0,
+        "precision@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@5": 0.0,
+        "hit_rate@5": 0.0,
+        "detected_cves": [
+          "CVE-2025-99999"
+        ],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 63.1,
+        "top_retrieved": [
+          "cve:CVE-2021-34527",
+          "cve:CVE-2022-30190",
+          "cve:CVE-2021-26855",
+          "cve:CVE-2019-0708",
+          "cve:CVE-2017-0144"
+        ]
+      },
+      {
+        "query_id": "q-0080",
+        "query": "How do quantum computers execute Shor's algorithm to factor primes?",
+        "category": "out_of_corpus",
+        "subtype": "physics_cryptography_outside_corpus",
+        "expect_abstain": true,
+        "recall@5": 0.0,
+        "recall@10": 0.0,
+        "precision@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@5": 0.0,
+        "hit_rate@5": 0.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 42.0,
+        "top_retrieved": [
+          "attack:T1573",
+          "attack:T1573.002",
+          "attack:T1573.001",
+          "attack:T1499.002",
+          "attack:T1111"
+        ]
+      }
+    ],
+    "hybrid_identifier_router_only": [
+      {
+        "query_id": "q-0009",
+        "query": "What vulnerability corresponds to CWE-502 deserialization of untrusted data?",
+        "category": "exact_identifier",
+        "subtype": "cwe_lookup",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 32.1,
+        "top_retrieved": [
+          "cve:CVE-2021-44228",
+          "attack:T1553",
+          "attack:T1599",
+          "attack:T1599.001",
+          "attack:T1187"
+        ]
+      },
+      {
+        "query_id": "q-0010",
+        "query": "Tell me about CVE-2021-44832 and how it differs from Log4Shell",
+        "category": "exact_identifier",
+        "subtype": "sibling_id_comparison",
+        "expect_abstain": false,
+        "recall@5": 0.5,
+        "recall@10": 0.5,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 0.6131471927654584,
+        "hit_rate@5": 1.0,
+        "detected_cves": [
+          "CVE-2021-44832"
+        ],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 28.8,
+        "top_retrieved": [
+          "cve:CVE-2021-44832",
+          "attack:T1547.015",
+          "attack:T1606.002",
+          "attack:T1606",
+          "attack:T1563"
+        ]
+      },
+      {
+        "query_id": "q-0019",
+        "query": "Remote unauthenticated code execution vulnerability affecting Microsoft Exchange email servers via SSRF",
+        "category": "semantic_paraphrase",
+        "subtype": "description_to_cve",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 47.2,
+        "top_retrieved": [
+          "cve:CVE-2021-26855",
+          "cve:CVE-2019-0708",
+          "cve:CVE-2022-30190",
+          "cve:CVE-2021-22986",
+          "cve:CVE-2021-34527"
+        ]
+      },
+      {
+        "query_id": "q-0020",
+        "query": "Severe memory leak bug in OpenSSL TLS heartbeat implementation",
+        "category": "semantic_paraphrase",
+        "subtype": "description_to_cve",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 56.5,
+        "top_retrieved": [
+          "cve:CVE-2014-0160",
+          "attack:T1555.002",
+          "attack:T1055.005",
+          "attack:T1588.004",
+          "attack:T1587.003"
+        ]
+      },
+      {
+        "query_id": "q-0029",
+        "query": "Techniques abusing Living off the Land Binaries (LOLBins) for proxy execution",
+        "category": "acronym_abbreviation",
+        "subtype": "out_of_glossary_acronym",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 44.2,
+        "top_retrieved": [
+          "attack:T1218",
+          "attack:T1216.002",
+          "attack:T1218.004",
+          "attack:T1216",
+          "attack:T1127"
+        ]
+      },
+      {
+        "query_id": "q-0030",
+        "query": "Bypassing Windows User Account Control (UAC) to elevate privileges",
+        "category": "acronym_abbreviation",
+        "subtype": "out_of_glossary_acronym",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 46.4,
+        "top_retrieved": [
+          "attack:T1548.002",
+          "attack:T1134.004",
+          "attack:T1546.011",
+          "attack:T1574.012",
+          "attack:T1548.003"
+        ]
+      },
+      {
+        "query_id": "q-0039",
+        "query": "F5 BIG-IP iControl REST vulnerability CVE-2021-22986 mapped to public application exploitation",
+        "category": "cross_corpus",
+        "subtype": "cve_to_technique",
+        "expect_abstain": false,
+        "recall@5": 0.5,
+        "recall@10": 0.5,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 0.6131471927654584,
+        "hit_rate@5": 1.0,
+        "detected_cves": [
+          "CVE-2021-22986"
+        ],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 33.5,
+        "top_retrieved": [
+          "cve:CVE-2021-22986",
+          "attack:T1211",
+          "attack:T1055.014",
+          "attack:T1068",
+          "attack:T1588.006"
+        ]
+      },
+      {
+        "query_id": "q-0040",
+        "query": "MOVEit Transfer SQL injection CVE-2023-34362 as an instance of exploiting internet-facing applications",
+        "category": "cross_corpus",
+        "subtype": "cve_to_technique",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [
+          "CVE-2023-34362"
+        ],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 33.1,
+        "top_retrieved": [
+          "cve:CVE-2023-34362",
+          "attack:T1190",
+          "attack:T1505.001",
+          "attack:T1584.008",
+          "attack:T1552.005"
+        ]
+      },
+      {
+        "query_id": "q-0049",
+        "query": "Privilege escalation techniques exploiting setuid and setgid binaries on Unix",
+        "category": "metadata_filtered",
+        "subtype": "platform_filter",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 72.7,
+        "top_retrieved": [
+          "attack:T1548.001",
+          "attack:T1611",
+          "attack:T1546.004",
+          "attack:T1078.003",
+          "attack:T1059.004"
+        ]
+      },
+      {
+        "query_id": "q-0050",
+        "query": "Vulnerabilities associated with directory traversal weakness CWE-22",
+        "category": "metadata_filtered",
+        "subtype": "cwe_filter",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.6,
+        "mrr": 0.5,
+        "ndcg@5": 0.7328286204777911,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 31.1,
+        "top_retrieved": [
+          "cve:CVE-2019-19781",
+          "cve:CVE-2018-13379",
+          "cve:CVE-2019-11510",
+          "cve:CVE-2021-21972",
+          "attack:T1599.001"
+        ]
+      },
+      {
+        "query_id": "q-0059",
+        "query": "exfiltration",
+        "category": "ambiguous",
+        "subtype": "generic_tactic_term",
+        "expect_abstain": false,
+        "recall@5": 0.5,
+        "recall@10": 0.5,
+        "precision@5": 0.2,
+        "mrr": 0.3333333333333333,
+        "ndcg@5": 0.3065735963827292,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 31.3,
+        "top_retrieved": [
+          "attack:T1020",
+          "attack:T1029",
+          "attack:T1041",
+          "attack:T1052.001",
+          "attack:T1567.001"
+        ]
+      },
+      {
+        "query_id": "q-0060",
+        "query": "elevation",
+        "category": "ambiguous",
+        "subtype": "generic_action_term",
+        "expect_abstain": false,
+        "recall@5": 0.5,
+        "recall@10": 0.5,
+        "precision@5": 0.2,
+        "mrr": 0.5,
+        "ndcg@5": 0.38685280723454163,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 33.0,
+        "top_retrieved": [
+          "cve:CVE-2020-1472",
+          "attack:T1548",
+          "cve:CVE-2023-23397",
+          "cve:CVE-2020-0601",
+          "cve:CVE-2023-34362"
+        ]
+      },
+      {
+        "query_id": "q-0069",
+        "query": "How does Kerberoasting (T1558.003) feed into Pass the Hash (T1550.002) for privilege elevation?",
+        "category": "multi_hop",
+        "subtype": "tactic_chaining",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [
+          "T1558.003",
+          "T1550.002"
+        ],
+        "expansion_terms": [],
+        "latency_ms": 31.5,
+        "top_retrieved": [
+          "attack:T1550.002",
+          "attack:T1558.003",
+          "cve:CVE-2020-1472",
+          "attack:T1548",
+          "cve:CVE-2023-23397"
+        ]
+      },
+      {
+        "query_id": "q-0070",
+        "query": "Explain the relationship between access token impersonation (T1134.001) and parent token manipulation (T1134)",
+        "category": "multi_hop",
+        "subtype": "parent_subtechnique_link",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [
+          "T1134.001",
+          "T1134"
+        ],
+        "expansion_terms": [],
+        "latency_ms": 31.6,
+        "top_retrieved": [
+          "attack:T1134.001",
+          "attack:T1134",
+          "attack:T1134.002",
+          "attack:T1134.003",
+          "attack:T1134.004"
+        ]
+      },
+      {
+        "query_id": "q-0079",
+        "query": "Details on CVE-2025-99999 remote code execution vulnerability",
+        "category": "out_of_corpus",
+        "subtype": "future_nonexistent_cve",
+        "expect_abstain": true,
+        "recall@5": 0.0,
+        "recall@10": 0.0,
+        "precision@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@5": 0.0,
+        "hit_rate@5": 0.0,
+        "detected_cves": [
+          "CVE-2025-99999"
+        ],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 31.9,
+        "top_retrieved": [
+          "cve:CVE-2021-34527",
+          "cve:CVE-2022-30190",
+          "cve:CVE-2019-0708",
+          "cve:CVE-2021-26855",
+          "cve:CVE-2017-0144"
+        ]
+      },
+      {
+        "query_id": "q-0080",
+        "query": "How do quantum computers execute Shor's algorithm to factor primes?",
+        "category": "out_of_corpus",
+        "subtype": "physics_cryptography_outside_corpus",
+        "expect_abstain": true,
+        "recall@5": 0.0,
+        "recall@10": 0.0,
+        "precision@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@5": 0.0,
+        "hit_rate@5": 0.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 39.7,
+        "top_retrieved": [
+          "attack:T1573",
+          "attack:T1573.002",
+          "attack:T1573.001",
+          "attack:T1499.002",
+          "attack:T1111"
+        ]
+      }
+    ],
+    "hybrid_full_qu": [
+      {
+        "query_id": "q-0009",
+        "query": "What vulnerability corresponds to CWE-502 deserialization of untrusted data?",
+        "category": "exact_identifier",
+        "subtype": "cwe_lookup",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 30.6,
+        "top_retrieved": [
+          "cve:CVE-2021-44228",
+          "attack:T1553",
+          "attack:T1599",
+          "attack:T1599.001",
+          "attack:T1187"
+        ]
+      },
+      {
+        "query_id": "q-0010",
+        "query": "Tell me about CVE-2021-44832 and how it differs from Log4Shell",
+        "category": "exact_identifier",
+        "subtype": "sibling_id_comparison",
+        "expect_abstain": false,
+        "recall@5": 0.5,
+        "recall@10": 0.5,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 0.6131471927654584,
+        "hit_rate@5": 1.0,
+        "detected_cves": [
+          "CVE-2021-44832"
+        ],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 35.7,
+        "top_retrieved": [
+          "cve:CVE-2021-44832",
+          "cve:CVE-2020-1472",
+          "cve:CVE-2021-34527",
+          "cve:CVE-2023-34362",
+          "cve:CVE-2022-30190"
+        ]
+      },
+      {
+        "query_id": "q-0019",
+        "query": "Remote unauthenticated code execution vulnerability affecting Microsoft Exchange email servers via SSRF",
+        "category": "semantic_paraphrase",
+        "subtype": "description_to_cve",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 45.2,
+        "top_retrieved": [
+          "cve:CVE-2021-26855",
+          "cve:CVE-2019-0708",
+          "cve:CVE-2022-30190",
+          "cve:CVE-2021-22986",
+          "cve:CVE-2021-34527"
+        ]
+      },
+      {
+        "query_id": "q-0020",
+        "query": "Severe memory leak bug in OpenSSL TLS heartbeat implementation",
+        "category": "semantic_paraphrase",
+        "subtype": "description_to_cve",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 41.6,
+        "top_retrieved": [
+          "cve:CVE-2014-0160",
+          "attack:T1555.002",
+          "attack:T1055.005",
+          "attack:T1588.004",
+          "attack:T1587.003"
+        ]
+      },
+      {
+        "query_id": "q-0029",
+        "query": "Techniques abusing Living off the Land Binaries (LOLBins) for proxy execution",
+        "category": "acronym_abbreviation",
+        "subtype": "out_of_glossary_acronym",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 41.7,
+        "top_retrieved": [
+          "attack:T1218",
+          "attack:T1216.002",
+          "attack:T1218.004",
+          "attack:T1216",
+          "attack:T1127"
+        ]
+      },
+      {
+        "query_id": "q-0030",
+        "query": "Bypassing Windows User Account Control (UAC) to elevate privileges",
+        "category": "acronym_abbreviation",
+        "subtype": "out_of_glossary_acronym",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 44.2,
+        "top_retrieved": [
+          "attack:T1548.002",
+          "attack:T1134.004",
+          "attack:T1546.011",
+          "attack:T1574.012",
+          "attack:T1548.003"
+        ]
+      },
+      {
+        "query_id": "q-0039",
+        "query": "F5 BIG-IP iControl REST vulnerability CVE-2021-22986 mapped to public application exploitation",
+        "category": "cross_corpus",
+        "subtype": "cve_to_technique",
+        "expect_abstain": false,
+        "recall@5": 0.5,
+        "recall@10": 0.5,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 0.6131471927654584,
+        "hit_rate@5": 1.0,
+        "detected_cves": [
+          "CVE-2021-22986"
+        ],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 39.4,
+        "top_retrieved": [
+          "cve:CVE-2021-22986",
+          "cve:CVE-2020-1472",
+          "cve:CVE-2022-30190",
+          "cve:CVE-2023-34362",
+          "cve:CVE-2021-34527"
+        ]
+      },
+      {
+        "query_id": "q-0040",
+        "query": "MOVEit Transfer SQL injection CVE-2023-34362 as an instance of exploiting internet-facing applications",
+        "category": "cross_corpus",
+        "subtype": "cve_to_technique",
+        "expect_abstain": false,
+        "recall@5": 0.5,
+        "recall@10": 0.5,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 0.6131471927654584,
+        "hit_rate@5": 1.0,
+        "detected_cves": [
+          "CVE-2023-34362"
+        ],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 38.0,
+        "top_retrieved": [
+          "cve:CVE-2023-34362",
+          "cve:CVE-2022-26134"
+        ]
+      },
+      {
+        "query_id": "q-0049",
+        "query": "Privilege escalation techniques exploiting setuid and setgid binaries on Unix",
+        "category": "metadata_filtered",
+        "subtype": "platform_filter",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 42.8,
+        "top_retrieved": [
+          "attack:T1548.001",
+          "attack:T1611",
+          "attack:T1546.004",
+          "attack:T1078.003",
+          "attack:T1059.004"
+        ]
+      },
+      {
+        "query_id": "q-0050",
+        "query": "Vulnerabilities associated with directory traversal weakness CWE-22",
+        "category": "metadata_filtered",
+        "subtype": "cwe_filter",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.6,
+        "mrr": 0.5,
+        "ndcg@5": 0.7328286204777911,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 30.1,
+        "top_retrieved": [
+          "cve:CVE-2019-19781",
+          "cve:CVE-2018-13379",
+          "cve:CVE-2019-11510",
+          "cve:CVE-2021-21972",
+          "attack:T1599.001"
+        ]
+      },
+      {
+        "query_id": "q-0059",
+        "query": "exfiltration",
+        "category": "ambiguous",
+        "subtype": "generic_tactic_term",
+        "expect_abstain": false,
+        "recall@5": 0.5,
+        "recall@10": 0.5,
+        "precision@5": 0.2,
+        "mrr": 0.3333333333333333,
+        "ndcg@5": 0.3065735963827292,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 29.1,
+        "top_retrieved": [
+          "attack:T1020",
+          "attack:T1029",
+          "attack:T1041",
+          "attack:T1052.001",
+          "attack:T1567.001"
+        ]
+      },
+      {
+        "query_id": "q-0060",
+        "query": "elevation",
+        "category": "ambiguous",
+        "subtype": "generic_action_term",
+        "expect_abstain": false,
+        "recall@5": 0.5,
+        "recall@10": 0.5,
+        "precision@5": 0.2,
+        "mrr": 0.5,
+        "ndcg@5": 0.38685280723454163,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 28.6,
+        "top_retrieved": [
+          "cve:CVE-2020-1472",
+          "attack:T1548",
+          "cve:CVE-2023-23397",
+          "cve:CVE-2020-0601",
+          "cve:CVE-2023-34362"
+        ]
+      },
+      {
+        "query_id": "q-0069",
+        "query": "How does Kerberoasting (T1558.003) feed into Pass the Hash (T1550.002) for privilege elevation?",
+        "category": "multi_hop",
+        "subtype": "tactic_chaining",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [
+          "T1558.003",
+          "T1550.002"
+        ],
+        "expansion_terms": [],
+        "latency_ms": 37.5,
+        "top_retrieved": [
+          "attack:T1550.002",
+          "attack:T1558.003",
+          "attack:T1548",
+          "attack:T1550.003",
+          "attack:T1482"
+        ]
+      },
+      {
+        "query_id": "q-0070",
+        "query": "Explain the relationship between access token impersonation (T1134.001) and parent token manipulation (T1134)",
+        "category": "multi_hop",
+        "subtype": "parent_subtechnique_link",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [
+          "T1134.001",
+          "T1134"
+        ],
+        "expansion_terms": [],
+        "latency_ms": 38.8,
+        "top_retrieved": [
+          "attack:T1134.001",
+          "attack:T1134",
+          "attack:T1134.002",
+          "attack:T1134.003",
+          "attack:T1134.004"
+        ]
+      },
+      {
+        "query_id": "q-0079",
+        "query": "Details on CVE-2025-99999 remote code execution vulnerability",
+        "category": "out_of_corpus",
+        "subtype": "future_nonexistent_cve",
+        "expect_abstain": true,
+        "recall@5": 0.0,
+        "recall@10": 0.0,
+        "precision@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@5": 0.0,
+        "hit_rate@5": 0.0,
+        "detected_cves": [
+          "CVE-2025-99999"
+        ],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 37.8,
+        "top_retrieved": [
+          "cve:CVE-2021-34527",
+          "cve:CVE-2022-30190",
+          "cve:CVE-2019-0708",
+          "cve:CVE-2021-26855",
+          "cve:CVE-2017-0144"
+        ]
+      },
+      {
+        "query_id": "q-0080",
+        "query": "How do quantum computers execute Shor's algorithm to factor primes?",
+        "category": "out_of_corpus",
+        "subtype": "physics_cryptography_outside_corpus",
+        "expect_abstain": true,
+        "recall@5": 0.0,
+        "recall@10": 0.0,
+        "precision@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@5": 0.0,
+        "hit_rate@5": 0.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 40.0,
+        "top_retrieved": [
+          "attack:T1573",
+          "attack:T1573.002",
+          "attack:T1573.001",
+          "attack:T1499.002",
+          "attack:T1111"
+        ]
+      }
+    ],
+    "sparse_no_expansion": [
+      {
+        "query_id": "q-0009",
+        "query": "What vulnerability corresponds to CWE-502 deserialization of untrusted data?",
+        "category": "exact_identifier",
+        "subtype": "cwe_lookup",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 29.9,
+        "top_retrieved": [
+          "cve:CVE-2021-44228",
+          "attack:T1553",
+          "attack:T1599",
+          "attack:T1599.001",
+          "attack:T1187"
+        ]
+      },
+      {
+        "query_id": "q-0010",
+        "query": "Tell me about CVE-2021-44832 and how it differs from Log4Shell",
+        "category": "exact_identifier",
+        "subtype": "sibling_id_comparison",
+        "expect_abstain": false,
+        "recall@5": 0.5,
+        "recall@10": 0.5,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 0.6131471927654584,
+        "hit_rate@5": 1.0,
+        "detected_cves": [
+          "CVE-2021-44832"
+        ],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 28.3,
+        "top_retrieved": [
+          "cve:CVE-2021-44832",
+          "attack:T1547.015",
+          "attack:T1606.002",
+          "attack:T1606",
+          "attack:T1563"
+        ]
+      },
+      {
+        "query_id": "q-0019",
+        "query": "Remote unauthenticated code execution vulnerability affecting Microsoft Exchange email servers via SSRF",
+        "category": "semantic_paraphrase",
+        "subtype": "description_to_cve",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 32.5,
+        "top_retrieved": [
+          "cve:CVE-2021-26855",
+          "cve:CVE-2019-0708",
+          "attack:T1552.005",
+          "cve:CVE-2020-1472",
+          "attack:T1087.003"
+        ]
+      },
+      {
+        "query_id": "q-0020",
+        "query": "Severe memory leak bug in OpenSSL TLS heartbeat implementation",
+        "category": "semantic_paraphrase",
+        "subtype": "description_to_cve",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 29.0,
+        "top_retrieved": [
+          "cve:CVE-2014-0160",
+          "attack:T1657",
+          "attack:T1055.005",
+          "attack:T1588.005",
+          "attack:T1190"
+        ]
+      },
+      {
+        "query_id": "q-0029",
+        "query": "Techniques abusing Living off the Land Binaries (LOLBins) for proxy execution",
+        "category": "acronym_abbreviation",
+        "subtype": "out_of_glossary_acronym",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.2,
+        "mrr": 0.5,
+        "ndcg@5": 0.6309297535714575,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 29.4,
+        "top_retrieved": [
+          "attack:T1216.002",
+          "attack:T1218",
+          "attack:T1036.003",
+          "attack:T1564.011",
+          "attack:T1218.004"
+        ]
+      },
+      {
+        "query_id": "q-0030",
+        "query": "Bypassing Windows User Account Control (UAC) to elevate privileges",
+        "category": "acronym_abbreviation",
+        "subtype": "out_of_glossary_acronym",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 31.4,
+        "top_retrieved": [
+          "attack:T1548.002",
+          "attack:T1134.004",
+          "attack:T1546.011",
+          "attack:T1574.012",
+          "attack:T1548.003"
+        ]
+      },
+      {
+        "query_id": "q-0039",
+        "query": "F5 BIG-IP iControl REST vulnerability CVE-2021-22986 mapped to public application exploitation",
+        "category": "cross_corpus",
+        "subtype": "cve_to_technique",
+        "expect_abstain": false,
+        "recall@5": 0.5,
+        "recall@10": 0.5,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 0.6131471927654584,
+        "hit_rate@5": 1.0,
+        "detected_cves": [
+          "CVE-2021-22986"
+        ],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 31.0,
+        "top_retrieved": [
+          "cve:CVE-2021-22986",
+          "attack:T1211",
+          "attack:T1055.014",
+          "attack:T1068",
+          "attack:T1588.006"
+        ]
+      },
+      {
+        "query_id": "q-0040",
+        "query": "MOVEit Transfer SQL injection CVE-2023-34362 as an instance of exploiting internet-facing applications",
+        "category": "cross_corpus",
+        "subtype": "cve_to_technique",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [
+          "CVE-2023-34362"
+        ],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 29.9,
+        "top_retrieved": [
+          "cve:CVE-2023-34362",
+          "attack:T1190",
+          "attack:T1505.001",
+          "attack:T1584.008",
+          "attack:T1552.005"
+        ]
+      },
+      {
+        "query_id": "q-0049",
+        "query": "Privilege escalation techniques exploiting setuid and setgid binaries on Unix",
+        "category": "metadata_filtered",
+        "subtype": "platform_filter",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 30.1,
+        "top_retrieved": [
+          "attack:T1548.001",
+          "attack:T1059.004",
+          "attack:T1546.004",
+          "attack:T1611",
+          "attack:T1566.001"
+        ]
+      },
+      {
+        "query_id": "q-0050",
+        "query": "Vulnerabilities associated with directory traversal weakness CWE-22",
+        "category": "metadata_filtered",
+        "subtype": "cwe_filter",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.6,
+        "mrr": 0.5,
+        "ndcg@5": 0.7328286204777911,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 30.2,
+        "top_retrieved": [
+          "cve:CVE-2019-19781",
+          "cve:CVE-2018-13379",
+          "cve:CVE-2019-11510",
+          "cve:CVE-2021-21972",
+          "attack:T1599.001"
+        ]
+      },
+      {
+        "query_id": "q-0059",
+        "query": "exfiltration",
+        "category": "ambiguous",
+        "subtype": "generic_tactic_term",
+        "expect_abstain": false,
+        "recall@5": 0.5,
+        "recall@10": 0.5,
+        "precision@5": 0.2,
+        "mrr": 0.2,
+        "ndcg@5": 0.23719771276929622,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 16.6,
+        "top_retrieved": [
+          "attack:T1020",
+          "attack:T1029",
+          "attack:T1052.001",
+          "attack:T1052",
+          "attack:T1041"
+        ]
+      },
+      {
+        "query_id": "q-0060",
+        "query": "elevation",
+        "category": "ambiguous",
+        "subtype": "generic_action_term",
+        "expect_abstain": false,
+        "recall@5": 0.5,
+        "recall@10": 0.5,
+        "precision@5": 0.2,
+        "mrr": 0.5,
+        "ndcg@5": 0.38685280723454163,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 15.5,
+        "top_retrieved": [
+          "cve:CVE-2020-1472",
+          "attack:T1548",
+          "cve:CVE-2023-23397"
+        ]
+      },
+      {
+        "query_id": "q-0069",
+        "query": "How does Kerberoasting (T1558.003) feed into Pass the Hash (T1550.002) for privilege elevation?",
+        "category": "multi_hop",
+        "subtype": "tactic_chaining",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [
+          "T1558.003",
+          "T1550.002"
+        ],
+        "expansion_terms": [],
+        "latency_ms": 30.3,
+        "top_retrieved": [
+          "attack:T1550.002",
+          "attack:T1558.003",
+          "cve:CVE-2020-1472",
+          "attack:T1548",
+          "cve:CVE-2023-23397"
+        ]
+      },
+      {
+        "query_id": "q-0070",
+        "query": "Explain the relationship between access token impersonation (T1134.001) and parent token manipulation (T1134)",
+        "category": "multi_hop",
+        "subtype": "parent_subtechnique_link",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [
+          "T1134.001",
+          "T1134"
+        ],
+        "expansion_terms": [],
+        "latency_ms": 30.8,
+        "top_retrieved": [
+          "attack:T1134.001",
+          "attack:T1134",
+          "attack:T1134.002",
+          "attack:T1134.003",
+          "attack:T1134.004"
+        ]
+      },
+      {
+        "query_id": "q-0079",
+        "query": "Details on CVE-2025-99999 remote code execution vulnerability",
+        "category": "out_of_corpus",
+        "subtype": "future_nonexistent_cve",
+        "expect_abstain": true,
+        "recall@5": 0.0,
+        "recall@10": 0.0,
+        "precision@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@5": 0.0,
+        "hit_rate@5": 0.0,
+        "detected_cves": [
+          "CVE-2025-99999"
+        ],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 30.4,
+        "top_retrieved": [
+          "cve:CVE-2021-34527",
+          "cve:CVE-2022-30190",
+          "cve:CVE-2019-0708",
+          "cve:CVE-2021-26855",
+          "cve:CVE-2017-0144"
+        ]
+      },
+      {
+        "query_id": "q-0080",
+        "query": "How do quantum computers execute Shor's algorithm to factor primes?",
+        "category": "out_of_corpus",
+        "subtype": "physics_cryptography_outside_corpus",
+        "expect_abstain": true,
+        "recall@5": 0.0,
+        "recall@10": 0.0,
+        "precision@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@5": 0.0,
+        "hit_rate@5": 0.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 27.0,
+        "top_retrieved": [
+          "attack:T1550",
+          "attack:T1556.002",
+          "attack:T1598.003",
+          "attack:T1573",
+          "attack:T1039"
+        ]
+      }
+    ],
+    "sparse_with_expansion": [
+      {
+        "query_id": "q-0009",
+        "query": "What vulnerability corresponds to CWE-502 deserialization of untrusted data?",
+        "category": "exact_identifier",
+        "subtype": "cwe_lookup",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 30.5,
+        "top_retrieved": [
+          "cve:CVE-2021-44228",
+          "attack:T1553",
+          "attack:T1599",
+          "attack:T1599.001",
+          "attack:T1187"
+        ]
+      },
+      {
+        "query_id": "q-0010",
+        "query": "Tell me about CVE-2021-44832 and how it differs from Log4Shell",
+        "category": "exact_identifier",
+        "subtype": "sibling_id_comparison",
+        "expect_abstain": false,
+        "recall@5": 0.5,
+        "recall@10": 0.5,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 0.6131471927654584,
+        "hit_rate@5": 1.0,
+        "detected_cves": [
+          "CVE-2021-44832"
+        ],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 28.4,
+        "top_retrieved": [
+          "cve:CVE-2021-44832",
+          "attack:T1547.015",
+          "attack:T1606.002",
+          "attack:T1606",
+          "attack:T1563"
+        ]
+      },
+      {
+        "query_id": "q-0019",
+        "query": "Remote unauthenticated code execution vulnerability affecting Microsoft Exchange email servers via SSRF",
+        "category": "semantic_paraphrase",
+        "subtype": "description_to_cve",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 32.4,
+        "top_retrieved": [
+          "cve:CVE-2021-26855",
+          "cve:CVE-2019-0708",
+          "attack:T1552.005",
+          "cve:CVE-2020-1472",
+          "attack:T1087.003"
+        ]
+      },
+      {
+        "query_id": "q-0020",
+        "query": "Severe memory leak bug in OpenSSL TLS heartbeat implementation",
+        "category": "semantic_paraphrase",
+        "subtype": "description_to_cve",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 29.2,
+        "top_retrieved": [
+          "cve:CVE-2014-0160",
+          "attack:T1657",
+          "attack:T1055.005",
+          "attack:T1588.005",
+          "attack:T1190"
+        ]
+      },
+      {
+        "query_id": "q-0029",
+        "query": "Techniques abusing Living off the Land Binaries (LOLBins) for proxy execution",
+        "category": "acronym_abbreviation",
+        "subtype": "out_of_glossary_acronym",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.2,
+        "mrr": 0.5,
+        "ndcg@5": 0.6309297535714575,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 29.3,
+        "top_retrieved": [
+          "attack:T1216.002",
+          "attack:T1218",
+          "attack:T1036.003",
+          "attack:T1564.011",
+          "attack:T1218.004"
+        ]
+      },
+      {
+        "query_id": "q-0030",
+        "query": "Bypassing Windows User Account Control (UAC) to elevate privileges",
+        "category": "acronym_abbreviation",
+        "subtype": "out_of_glossary_acronym",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 31.6,
+        "top_retrieved": [
+          "attack:T1548.002",
+          "attack:T1134.004",
+          "attack:T1546.011",
+          "attack:T1574.012",
+          "attack:T1548.003"
+        ]
+      },
+      {
+        "query_id": "q-0039",
+        "query": "F5 BIG-IP iControl REST vulnerability CVE-2021-22986 mapped to public application exploitation",
+        "category": "cross_corpus",
+        "subtype": "cve_to_technique",
+        "expect_abstain": false,
+        "recall@5": 0.5,
+        "recall@10": 0.5,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 0.6131471927654584,
+        "hit_rate@5": 1.0,
+        "detected_cves": [
+          "CVE-2021-22986"
+        ],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 31.2,
+        "top_retrieved": [
+          "cve:CVE-2021-22986",
+          "attack:T1211",
+          "attack:T1055.014",
+          "attack:T1068",
+          "attack:T1588.006"
+        ]
+      },
+      {
+        "query_id": "q-0040",
+        "query": "MOVEit Transfer SQL injection CVE-2023-34362 as an instance of exploiting internet-facing applications",
+        "category": "cross_corpus",
+        "subtype": "cve_to_technique",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [
+          "CVE-2023-34362"
+        ],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 30.0,
+        "top_retrieved": [
+          "cve:CVE-2023-34362",
+          "attack:T1190",
+          "attack:T1505.001",
+          "attack:T1584.008",
+          "attack:T1552.005"
+        ]
+      },
+      {
+        "query_id": "q-0049",
+        "query": "Privilege escalation techniques exploiting setuid and setgid binaries on Unix",
+        "category": "metadata_filtered",
+        "subtype": "platform_filter",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 30.1,
+        "top_retrieved": [
+          "attack:T1548.001",
+          "attack:T1059.004",
+          "attack:T1546.004",
+          "attack:T1611",
+          "attack:T1566.001"
+        ]
+      },
+      {
+        "query_id": "q-0050",
+        "query": "Vulnerabilities associated with directory traversal weakness CWE-22",
+        "category": "metadata_filtered",
+        "subtype": "cwe_filter",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.6,
+        "mrr": 0.5,
+        "ndcg@5": 0.7328286204777911,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 30.0,
+        "top_retrieved": [
+          "cve:CVE-2019-19781",
+          "cve:CVE-2018-13379",
+          "cve:CVE-2019-11510",
+          "cve:CVE-2021-21972",
+          "attack:T1599.001"
+        ]
+      },
+      {
+        "query_id": "q-0059",
+        "query": "exfiltration",
+        "category": "ambiguous",
+        "subtype": "generic_tactic_term",
+        "expect_abstain": false,
+        "recall@5": 0.5,
+        "recall@10": 0.5,
+        "precision@5": 0.2,
+        "mrr": 0.2,
+        "ndcg@5": 0.23719771276929622,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 16.4,
+        "top_retrieved": [
+          "attack:T1020",
+          "attack:T1029",
+          "attack:T1052.001",
+          "attack:T1052",
+          "attack:T1041"
+        ]
+      },
+      {
+        "query_id": "q-0060",
+        "query": "elevation",
+        "category": "ambiguous",
+        "subtype": "generic_action_term",
+        "expect_abstain": false,
+        "recall@5": 0.5,
+        "recall@10": 0.5,
+        "precision@5": 0.2,
+        "mrr": 0.5,
+        "ndcg@5": 0.38685280723454163,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 15.4,
+        "top_retrieved": [
+          "cve:CVE-2020-1472",
+          "attack:T1548",
+          "cve:CVE-2023-23397"
+        ]
+      },
+      {
+        "query_id": "q-0069",
+        "query": "How does Kerberoasting (T1558.003) feed into Pass the Hash (T1550.002) for privilege elevation?",
+        "category": "multi_hop",
+        "subtype": "tactic_chaining",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [
+          "T1558.003",
+          "T1550.002"
+        ],
+        "expansion_terms": [],
+        "latency_ms": 29.5,
+        "top_retrieved": [
+          "attack:T1550.002",
+          "attack:T1558.003",
+          "cve:CVE-2020-1472",
+          "attack:T1548",
+          "cve:CVE-2023-23397"
+        ]
+      },
+      {
+        "query_id": "q-0070",
+        "query": "Explain the relationship between access token impersonation (T1134.001) and parent token manipulation (T1134)",
+        "category": "multi_hop",
+        "subtype": "parent_subtechnique_link",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [
+          "T1134.001",
+          "T1134"
+        ],
+        "expansion_terms": [],
+        "latency_ms": 30.5,
+        "top_retrieved": [
+          "attack:T1134.001",
+          "attack:T1134",
+          "attack:T1134.002",
+          "attack:T1134.003",
+          "attack:T1134.004"
+        ]
+      },
+      {
+        "query_id": "q-0079",
+        "query": "Details on CVE-2025-99999 remote code execution vulnerability",
+        "category": "out_of_corpus",
+        "subtype": "future_nonexistent_cve",
+        "expect_abstain": true,
+        "recall@5": 0.0,
+        "recall@10": 0.0,
+        "precision@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@5": 0.0,
+        "hit_rate@5": 0.0,
+        "detected_cves": [
+          "CVE-2025-99999"
+        ],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 30.0,
+        "top_retrieved": [
+          "cve:CVE-2021-34527",
+          "cve:CVE-2022-30190",
+          "cve:CVE-2019-0708",
+          "cve:CVE-2021-26855",
+          "cve:CVE-2017-0144"
+        ]
+      },
+      {
+        "query_id": "q-0080",
+        "query": "How do quantum computers execute Shor's algorithm to factor primes?",
+        "category": "out_of_corpus",
+        "subtype": "physics_cryptography_outside_corpus",
+        "expect_abstain": true,
+        "recall@5": 0.0,
+        "recall@10": 0.0,
+        "precision@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@5": 0.0,
+        "hit_rate@5": 0.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 26.0,
+        "top_retrieved": [
+          "attack:T1550",
+          "attack:T1556.002",
+          "attack:T1598.003",
+          "attack:T1573",
+          "attack:T1039"
+        ]
+      }
+    ],
+    "dense_no_expansion": [
+      {
+        "query_id": "q-0009",
+        "query": "What vulnerability corresponds to CWE-502 deserialization of untrusted data?",
+        "category": "exact_identifier",
+        "subtype": "cwe_lookup",
+        "expect_abstain": false,
+        "recall@5": 0.0,
+        "recall@10": 0.0,
+        "precision@5": 0.0,
+        "mrr": 0.09090909090909091,
+        "ndcg@5": 0.0,
+        "hit_rate@5": 0.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 12.3,
+        "top_retrieved": [
+          "cve:CVE-2023-23397",
+          "cve:CVE-2021-44832",
+          "cve:CVE-2021-26855",
+          "cve:CVE-2022-26134",
+          "cve:CVE-2019-11510"
+        ]
+      },
+      {
+        "query_id": "q-0010",
+        "query": "Tell me about CVE-2021-44832 and how it differs from Log4Shell",
+        "category": "exact_identifier",
+        "subtype": "sibling_id_comparison",
+        "expect_abstain": false,
+        "recall@5": 0.5,
+        "recall@10": 1.0,
+        "precision@5": 0.2,
+        "mrr": 0.25,
+        "ndcg@5": 0.2640681225725909,
+        "hit_rate@5": 1.0,
+        "detected_cves": [
+          "CVE-2021-44832"
+        ],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 12.4,
+        "top_retrieved": [
+          "cve:CVE-2021-22986",
+          "cve:CVE-2021-34527",
+          "cve:CVE-2021-21972",
+          "cve:CVE-2021-44832",
+          "cve:CVE-2021-26855"
+        ]
+      },
+      {
+        "query_id": "q-0019",
+        "query": "Remote unauthenticated code execution vulnerability affecting Microsoft Exchange email servers via SSRF",
+        "category": "semantic_paraphrase",
+        "subtype": "description_to_cve",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 13.7,
+        "top_retrieved": [
+          "cve:CVE-2021-26855",
+          "cve:CVE-2021-34527",
+          "cve:CVE-2022-30190",
+          "cve:CVE-2019-0708",
+          "cve:CVE-2017-0144"
+        ]
+      },
+      {
+        "query_id": "q-0020",
+        "query": "Severe memory leak bug in OpenSSL TLS heartbeat implementation",
+        "category": "semantic_paraphrase",
+        "subtype": "description_to_cve",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 11.8,
+        "top_retrieved": [
+          "cve:CVE-2014-0160",
+          "attack:T1555.002",
+          "attack:T1055.009",
+          "attack:T1588.004",
+          "attack:T1587.003"
+        ]
+      },
+      {
+        "query_id": "q-0029",
+        "query": "Techniques abusing Living off the Land Binaries (LOLBins) for proxy execution",
+        "category": "acronym_abbreviation",
+        "subtype": "out_of_glossary_acronym",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 11.7,
+        "top_retrieved": [
+          "attack:T1218",
+          "attack:T1216",
+          "attack:T1127",
+          "attack:T1216.002",
+          "attack:T1127.001"
+        ]
+      },
+      {
+        "query_id": "q-0030",
+        "query": "Bypassing Windows User Account Control (UAC) to elevate privileges",
+        "category": "acronym_abbreviation",
+        "subtype": "out_of_glossary_acronym",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 12.2,
+        "top_retrieved": [
+          "attack:T1548.002",
+          "attack:T1134.004",
+          "attack:T1546.011",
+          "attack:T1574.012",
+          "attack:T1218.003"
+        ]
+      },
+      {
+        "query_id": "q-0039",
+        "query": "F5 BIG-IP iControl REST vulnerability CVE-2021-22986 mapped to public application exploitation",
+        "category": "cross_corpus",
+        "subtype": "cve_to_technique",
+        "expect_abstain": false,
+        "recall@5": 0.5,
+        "recall@10": 0.5,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 0.6131471927654584,
+        "hit_rate@5": 1.0,
+        "detected_cves": [
+          "CVE-2021-22986"
+        ],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 13.5,
+        "top_retrieved": [
+          "cve:CVE-2021-22986",
+          "cve:CVE-2021-21972",
+          "cve:CVE-2021-26855",
+          "cve:CVE-2021-44832",
+          "cve:CVE-2021-34527"
+        ]
+      },
+      {
+        "query_id": "q-0040",
+        "query": "MOVEit Transfer SQL injection CVE-2023-34362 as an instance of exploiting internet-facing applications",
+        "category": "cross_corpus",
+        "subtype": "cve_to_technique",
+        "expect_abstain": false,
+        "recall@5": 0.5,
+        "recall@10": 0.5,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 0.6131471927654584,
+        "hit_rate@5": 1.0,
+        "detected_cves": [
+          "CVE-2023-34362"
+        ],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 12.6,
+        "top_retrieved": [
+          "cve:CVE-2023-34362",
+          "cve:CVE-2022-26134",
+          "cve:CVE-2021-22986",
+          "cve:CVE-2018-13379",
+          "cve:CVE-2021-21972"
+        ]
+      },
+      {
+        "query_id": "q-0049",
+        "query": "Privilege escalation techniques exploiting setuid and setgid binaries on Unix",
+        "category": "metadata_filtered",
+        "subtype": "platform_filter",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 12.1,
+        "top_retrieved": [
+          "attack:T1548.001",
+          "attack:T1078.003",
+          "attack:T1546.005",
+          "attack:T1098",
+          "attack:T1543.002"
+        ]
+      },
+      {
+        "query_id": "q-0050",
+        "query": "Vulnerabilities associated with directory traversal weakness CWE-22",
+        "category": "metadata_filtered",
+        "subtype": "cwe_filter",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.6,
+        "mrr": 0.5,
+        "ndcg@5": 0.7122630665145961,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 12.3,
+        "top_retrieved": [
+          "cve:CVE-2019-19781",
+          "cve:CVE-2018-13379",
+          "cve:CVE-2019-11510",
+          "cve:CVE-2016-10033",
+          "cve:CVE-2021-21972"
+        ]
+      },
+      {
+        "query_id": "q-0059",
+        "query": "exfiltration",
+        "category": "ambiguous",
+        "subtype": "generic_tactic_term",
+        "expect_abstain": false,
+        "recall@5": 0.5,
+        "recall@10": 0.5,
+        "precision@5": 0.2,
+        "mrr": 0.3333333333333333,
+        "ndcg@5": 0.3065735963827292,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 15.8,
+        "top_retrieved": [
+          "attack:T1020",
+          "attack:T1029",
+          "attack:T1041",
+          "attack:T1567.001",
+          "attack:T1052.001"
+        ]
+      },
+      {
+        "query_id": "q-0060",
+        "query": "elevation",
+        "category": "ambiguous",
+        "subtype": "generic_action_term",
+        "expect_abstain": false,
+        "recall@5": 0.5,
+        "recall@10": 0.5,
+        "precision@5": 0.2,
+        "mrr": 0.3333333333333333,
+        "ndcg@5": 0.3065735963827292,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 14.8,
+        "top_retrieved": [
+          "cve:CVE-2020-1472",
+          "cve:CVE-2023-23397",
+          "attack:T1548",
+          "cve:CVE-2020-0601",
+          "cve:CVE-2023-34362"
+        ]
+      },
+      {
+        "query_id": "q-0069",
+        "query": "How does Kerberoasting (T1558.003) feed into Pass the Hash (T1550.002) for privilege elevation?",
+        "category": "multi_hop",
+        "subtype": "tactic_chaining",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.4,
+        "mrr": 0.5,
+        "ndcg@5": 0.6240505200038379,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [
+          "T1558.003",
+          "T1550.002"
+        ],
+        "expansion_terms": [],
+        "latency_ms": 13.3,
+        "top_retrieved": [
+          "attack:T1550.003",
+          "attack:T1550.002",
+          "attack:T1558.002",
+          "attack:T1558.001",
+          "attack:T1558.003"
+        ]
+      },
+      {
+        "query_id": "q-0070",
+        "query": "Explain the relationship between access token impersonation (T1134.001) and parent token manipulation (T1134)",
+        "category": "multi_hop",
+        "subtype": "parent_subtechnique_link",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 0.9197207891481876,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [
+          "T1134.001",
+          "T1134"
+        ],
+        "expansion_terms": [],
+        "latency_ms": 12.5,
+        "top_retrieved": [
+          "attack:T1134",
+          "attack:T1134.002",
+          "attack:T1134.001",
+          "attack:T1134.003",
+          "attack:T1134.004"
+        ]
+      },
+      {
+        "query_id": "q-0079",
+        "query": "Details on CVE-2025-99999 remote code execution vulnerability",
+        "category": "out_of_corpus",
+        "subtype": "future_nonexistent_cve",
+        "expect_abstain": true,
+        "recall@5": 0.0,
+        "recall@10": 0.0,
+        "precision@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@5": 0.0,
+        "hit_rate@5": 0.0,
+        "detected_cves": [
+          "CVE-2025-99999"
+        ],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 12.9,
+        "top_retrieved": [
+          "cve:CVE-2021-34527",
+          "cve:CVE-2021-26855",
+          "cve:CVE-2019-0708",
+          "cve:CVE-2022-30190",
+          "cve:CVE-2021-21972"
+        ]
+      },
+      {
+        "query_id": "q-0080",
+        "query": "How do quantum computers execute Shor's algorithm to factor primes?",
+        "category": "out_of_corpus",
+        "subtype": "physics_cryptography_outside_corpus",
+        "expect_abstain": true,
+        "recall@5": 0.0,
+        "recall@10": 0.0,
+        "precision@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@5": 0.0,
+        "hit_rate@5": 0.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 12.4,
+        "top_retrieved": [
+          "attack:T1573",
+          "attack:T1573.001",
+          "attack:T1573.002",
+          "attack:T1111",
+          "attack:T1098.001"
+        ]
+      }
+    ],
+    "dense_with_expansion": [
+      {
+        "query_id": "q-0009",
+        "query": "What vulnerability corresponds to CWE-502 deserialization of untrusted data?",
+        "category": "exact_identifier",
+        "subtype": "cwe_lookup",
+        "expect_abstain": false,
+        "recall@5": 0.0,
+        "recall@10": 0.0,
+        "precision@5": 0.0,
+        "mrr": 0.09090909090909091,
+        "ndcg@5": 0.0,
+        "hit_rate@5": 0.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 15.0,
+        "top_retrieved": [
+          "cve:CVE-2023-23397",
+          "cve:CVE-2021-44832",
+          "cve:CVE-2021-26855",
+          "cve:CVE-2022-26134",
+          "cve:CVE-2019-11510"
+        ]
+      },
+      {
+        "query_id": "q-0010",
+        "query": "Tell me about CVE-2021-44832 and how it differs from Log4Shell",
+        "category": "exact_identifier",
+        "subtype": "sibling_id_comparison",
+        "expect_abstain": false,
+        "recall@5": 0.5,
+        "recall@10": 1.0,
+        "precision@5": 0.2,
+        "mrr": 0.25,
+        "ndcg@5": 0.2640681225725909,
+        "hit_rate@5": 1.0,
+        "detected_cves": [
+          "CVE-2021-44832"
+        ],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 27.1,
+        "top_retrieved": [
+          "cve:CVE-2021-22986",
+          "cve:CVE-2021-34527",
+          "cve:CVE-2021-21972",
+          "cve:CVE-2021-44832",
+          "cve:CVE-2021-26855"
+        ]
+      },
+      {
+        "query_id": "q-0019",
+        "query": "Remote unauthenticated code execution vulnerability affecting Microsoft Exchange email servers via SSRF",
+        "category": "semantic_paraphrase",
+        "subtype": "description_to_cve",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 16.1,
+        "top_retrieved": [
+          "cve:CVE-2021-26855",
+          "cve:CVE-2021-34527",
+          "cve:CVE-2022-30190",
+          "cve:CVE-2019-0708",
+          "cve:CVE-2017-0144"
+        ]
+      },
+      {
+        "query_id": "q-0020",
+        "query": "Severe memory leak bug in OpenSSL TLS heartbeat implementation",
+        "category": "semantic_paraphrase",
+        "subtype": "description_to_cve",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 12.7,
+        "top_retrieved": [
+          "cve:CVE-2014-0160",
+          "attack:T1555.002",
+          "attack:T1055.009",
+          "attack:T1588.004",
+          "attack:T1587.003"
+        ]
+      },
+      {
+        "query_id": "q-0029",
+        "query": "Techniques abusing Living off the Land Binaries (LOLBins) for proxy execution",
+        "category": "acronym_abbreviation",
+        "subtype": "out_of_glossary_acronym",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 15.7,
+        "top_retrieved": [
+          "attack:T1218",
+          "attack:T1216",
+          "attack:T1127",
+          "attack:T1216.002",
+          "attack:T1127.001"
+        ]
+      },
+      {
+        "query_id": "q-0030",
+        "query": "Bypassing Windows User Account Control (UAC) to elevate privileges",
+        "category": "acronym_abbreviation",
+        "subtype": "out_of_glossary_acronym",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 12.5,
+        "top_retrieved": [
+          "attack:T1548.002",
+          "attack:T1134.004",
+          "attack:T1546.011",
+          "attack:T1574.012",
+          "attack:T1218.003"
+        ]
+      },
+      {
+        "query_id": "q-0039",
+        "query": "F5 BIG-IP iControl REST vulnerability CVE-2021-22986 mapped to public application exploitation",
+        "category": "cross_corpus",
+        "subtype": "cve_to_technique",
+        "expect_abstain": false,
+        "recall@5": 0.5,
+        "recall@10": 0.5,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 0.6131471927654584,
+        "hit_rate@5": 1.0,
+        "detected_cves": [
+          "CVE-2021-22986"
+        ],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 14.0,
+        "top_retrieved": [
+          "cve:CVE-2021-22986",
+          "cve:CVE-2021-21972",
+          "cve:CVE-2021-26855",
+          "cve:CVE-2021-44832",
+          "cve:CVE-2021-34527"
+        ]
+      },
+      {
+        "query_id": "q-0040",
+        "query": "MOVEit Transfer SQL injection CVE-2023-34362 as an instance of exploiting internet-facing applications",
+        "category": "cross_corpus",
+        "subtype": "cve_to_technique",
+        "expect_abstain": false,
+        "recall@5": 0.5,
+        "recall@10": 0.5,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 0.6131471927654584,
+        "hit_rate@5": 1.0,
+        "detected_cves": [
+          "CVE-2023-34362"
+        ],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 12.4,
+        "top_retrieved": [
+          "cve:CVE-2023-34362",
+          "cve:CVE-2022-26134",
+          "cve:CVE-2021-22986",
+          "cve:CVE-2018-13379",
+          "cve:CVE-2021-21972"
+        ]
+      },
+      {
+        "query_id": "q-0049",
+        "query": "Privilege escalation techniques exploiting setuid and setgid binaries on Unix",
+        "category": "metadata_filtered",
+        "subtype": "platform_filter",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 12.5,
+        "top_retrieved": [
+          "attack:T1548.001",
+          "attack:T1078.003",
+          "attack:T1546.005",
+          "attack:T1098",
+          "attack:T1543.002"
+        ]
+      },
+      {
+        "query_id": "q-0050",
+        "query": "Vulnerabilities associated with directory traversal weakness CWE-22",
+        "category": "metadata_filtered",
+        "subtype": "cwe_filter",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.6,
+        "mrr": 0.5,
+        "ndcg@5": 0.7122630665145961,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 12.5,
+        "top_retrieved": [
+          "cve:CVE-2019-19781",
+          "cve:CVE-2018-13379",
+          "cve:CVE-2019-11510",
+          "cve:CVE-2016-10033",
+          "cve:CVE-2021-21972"
+        ]
+      },
+      {
+        "query_id": "q-0059",
+        "query": "exfiltration",
+        "category": "ambiguous",
+        "subtype": "generic_tactic_term",
+        "expect_abstain": false,
+        "recall@5": 0.5,
+        "recall@10": 0.5,
+        "precision@5": 0.2,
+        "mrr": 0.3333333333333333,
+        "ndcg@5": 0.3065735963827292,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 12.8,
+        "top_retrieved": [
+          "attack:T1020",
+          "attack:T1029",
+          "attack:T1041",
+          "attack:T1567.001",
+          "attack:T1052.001"
+        ]
+      },
+      {
+        "query_id": "q-0060",
+        "query": "elevation",
+        "category": "ambiguous",
+        "subtype": "generic_action_term",
+        "expect_abstain": false,
+        "recall@5": 0.5,
+        "recall@10": 0.5,
+        "precision@5": 0.2,
+        "mrr": 0.3333333333333333,
+        "ndcg@5": 0.3065735963827292,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 12.3,
+        "top_retrieved": [
+          "cve:CVE-2020-1472",
+          "cve:CVE-2023-23397",
+          "attack:T1548",
+          "cve:CVE-2020-0601",
+          "cve:CVE-2023-34362"
+        ]
+      },
+      {
+        "query_id": "q-0069",
+        "query": "How does Kerberoasting (T1558.003) feed into Pass the Hash (T1550.002) for privilege elevation?",
+        "category": "multi_hop",
+        "subtype": "tactic_chaining",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.4,
+        "mrr": 0.5,
+        "ndcg@5": 0.6240505200038379,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [
+          "T1558.003",
+          "T1550.002"
+        ],
+        "expansion_terms": [],
+        "latency_ms": 12.7,
+        "top_retrieved": [
+          "attack:T1550.003",
+          "attack:T1550.002",
+          "attack:T1558.002",
+          "attack:T1558.001",
+          "attack:T1558.003"
+        ]
+      },
+      {
+        "query_id": "q-0070",
+        "query": "Explain the relationship between access token impersonation (T1134.001) and parent token manipulation (T1134)",
+        "category": "multi_hop",
+        "subtype": "parent_subtechnique_link",
+        "expect_abstain": false,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 0.9197207891481876,
+        "hit_rate@5": 1.0,
+        "detected_cves": [],
+        "detected_techniques": [
+          "T1134.001",
+          "T1134"
+        ],
+        "expansion_terms": [],
+        "latency_ms": 12.8,
+        "top_retrieved": [
+          "attack:T1134",
+          "attack:T1134.002",
+          "attack:T1134.001",
+          "attack:T1134.003",
+          "attack:T1134.004"
+        ]
+      },
+      {
+        "query_id": "q-0079",
+        "query": "Details on CVE-2025-99999 remote code execution vulnerability",
+        "category": "out_of_corpus",
+        "subtype": "future_nonexistent_cve",
+        "expect_abstain": true,
+        "recall@5": 0.0,
+        "recall@10": 0.0,
+        "precision@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@5": 0.0,
+        "hit_rate@5": 0.0,
+        "detected_cves": [
+          "CVE-2025-99999"
+        ],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 12.8,
+        "top_retrieved": [
+          "cve:CVE-2021-34527",
+          "cve:CVE-2021-26855",
+          "cve:CVE-2019-0708",
+          "cve:CVE-2022-30190",
+          "cve:CVE-2021-21972"
+        ]
+      },
+      {
+        "query_id": "q-0080",
+        "query": "How do quantum computers execute Shor's algorithm to factor primes?",
+        "category": "out_of_corpus",
+        "subtype": "physics_cryptography_outside_corpus",
+        "expect_abstain": true,
+        "recall@5": 0.0,
+        "recall@10": 0.0,
+        "precision@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@5": 0.0,
+        "hit_rate@5": 0.0,
+        "detected_cves": [],
+        "detected_techniques": [],
+        "expansion_terms": [],
+        "latency_ms": 13.1,
+        "top_retrieved": [
+          "attack:T1573",
+          "attack:T1573.001",
+          "attack:T1573.002",
+          "attack:T1111",
+          "attack:T1098.001"
+        ]
+      }
+    ]
+  }
+}

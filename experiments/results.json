@@ -1,0 +1,2739 @@
+{
+  "summary": {
+    "dense": {
+      "recall_at_k": 0.725,
+      "precision_at_k": 0.16,
+      "mrr": 0.557,
+      "ndcg_at_k": 0.543,
+      "hit_rate": 0.8,
+      "citation_correctness": 0.257,
+      "avg_latency_ms": 16.6
+    },
+    "sparse": {
+      "recall_at_k": 0.9,
+      "precision_at_k": 0.24,
+      "mrr": 0.708,
+      "ndcg_at_k": 0.752,
+      "hit_rate": 0.9,
+      "citation_correctness": 0.232,
+      "avg_latency_ms": 32.2
+    },
+    "hybrid": {
+      "recall_at_k": 0.85,
+      "precision_at_k": 0.2,
+      "mrr": 0.733,
+      "ndcg_at_k": 0.732,
+      "hit_rate": 0.9,
+      "citation_correctness": 0.232,
+      "avg_latency_ms": 47.3
+    },
+    "hybrid_rerank": {
+      "recall_at_k": 0.825,
+      "precision_at_k": 0.18,
+      "mrr": 0.65,
+      "ndcg_at_k": 0.652,
+      "hit_rate": 0.9,
+      "citation_correctness": 0.418,
+      "avg_latency_ms": 48.8
+    }
+  },
+  "per_query": [
+    {
+      "query": "What is CVE-2021-44228 and what makes it dangerous?",
+      "strategy": "dense",
+      "first_stage": {
+        "retrieved_doc_ids": [
+          "cve:CVE-2021-22986",
+          "cve:CVE-2021-21972",
+          "cve:CVE-2021-44832",
+          "cve:CVE-2021-34527",
+          "cve:CVE-2021-44228",
+          "cve:CVE-2021-26855",
+          "cve:CVE-2022-26134",
+          "cve:CVE-2023-34362",
+          "cve:CVE-2019-11510",
+          "cve:CVE-2018-13379",
+          "cve:CVE-2019-19781",
+          "cve:CVE-2019-0708",
+          "cve:CVE-2016-10033",
+          "cve:CVE-2017-5638",
+          "cve:CVE-2017-0144",
+          "cve:CVE-2022-30190",
+          "cve:CVE-2014-0160",
+          "cve:CVE-2023-23397",
+          "attack:T1102.003",
+          "attack:T1583.006",
+          "attack:T1102"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 0.2,
+        "ndcg_at_k": 0.38685280723454163,
+        "hit_rate": 1.0
+      },
+      "reranked": {
+        "retrieved_doc_ids": [
+          "cve:CVE-2021-22986",
+          "cve:CVE-2021-21972",
+          "cve:CVE-2021-44832",
+          "cve:CVE-2021-34527",
+          "cve:CVE-2021-44228",
+          "cve:CVE-2021-26855",
+          "cve:CVE-2022-26134"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 0.2,
+        "ndcg_at_k": 0.38685280723454163,
+        "hit_rate": 1.0
+      },
+      "generation": {
+        "cited_doc_ids": [
+          "cve:CVE-2021-22986",
+          "cve:CVE-2021-21972",
+          "cve:CVE-2021-44228"
+        ],
+        "citation_correctness": 0.3333333333333333,
+        "grounded": true
+      },
+      "above_relevance_floor": 8,
+      "floor_mode": "off",
+      "latency_ms": 21.9,
+      "expected_doc_ids": [
+        "cve:CVE-2021-44228"
+      ]
+    },
+    {
+      "query": "What is CVE-2021-44228 and what makes it dangerous?",
+      "strategy": "sparse",
+      "first_stage": {
+        "retrieved_doc_ids": [
+          "cve:CVE-2021-44228",
+          "attack:T1036.007",
+          "attack:T1102.003",
+          "attack:T1218.010",
+          "attack:T1583.006",
+          "attack:T1102.002",
+          "attack:T1690",
+          "attack:T1608.001",
+          "attack:T1102",
+          "attack:T1685.002",
+          "attack:T1574.001",
+          "attack:T1583",
+          "attack:T1090.003",
+          "attack:T1102.001",
+          "attack:T1584.006",
+          "attack:T1027.016",
+          "cve:CVE-2021-34527",
+          "attack:T1613",
+          "attack:T1056",
+          "attack:T1049",
+          "attack:T1070.004"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "hit_rate": 1.0
+      },
+      "reranked": {
+        "retrieved_doc_ids": [
+          "cve:CVE-2021-44228",
+          "attack:T1036.007",
+          "attack:T1102.003",
+          "attack:T1218.010",
+          "attack:T1583.006",
+          "attack:T1102.002",
+          "attack:T1690"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "hit_rate": 1.0
+      },
+      "generation": {
+        "cited_doc_ids": [
+          "cve:CVE-2021-44228",
+          "attack:T1036.007",
+          "attack:T1102.003",
+          "attack:T1218.010",
+          "attack:T1583.006"
+        ],
+        "citation_correctness": 0.2,
+        "grounded": true
+      },
+      "above_relevance_floor": 8,
+      "floor_mode": "off",
+      "latency_ms": 31.0,
+      "expected_doc_ids": [
+        "cve:CVE-2021-44228"
+      ]
+    },
+    {
+      "query": "What is CVE-2021-44228 and what makes it dangerous?",
+      "strategy": "hybrid",
+      "first_stage": {
+        "retrieved_doc_ids": [
+          "cve:CVE-2021-44228",
+          "attack:T1102.003",
+          "attack:T1583.006",
+          "cve:CVE-2021-34527",
+          "attack:T1102",
+          "cve:CVE-2021-22986",
+          "cve:CVE-2021-21972",
+          "attack:T1036.007",
+          "cve:CVE-2021-44832",
+          "attack:T1218.010",
+          "cve:CVE-2021-26855",
+          "attack:T1102.002",
+          "cve:CVE-2022-26134",
+          "attack:T1690",
+          "attack:T1608.001",
+          "cve:CVE-2023-34362",
+          "attack:T1685.002",
+          "cve:CVE-2019-11510",
+          "attack:T1574.001",
+          "cve:CVE-2018-13379",
+          "cve:CVE-2019-19781",
+          "attack:T1583",
+          "cve:CVE-2019-0708",
+          "attack:T1090.003"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "hit_rate": 1.0
+      },
+      "reranked": {
+        "retrieved_doc_ids": [
+          "cve:CVE-2021-44228",
+          "attack:T1102.003",
+          "attack:T1583.006",
+          "cve:CVE-2021-34527",
+          "attack:T1102",
+          "cve:CVE-2021-22986",
+          "cve:CVE-2021-21972",
+          "attack:T1036.007"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "hit_rate": 1.0
+      },
+      "generation": {
+        "cited_doc_ids": [
+          "cve:CVE-2021-44228",
+          "attack:T1102.003",
+          "attack:T1583.006",
+          "cve:CVE-2021-34527",
+          "attack:T1102",
+          "attack:T1036.007"
+        ],
+        "citation_correctness": 0.16666666666666666,
+        "grounded": true
+      },
+      "above_relevance_floor": 8,
+      "floor_mode": "off",
+      "latency_ms": 45.2,
+      "expected_doc_ids": [
+        "cve:CVE-2021-44228"
+      ]
+    },
+    {
+      "query": "What is CVE-2021-44228 and what makes it dangerous?",
+      "strategy": "hybrid_rerank",
+      "first_stage": {
+        "retrieved_doc_ids": [
+          "cve:CVE-2021-44228",
+          "attack:T1102.003",
+          "attack:T1583.006",
+          "cve:CVE-2021-34527",
+          "attack:T1102",
+          "cve:CVE-2021-22986",
+          "cve:CVE-2021-21972",
+          "attack:T1036.007",
+          "cve:CVE-2021-44832",
+          "attack:T1218.010",
+          "cve:CVE-2021-26855",
+          "attack:T1102.002",
+          "cve:CVE-2022-26134",
+          "attack:T1690",
+          "attack:T1608.001",
+          "cve:CVE-2023-34362",
+          "attack:T1685.002",
+          "cve:CVE-2019-11510",
+          "attack:T1574.001",
+          "cve:CVE-2018-13379",
+          "cve:CVE-2019-19781",
+          "attack:T1583",
+          "cve:CVE-2019-0708",
+          "attack:T1090.003"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "hit_rate": 1.0
+      },
+      "reranked": {
+        "retrieved_doc_ids": [
+          "cve:CVE-2021-44228",
+          "attack:T1102.003",
+          "attack:T1036.007",
+          "attack:T1218.010",
+          "attack:T1583.006",
+          "attack:T1690",
+          "attack:T1102.002"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "hit_rate": 1.0
+      },
+      "generation": {
+        "cited_doc_ids": [
+          "cve:CVE-2021-44228"
+        ],
+        "citation_correctness": 1.0,
+        "grounded": true
+      },
+      "above_relevance_floor": 1,
+      "floor_mode": "relative",
+      "latency_ms": 46.5,
+      "expected_doc_ids": [
+        "cve:CVE-2021-44228"
+      ]
+    },
+    {
+      "query": "Tell me about CVE-2020-1472, the Zerologon vulnerability",
+      "strategy": "dense",
+      "first_stage": {
+        "retrieved_doc_ids": [
+          "cve:CVE-2020-1472",
+          "cve:CVE-2023-23397",
+          "cve:CVE-2020-0601",
+          "cve:CVE-2022-30190",
+          "cve:CVE-2019-0708",
+          "cve:CVE-2019-11510",
+          "cve:CVE-2021-26855",
+          "cve:CVE-2017-0144",
+          "cve:CVE-2023-34362",
+          "cve:CVE-2016-10033",
+          "cve:CVE-2019-19781",
+          "cve:CVE-2018-13379",
+          "cve:CVE-2022-26134",
+          "cve:CVE-2021-34527",
+          "cve:CVE-2014-0160",
+          "cve:CVE-2017-5638",
+          "cve:CVE-2021-22986",
+          "cve:CVE-2021-21972",
+          "attack:T1548",
+          "cve:CVE-2021-44832"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "hit_rate": 1.0
+      },
+      "reranked": {
+        "retrieved_doc_ids": [
+          "cve:CVE-2020-1472",
+          "cve:CVE-2023-23397",
+          "cve:CVE-2020-0601",
+          "cve:CVE-2022-30190",
+          "cve:CVE-2019-0708",
+          "cve:CVE-2019-11510"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "hit_rate": 1.0
+      },
+      "generation": {
+        "cited_doc_ids": [
+          "cve:CVE-2020-1472",
+          "cve:CVE-2023-23397",
+          "cve:CVE-2020-0601",
+          "cve:CVE-2022-30190"
+        ],
+        "citation_correctness": 0.25,
+        "grounded": true
+      },
+      "above_relevance_floor": 8,
+      "floor_mode": "off",
+      "latency_ms": 15.8,
+      "expected_doc_ids": [
+        "cve:CVE-2020-1472"
+      ]
+    },
+    {
+      "query": "Tell me about CVE-2020-1472, the Zerologon vulnerability",
+      "strategy": "sparse",
+      "first_stage": {
+        "retrieved_doc_ids": [
+          "cve:CVE-2020-1472",
+          "attack:T1547.015",
+          "attack:T1588.006",
+          "cve:CVE-2022-30190",
+          "cve:CVE-2021-34527",
+          "cve:CVE-2023-23397",
+          "cve:CVE-2019-0708",
+          "attack:T1595.002",
+          "cve:CVE-2020-0601",
+          "cve:CVE-2021-26855",
+          "cve:CVE-2023-34362",
+          "cve:CVE-2017-0144",
+          "cve:CVE-2019-11510",
+          "cve:CVE-2021-22986",
+          "cve:CVE-2022-26134",
+          "attack:T1068",
+          "cve:CVE-2021-21972",
+          "attack:T1588.005",
+          "attack:T1204.001"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "hit_rate": 1.0
+      },
+      "reranked": {
+        "retrieved_doc_ids": [
+          "cve:CVE-2020-1472",
+          "attack:T1547.015",
+          "attack:T1588.006",
+          "cve:CVE-2022-30190",
+          "cve:CVE-2021-34527",
+          "cve:CVE-2023-23397"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "hit_rate": 1.0
+      },
+      "generation": {
+        "cited_doc_ids": [
+          "cve:CVE-2020-1472",
+          "attack:T1547.015",
+          "attack:T1588.006",
+          "cve:CVE-2022-30190"
+        ],
+        "citation_correctness": 0.25,
+        "grounded": true
+      },
+      "above_relevance_floor": 8,
+      "floor_mode": "off",
+      "latency_ms": 32.3,
+      "expected_doc_ids": [
+        "cve:CVE-2020-1472"
+      ]
+    },
+    {
+      "query": "Tell me about CVE-2020-1472, the Zerologon vulnerability",
+      "strategy": "hybrid",
+      "first_stage": {
+        "retrieved_doc_ids": [
+          "cve:CVE-2020-1472",
+          "cve:CVE-2023-23397",
+          "cve:CVE-2022-30190",
+          "cve:CVE-2020-0601",
+          "cve:CVE-2019-0708",
+          "cve:CVE-2021-26855",
+          "cve:CVE-2019-11510",
+          "cve:CVE-2017-0144",
+          "cve:CVE-2023-34362",
+          "cve:CVE-2021-34527",
+          "cve:CVE-2022-26134",
+          "cve:CVE-2021-22986",
+          "cve:CVE-2021-21972",
+          "attack:T1547.015",
+          "attack:T1588.006",
+          "attack:T1595.002",
+          "cve:CVE-2016-10033",
+          "cve:CVE-2019-19781",
+          "cve:CVE-2018-13379",
+          "cve:CVE-2014-0160",
+          "cve:CVE-2017-5638",
+          "attack:T1068",
+          "attack:T1548",
+          "attack:T1588.005"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "hit_rate": 1.0
+      },
+      "reranked": {
+        "retrieved_doc_ids": [
+          "cve:CVE-2020-1472",
+          "cve:CVE-2023-23397",
+          "cve:CVE-2022-30190",
+          "cve:CVE-2020-0601",
+          "cve:CVE-2019-0708",
+          "cve:CVE-2021-26855"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "hit_rate": 1.0
+      },
+      "generation": {
+        "cited_doc_ids": [
+          "cve:CVE-2020-1472",
+          "cve:CVE-2023-23397",
+          "cve:CVE-2022-30190",
+          "cve:CVE-2020-0601"
+        ],
+        "citation_correctness": 0.25,
+        "grounded": true
+      },
+      "above_relevance_floor": 8,
+      "floor_mode": "off",
+      "latency_ms": 47.4,
+      "expected_doc_ids": [
+        "cve:CVE-2020-1472"
+      ]
+    },
+    {
+      "query": "Tell me about CVE-2020-1472, the Zerologon vulnerability",
+      "strategy": "hybrid_rerank",
+      "first_stage": {
+        "retrieved_doc_ids": [
+          "cve:CVE-2020-1472",
+          "cve:CVE-2023-23397",
+          "cve:CVE-2022-30190",
+          "cve:CVE-2020-0601",
+          "cve:CVE-2019-0708",
+          "cve:CVE-2021-26855",
+          "cve:CVE-2019-11510",
+          "cve:CVE-2017-0144",
+          "cve:CVE-2023-34362",
+          "cve:CVE-2021-34527",
+          "cve:CVE-2022-26134",
+          "cve:CVE-2021-22986",
+          "cve:CVE-2021-21972",
+          "attack:T1547.015",
+          "attack:T1588.006",
+          "attack:T1595.002",
+          "cve:CVE-2016-10033",
+          "cve:CVE-2019-19781",
+          "cve:CVE-2018-13379",
+          "cve:CVE-2014-0160",
+          "cve:CVE-2017-5638",
+          "attack:T1068",
+          "attack:T1548",
+          "attack:T1588.005"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "hit_rate": 1.0
+      },
+      "reranked": {
+        "retrieved_doc_ids": [
+          "cve:CVE-2020-1472",
+          "cve:CVE-2021-34527",
+          "cve:CVE-2021-26855",
+          "cve:CVE-2023-23397",
+          "cve:CVE-2019-0708",
+          "cve:CVE-2019-11510"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "hit_rate": 1.0
+      },
+      "generation": {
+        "cited_doc_ids": [
+          "cve:CVE-2020-1472"
+        ],
+        "citation_correctness": 1.0,
+        "grounded": true
+      },
+      "above_relevance_floor": 3,
+      "floor_mode": "relative",
+      "latency_ms": 48.4,
+      "expected_doc_ids": [
+        "cve:CVE-2020-1472"
+      ]
+    },
+    {
+      "query": "Explain T1059.001 in detail",
+      "strategy": "dense",
+      "first_stage": {
+        "retrieved_doc_ids": [
+          "attack:T1216.002",
+          "attack:T1027.003",
+          "attack:T1546.013",
+          "attack:T1059",
+          "attack:T1056.002",
+          "attack:T1059.001",
+          "attack:T1059.009",
+          "attack:T1070.008",
+          "attack:T1531",
+          "attack:T1197",
+          "attack:T1564.011",
+          "attack:T1685.005",
+          "attack:T1620",
+          "attack:T1654",
+          "attack:T1689",
+          "attack:T1059.005",
+          "attack:T1564.003",
+          "attack:T1098.002",
+          "attack:T1574.011"
+        ],
+        "recall_at_k": 0.0,
+        "precision_at_k": 0.0,
+        "mrr": 0.16666666666666666,
+        "ndcg_at_k": 0.0,
+        "hit_rate": 0.0
+      },
+      "reranked": {
+        "retrieved_doc_ids": [
+          "attack:T1216.002",
+          "attack:T1027.003",
+          "attack:T1546.013",
+          "attack:T1059",
+          "attack:T1056.002",
+          "attack:T1059.001",
+          "attack:T1059.009"
+        ],
+        "recall_at_k": 0.0,
+        "precision_at_k": 0.0,
+        "mrr": 0.16666666666666666,
+        "ndcg_at_k": 0.0,
+        "hit_rate": 0.0
+      },
+      "generation": {
+        "cited_doc_ids": [
+          "attack:T1216.002",
+          "attack:T1059.001"
+        ],
+        "citation_correctness": 0.5,
+        "grounded": true
+      },
+      "above_relevance_floor": 8,
+      "floor_mode": "off",
+      "latency_ms": 16.4,
+      "expected_doc_ids": [
+        "attack:T1059.001"
+      ]
+    },
+    {
+      "query": "Explain T1059.001 in detail",
+      "strategy": "sparse",
+      "first_stage": {
+        "retrieved_doc_ids": [
+          "attack:T1059.001",
+          "attack:T1124",
+          "attack:T1566.001"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "hit_rate": 1.0
+      },
+      "reranked": {
+        "retrieved_doc_ids": [
+          "attack:T1059.001",
+          "attack:T1124",
+          "attack:T1566.001"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "hit_rate": 1.0
+      },
+      "generation": {
+        "cited_doc_ids": [
+          "attack:T1059.001",
+          "attack:T1124",
+          "attack:T1566.001"
+        ],
+        "citation_correctness": 0.3333333333333333,
+        "grounded": true
+      },
+      "above_relevance_floor": 3,
+      "floor_mode": "off",
+      "latency_ms": 28.5,
+      "expected_doc_ids": [
+        "attack:T1059.001"
+      ]
+    },
+    {
+      "query": "Explain T1059.001 in detail",
+      "strategy": "hybrid",
+      "first_stage": {
+        "retrieved_doc_ids": [
+          "attack:T1059.001",
+          "attack:T1216.002",
+          "attack:T1027.003",
+          "attack:T1124",
+          "attack:T1546.013",
+          "attack:T1566.001",
+          "attack:T1059",
+          "attack:T1056.002",
+          "attack:T1059.009",
+          "attack:T1070.008",
+          "attack:T1531",
+          "attack:T1197",
+          "attack:T1564.011",
+          "attack:T1685.005",
+          "attack:T1620",
+          "attack:T1654",
+          "attack:T1689",
+          "attack:T1059.005",
+          "attack:T1564.003",
+          "attack:T1098.002",
+          "attack:T1574.011"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "hit_rate": 1.0
+      },
+      "reranked": {
+        "retrieved_doc_ids": [
+          "attack:T1059.001",
+          "attack:T1216.002",
+          "attack:T1027.003",
+          "attack:T1124",
+          "attack:T1546.013",
+          "attack:T1566.001",
+          "attack:T1059",
+          "attack:T1056.002"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "hit_rate": 1.0
+      },
+      "generation": {
+        "cited_doc_ids": [
+          "attack:T1059.001",
+          "attack:T1124",
+          "attack:T1566.001"
+        ],
+        "citation_correctness": 0.3333333333333333,
+        "grounded": true
+      },
+      "above_relevance_floor": 8,
+      "floor_mode": "off",
+      "latency_ms": 44.6,
+      "expected_doc_ids": [
+        "attack:T1059.001"
+      ]
+    },
+    {
+      "query": "Explain T1059.001 in detail",
+      "strategy": "hybrid_rerank",
+      "first_stage": {
+        "retrieved_doc_ids": [
+          "attack:T1059.001",
+          "attack:T1216.002",
+          "attack:T1027.003",
+          "attack:T1124",
+          "attack:T1546.013",
+          "attack:T1566.001",
+          "attack:T1059",
+          "attack:T1056.002",
+          "attack:T1059.009",
+          "attack:T1070.008",
+          "attack:T1531",
+          "attack:T1197",
+          "attack:T1564.011",
+          "attack:T1685.005",
+          "attack:T1620",
+          "attack:T1654",
+          "attack:T1689",
+          "attack:T1059.005",
+          "attack:T1564.003",
+          "attack:T1098.002",
+          "attack:T1574.011"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "hit_rate": 1.0
+      },
+      "reranked": {
+        "retrieved_doc_ids": [
+          "attack:T1059.001",
+          "attack:T1124",
+          "attack:T1566.001",
+          "attack:T1216.002",
+          "attack:T1027.003",
+          "attack:T1546.013",
+          "attack:T1059",
+          "attack:T1056.002"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "hit_rate": 1.0
+      },
+      "generation": {
+        "cited_doc_ids": [
+          "attack:T1059.001"
+        ],
+        "citation_correctness": 1.0,
+        "grounded": true
+      },
+      "above_relevance_floor": 1,
+      "floor_mode": "relative",
+      "latency_ms": 45.7,
+      "expected_doc_ids": [
+        "attack:T1059.001"
+      ]
+    },
+    {
+      "query": "How does credential dumping work on Windows?",
+      "strategy": "dense",
+      "first_stage": {
+        "retrieved_doc_ids": [
+          "attack:T1003",
+          "attack:T1552.001",
+          "attack:T1485",
+          "attack:T1110.002",
+          "attack:T1078.003",
+          "attack:T1110",
+          "attack:T1078.002",
+          "attack:T1558.001",
+          "attack:T1561.001",
+          "attack:T1561.002",
+          "attack:T1558.002",
+          "attack:T1561",
+          "attack:T1675",
+          "attack:T1486",
+          "attack:T1003.006",
+          "attack:T1003.004",
+          "attack:T1003.003",
+          "attack:T1003.002",
+          "attack:T1552.006",
+          "attack:T1003.001",
+          "attack:T1550.003",
+          "attack:T1555.005",
+          "attack:T1033",
+          "attack:T1556.002"
+        ],
+        "recall_at_k": 0.25,
+        "precision_at_k": 0.2,
+        "mrr": 1.0,
+        "ndcg_at_k": 0.3903800499921017,
+        "hit_rate": 1.0
+      },
+      "reranked": {
+        "retrieved_doc_ids": [
+          "attack:T1003",
+          "attack:T1552.001",
+          "attack:T1485",
+          "attack:T1110.002",
+          "attack:T1078.003",
+          "attack:T1110",
+          "attack:T1078.002",
+          "attack:T1558.001"
+        ],
+        "recall_at_k": 0.25,
+        "precision_at_k": 0.2,
+        "mrr": 1.0,
+        "ndcg_at_k": 0.3903800499921017,
+        "hit_rate": 1.0
+      },
+      "generation": {
+        "cited_doc_ids": [
+          "attack:T1003",
+          "attack:T1552.001",
+          "attack:T1485",
+          "attack:T1110.002"
+        ],
+        "citation_correctness": 0.25,
+        "grounded": true
+      },
+      "above_relevance_floor": 8,
+      "floor_mode": "off",
+      "latency_ms": 18.3,
+      "expected_doc_ids": [
+        "attack:T1003",
+        "attack:T1003.001",
+        "attack:T1003.002",
+        "attack:T1003.003"
+      ]
+    },
+    {
+      "query": "How does credential dumping work on Windows?",
+      "strategy": "sparse",
+      "first_stage": {
+        "retrieved_doc_ids": [
+          "attack:T1003.003",
+          "attack:T1003.002",
+          "attack:T1556",
+          "attack:T1003.001",
+          "attack:T1003",
+          "attack:T1547.008",
+          "attack:T1036.006",
+          "attack:T1566.003",
+          "attack:T1110",
+          "attack:T1078.002",
+          "attack:T1078.003",
+          "attack:T1556.002",
+          "attack:T1552.001",
+          "attack:T1499.001",
+          "attack:T1558.002",
+          "attack:T1558.001",
+          "attack:T1110.002",
+          "attack:T1561.002",
+          "attack:T1561.001",
+          "attack:T1033",
+          "attack:T1675",
+          "attack:T1556.001"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.8,
+        "mrr": 1.0,
+        "ndcg_at_k": 0.9558295932317544,
+        "hit_rate": 1.0
+      },
+      "reranked": {
+        "retrieved_doc_ids": [
+          "attack:T1003.003",
+          "attack:T1003.002",
+          "attack:T1556",
+          "attack:T1003.001",
+          "attack:T1003",
+          "attack:T1547.008",
+          "attack:T1036.006",
+          "attack:T1566.003"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.8,
+        "mrr": 1.0,
+        "ndcg_at_k": 0.9558295932317544,
+        "hit_rate": 1.0
+      },
+      "generation": {
+        "cited_doc_ids": [
+          "attack:T1003.003",
+          "attack:T1003.002",
+          "attack:T1556",
+          "attack:T1003",
+          "attack:T1036.006"
+        ],
+        "citation_correctness": 0.6,
+        "grounded": true
+      },
+      "above_relevance_floor": 8,
+      "floor_mode": "off",
+      "latency_ms": 35.2,
+      "expected_doc_ids": [
+        "attack:T1003",
+        "attack:T1003.001",
+        "attack:T1003.002",
+        "attack:T1003.003"
+      ]
+    },
+    {
+      "query": "How does credential dumping work on Windows?",
+      "strategy": "hybrid",
+      "first_stage": {
+        "retrieved_doc_ids": [
+          "attack:T1003",
+          "attack:T1552.001",
+          "attack:T1110",
+          "attack:T1003.003",
+          "attack:T1078.003",
+          "attack:T1078.002",
+          "attack:T1003.002",
+          "attack:T1110.002",
+          "attack:T1003.001",
+          "attack:T1558.001",
+          "attack:T1558.002",
+          "attack:T1561.001",
+          "attack:T1561.002",
+          "attack:T1675",
+          "attack:T1556.002",
+          "attack:T1033",
+          "attack:T1485",
+          "attack:T1556",
+          "attack:T1547.008",
+          "attack:T1036.006",
+          "attack:T1566.003",
+          "attack:T1561",
+          "attack:T1486",
+          "attack:T1003.006",
+          "attack:T1499.001",
+          "attack:T1003.004",
+          "attack:T1552.006"
+        ],
+        "recall_at_k": 0.5,
+        "precision_at_k": 0.4,
+        "mrr": 1.0,
+        "ndcg_at_k": 0.5585075862632192,
+        "hit_rate": 1.0
+      },
+      "reranked": {
+        "retrieved_doc_ids": [
+          "attack:T1003",
+          "attack:T1552.001",
+          "attack:T1110",
+          "attack:T1003.003",
+          "attack:T1078.003",
+          "attack:T1078.002",
+          "attack:T1003.002",
+          "attack:T1110.002"
+        ],
+        "recall_at_k": 0.5,
+        "precision_at_k": 0.4,
+        "mrr": 1.0,
+        "ndcg_at_k": 0.5585075862632192,
+        "hit_rate": 1.0
+      },
+      "generation": {
+        "cited_doc_ids": [
+          "attack:T1003",
+          "attack:T1552.001",
+          "attack:T1110"
+        ],
+        "citation_correctness": 0.3333333333333333,
+        "grounded": true
+      },
+      "above_relevance_floor": 8,
+      "floor_mode": "off",
+      "latency_ms": 53.2,
+      "expected_doc_ids": [
+        "attack:T1003",
+        "attack:T1003.001",
+        "attack:T1003.002",
+        "attack:T1003.003"
+      ]
+    },
+    {
+      "query": "How does credential dumping work on Windows?",
+      "strategy": "hybrid_rerank",
+      "first_stage": {
+        "retrieved_doc_ids": [
+          "attack:T1003",
+          "attack:T1552.001",
+          "attack:T1110",
+          "attack:T1003.003",
+          "attack:T1078.003",
+          "attack:T1078.002",
+          "attack:T1003.002",
+          "attack:T1110.002",
+          "attack:T1003.001",
+          "attack:T1558.001",
+          "attack:T1558.002",
+          "attack:T1561.001",
+          "attack:T1561.002",
+          "attack:T1675",
+          "attack:T1556.002",
+          "attack:T1033",
+          "attack:T1485",
+          "attack:T1556",
+          "attack:T1547.008",
+          "attack:T1036.006",
+          "attack:T1566.003",
+          "attack:T1561",
+          "attack:T1486",
+          "attack:T1003.006",
+          "attack:T1499.001",
+          "attack:T1003.004",
+          "attack:T1552.006"
+        ],
+        "recall_at_k": 0.5,
+        "precision_at_k": 0.4,
+        "mrr": 1.0,
+        "ndcg_at_k": 0.5585075862632192,
+        "hit_rate": 1.0
+      },
+      "reranked": {
+        "retrieved_doc_ids": [
+          "attack:T1003",
+          "attack:T1078.002",
+          "attack:T1078.003",
+          "attack:T1558.001",
+          "attack:T1561.002",
+          "attack:T1003.004",
+          "attack:T1558.002",
+          "attack:T1561.001"
+        ],
+        "recall_at_k": 0.25,
+        "precision_at_k": 0.2,
+        "mrr": 1.0,
+        "ndcg_at_k": 0.3903800499921017,
+        "hit_rate": 1.0
+      },
+      "generation": {
+        "cited_doc_ids": [
+          "attack:T1003",
+          "attack:T1078.002",
+          "attack:T1078.003",
+          "attack:T1561.002",
+          "attack:T1561.001"
+        ],
+        "citation_correctness": 0.2,
+        "grounded": true
+      },
+      "above_relevance_floor": 8,
+      "floor_mode": "relative",
+      "latency_ms": 52.2,
+      "expected_doc_ids": [
+        "attack:T1003",
+        "attack:T1003.001",
+        "attack:T1003.002",
+        "attack:T1003.003"
+      ]
+    },
+    {
+      "query": "What weakness type (CWE) is associated with the Log4Shell vulnerability?",
+      "strategy": "dense",
+      "first_stage": {
+        "retrieved_doc_ids": [
+          "cve:CVE-2021-44228",
+          "cve:CVE-2021-44832",
+          "cve:CVE-2023-23397",
+          "cve:CVE-2020-1472",
+          "cve:CVE-2021-26855",
+          "cve:CVE-2021-22986",
+          "cve:CVE-2023-34362",
+          "cve:CVE-2018-13379",
+          "cve:CVE-2021-21972",
+          "cve:CVE-2019-11510",
+          "cve:CVE-2022-30190",
+          "cve:CVE-2019-19781",
+          "cve:CVE-2019-0708",
+          "attack:T1584.001",
+          "cve:CVE-2022-26134",
+          "cve:CVE-2020-0601",
+          "cve:CVE-2017-5638",
+          "attack:T1574.005",
+          "attack:T1574.011",
+          "attack:T1480.002",
+          "attack:T1548.005"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "hit_rate": 1.0
+      },
+      "reranked": {
+        "retrieved_doc_ids": [
+          "cve:CVE-2021-44228",
+          "cve:CVE-2021-44832",
+          "cve:CVE-2023-23397",
+          "cve:CVE-2020-1472",
+          "cve:CVE-2021-26855",
+          "cve:CVE-2021-22986"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "hit_rate": 1.0
+      },
+      "generation": {
+        "cited_doc_ids": [
+          "cve:CVE-2021-44228",
+          "cve:CVE-2021-44832",
+          "cve:CVE-2023-23397",
+          "cve:CVE-2020-1472"
+        ],
+        "citation_correctness": 0.25,
+        "grounded": true
+      },
+      "above_relevance_floor": 8,
+      "floor_mode": "off",
+      "latency_ms": 16.4,
+      "expected_doc_ids": [
+        "cve:CVE-2021-44228"
+      ]
+    },
+    {
+      "query": "What weakness type (CWE) is associated with the Log4Shell vulnerability?",
+      "strategy": "sparse",
+      "first_stage": {
+        "retrieved_doc_ids": [
+          "cve:CVE-2023-23397",
+          "attack:T1588.006",
+          "attack:T1190",
+          "cve:CVE-2021-44228",
+          "cve:CVE-2021-44832",
+          "cve:CVE-2020-1472",
+          "attack:T1574.005",
+          "attack:T1690",
+          "attack:T1574.010",
+          "attack:T1574.011",
+          "attack:T1685.002",
+          "attack:T1070.003",
+          "attack:T1036.007",
+          "cve:CVE-2021-34527",
+          "attack:T1036.002",
+          "cve:CVE-2022-30190",
+          "cve:CVE-2019-0708"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 0.25,
+        "ndcg_at_k": 0.43067655807339306,
+        "hit_rate": 1.0
+      },
+      "reranked": {
+        "retrieved_doc_ids": [
+          "cve:CVE-2023-23397",
+          "attack:T1588.006",
+          "attack:T1190",
+          "cve:CVE-2021-44228",
+          "cve:CVE-2021-44832",
+          "cve:CVE-2020-1472",
+          "attack:T1574.005",
+          "attack:T1690"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 0.25,
+        "ndcg_at_k": 0.43067655807339306,
+        "hit_rate": 1.0
+      },
+      "generation": {
+        "cited_doc_ids": [
+          "cve:CVE-2023-23397",
+          "attack:T1588.006",
+          "cve:CVE-2021-44228",
+          "cve:CVE-2021-44832",
+          "cve:CVE-2020-1472",
+          "attack:T1690"
+        ],
+        "citation_correctness": 0.16666666666666666,
+        "grounded": true
+      },
+      "above_relevance_floor": 8,
+      "floor_mode": "off",
+      "latency_ms": 32.9,
+      "expected_doc_ids": [
+        "cve:CVE-2021-44228"
+      ]
+    },
+    {
+      "query": "What weakness type (CWE) is associated with the Log4Shell vulnerability?",
+      "strategy": "hybrid",
+      "first_stage": {
+        "retrieved_doc_ids": [
+          "cve:CVE-2023-23397",
+          "cve:CVE-2021-44228",
+          "cve:CVE-2021-44832",
+          "cve:CVE-2020-1472",
+          "attack:T1574.005",
+          "cve:CVE-2022-30190",
+          "attack:T1574.011",
+          "cve:CVE-2019-0708",
+          "attack:T1588.006",
+          "attack:T1190",
+          "cve:CVE-2021-26855",
+          "cve:CVE-2021-22986",
+          "attack:T1690",
+          "cve:CVE-2023-34362",
+          "cve:CVE-2018-13379",
+          "attack:T1574.010",
+          "cve:CVE-2021-21972",
+          "cve:CVE-2019-11510",
+          "cve:CVE-2019-19781",
+          "attack:T1685.002",
+          "attack:T1584.001",
+          "cve:CVE-2022-26134",
+          "cve:CVE-2020-0601"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "hit_rate": 1.0
+      },
+      "reranked": {
+        "retrieved_doc_ids": [
+          "cve:CVE-2023-23397",
+          "cve:CVE-2021-44228",
+          "cve:CVE-2021-44832",
+          "cve:CVE-2020-1472",
+          "attack:T1574.005",
+          "cve:CVE-2022-30190",
+          "attack:T1574.011"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "hit_rate": 1.0
+      },
+      "generation": {
+        "cited_doc_ids": [
+          "cve:CVE-2023-23397",
+          "cve:CVE-2021-44228",
+          "cve:CVE-2021-44832",
+          "cve:CVE-2020-1472"
+        ],
+        "citation_correctness": 0.25,
+        "grounded": true
+      },
+      "above_relevance_floor": 8,
+      "floor_mode": "off",
+      "latency_ms": 48.5,
+      "expected_doc_ids": [
+        "cve:CVE-2021-44228"
+      ]
+    },
+    {
+      "query": "What weakness type (CWE) is associated with the Log4Shell vulnerability?",
+      "strategy": "hybrid_rerank",
+      "first_stage": {
+        "retrieved_doc_ids": [
+          "cve:CVE-2023-23397",
+          "cve:CVE-2021-44228",
+          "cve:CVE-2021-44832",
+          "cve:CVE-2020-1472",
+          "attack:T1574.005",
+          "cve:CVE-2022-30190",
+          "attack:T1574.011",
+          "cve:CVE-2019-0708",
+          "attack:T1588.006",
+          "attack:T1190",
+          "cve:CVE-2021-26855",
+          "cve:CVE-2021-22986",
+          "attack:T1690",
+          "cve:CVE-2023-34362",
+          "cve:CVE-2018-13379",
+          "attack:T1574.010",
+          "cve:CVE-2021-21972",
+          "cve:CVE-2019-11510",
+          "cve:CVE-2019-19781",
+          "attack:T1685.002",
+          "attack:T1584.001",
+          "cve:CVE-2022-26134",
+          "cve:CVE-2020-0601"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "hit_rate": 1.0
+      },
+      "reranked": {
+        "retrieved_doc_ids": [
+          "cve:CVE-2023-23397",
+          "cve:CVE-2020-1472",
+          "cve:CVE-2021-44228",
+          "cve:CVE-2021-44832",
+          "cve:CVE-2021-26855",
+          "attack:T1574.011",
+          "cve:CVE-2019-0708",
+          "attack:T1690"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 0.3333333333333333,
+        "ndcg_at_k": 0.5,
+        "hit_rate": 1.0
+      },
+      "generation": {
+        "cited_doc_ids": [
+          "cve:CVE-2023-23397",
+          "cve:CVE-2020-1472",
+          "cve:CVE-2021-44228",
+          "cve:CVE-2021-44832",
+          "attack:T1690"
+        ],
+        "citation_correctness": 0.2,
+        "grounded": true
+      },
+      "above_relevance_floor": 8,
+      "floor_mode": "relative",
+      "latency_ms": 49.6,
+      "expected_doc_ids": [
+        "cve:CVE-2021-44228"
+      ]
+    },
+    {
+      "query": "What is Kerberoasting and which ATT&CK technique covers it?",
+      "strategy": "dense",
+      "first_stage": {
+        "retrieved_doc_ids": [
+          "attack:T1558.004",
+          "attack:T1069.002",
+          "attack:T1069.001",
+          "attack:T1069",
+          "attack:T1558.003",
+          "attack:T1690",
+          "attack:T1036.006",
+          "attack:T1207",
+          "attack:T1080",
+          "attack:T1574.005",
+          "attack:T1601.001",
+          "attack:T1087.002",
+          "attack:T1036.002",
+          "attack:T1070.003",
+          "attack:T1218.010",
+          "attack:T1613",
+          "attack:T1090.004",
+          "attack:T1574.010",
+          "attack:T1036.009"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 0.2,
+        "ndcg_at_k": 0.38685280723454163,
+        "hit_rate": 1.0
+      },
+      "reranked": {
+        "retrieved_doc_ids": [
+          "attack:T1558.004",
+          "attack:T1069.002",
+          "attack:T1069.001",
+          "attack:T1069",
+          "attack:T1558.003",
+          "attack:T1690"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 0.2,
+        "ndcg_at_k": 0.38685280723454163,
+        "hit_rate": 1.0
+      },
+      "generation": {
+        "cited_doc_ids": [
+          "attack:T1558.004",
+          "attack:T1558.003",
+          "attack:T1690"
+        ],
+        "citation_correctness": 0.3333333333333333,
+        "grounded": true
+      },
+      "above_relevance_floor": 8,
+      "floor_mode": "off",
+      "latency_ms": 16.2,
+      "expected_doc_ids": [
+        "attack:T1558.003"
+      ]
+    },
+    {
+      "query": "What is Kerberoasting and which ATT&CK technique covers it?",
+      "strategy": "sparse",
+      "first_stage": {
+        "retrieved_doc_ids": [
+          "attack:T1690",
+          "attack:T1558.003",
+          "attack:T1482",
+          "attack:T1558.002",
+          "attack:T1558.004",
+          "attack:T1036.002",
+          "attack:T1548.005",
+          "attack:T1547.013",
+          "attack:T1685.002",
+          "attack:T1613",
+          "attack:T1056",
+          "attack:T1207",
+          "attack:T1070.004",
+          "attack:T1049",
+          "attack:T1550.001",
+          "attack:T1601.001",
+          "attack:T1518",
+          "attack:T1574.010",
+          "attack:T1027.001",
+          "attack:T1548.004",
+          "attack:T1070.003",
+          "attack:T1598.003"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "hit_rate": 1.0
+      },
+      "reranked": {
+        "retrieved_doc_ids": [
+          "attack:T1690",
+          "attack:T1558.003",
+          "attack:T1482",
+          "attack:T1558.002",
+          "attack:T1558.004",
+          "attack:T1036.002"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "hit_rate": 1.0
+      },
+      "generation": {
+        "cited_doc_ids": [
+          "attack:T1690",
+          "attack:T1558.003",
+          "attack:T1482",
+          "attack:T1558.002",
+          "attack:T1558.004",
+          "attack:T1036.002"
+        ],
+        "citation_correctness": 0.16666666666666666,
+        "grounded": true
+      },
+      "above_relevance_floor": 8,
+      "floor_mode": "off",
+      "latency_ms": 32.1,
+      "expected_doc_ids": [
+        "attack:T1558.003"
+      ]
+    },
+    {
+      "query": "What is Kerberoasting and which ATT&CK technique covers it?",
+      "strategy": "hybrid",
+      "first_stage": {
+        "retrieved_doc_ids": [
+          "attack:T1558.004",
+          "attack:T1690",
+          "attack:T1558.003",
+          "attack:T1036.002",
+          "attack:T1207",
+          "attack:T1613",
+          "attack:T1601.001",
+          "attack:T1070.003",
+          "attack:T1574.010",
+          "attack:T1069.002",
+          "attack:T1069.001",
+          "attack:T1069",
+          "attack:T1482",
+          "attack:T1558.002",
+          "attack:T1036.006",
+          "attack:T1548.005",
+          "attack:T1080",
+          "attack:T1547.013",
+          "attack:T1574.005",
+          "attack:T1685.002",
+          "attack:T1056",
+          "attack:T1087.002",
+          "attack:T1070.004",
+          "attack:T1049",
+          "attack:T1550.001"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 0.3333333333333333,
+        "ndcg_at_k": 0.5,
+        "hit_rate": 1.0
+      },
+      "reranked": {
+        "retrieved_doc_ids": [
+          "attack:T1558.004",
+          "attack:T1690",
+          "attack:T1558.003",
+          "attack:T1036.002",
+          "attack:T1207"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 0.3333333333333333,
+        "ndcg_at_k": 0.5,
+        "hit_rate": 1.0
+      },
+      "generation": {
+        "cited_doc_ids": [
+          "attack:T1558.004",
+          "attack:T1690",
+          "attack:T1558.003",
+          "attack:T1036.002",
+          "attack:T1207"
+        ],
+        "citation_correctness": 0.2,
+        "grounded": true
+      },
+      "above_relevance_floor": 8,
+      "floor_mode": "off",
+      "latency_ms": 47.9,
+      "expected_doc_ids": [
+        "attack:T1558.003"
+      ]
+    },
+    {
+      "query": "What is Kerberoasting and which ATT&CK technique covers it?",
+      "strategy": "hybrid_rerank",
+      "first_stage": {
+        "retrieved_doc_ids": [
+          "attack:T1558.004",
+          "attack:T1690",
+          "attack:T1558.003",
+          "attack:T1036.002",
+          "attack:T1207",
+          "attack:T1613",
+          "attack:T1601.001",
+          "attack:T1070.003",
+          "attack:T1574.010",
+          "attack:T1069.002",
+          "attack:T1069.001",
+          "attack:T1069",
+          "attack:T1482",
+          "attack:T1558.002",
+          "attack:T1036.006",
+          "attack:T1548.005",
+          "attack:T1080",
+          "attack:T1547.013",
+          "attack:T1574.005",
+          "attack:T1685.002",
+          "attack:T1056",
+          "attack:T1087.002",
+          "attack:T1070.004",
+          "attack:T1049",
+          "attack:T1550.001"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 0.3333333333333333,
+        "ndcg_at_k": 0.5,
+        "hit_rate": 1.0
+      },
+      "reranked": {
+        "retrieved_doc_ids": [
+          "attack:T1547.013",
+          "attack:T1548.005",
+          "attack:T1558.003",
+          "attack:T1036.002",
+          "attack:T1613",
+          "attack:T1601.001",
+          "attack:T1574.010",
+          "attack:T1056"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 0.3333333333333333,
+        "ndcg_at_k": 0.5,
+        "hit_rate": 1.0
+      },
+      "generation": {
+        "cited_doc_ids": [
+          "attack:T1547.013",
+          "attack:T1548.005",
+          "attack:T1558.003",
+          "attack:T1036.002"
+        ],
+        "citation_correctness": 0.25,
+        "grounded": true
+      },
+      "above_relevance_floor": 8,
+      "floor_mode": "relative",
+      "latency_ms": 49.5,
+      "expected_doc_ids": [
+        "attack:T1558.003"
+      ]
+    },
+    {
+      "query": "Describe the BlueKeep RDP vulnerability",
+      "strategy": "dense",
+      "first_stage": {
+        "retrieved_doc_ids": [
+          "cve:CVE-2019-0708",
+          "cve:CVE-2020-1472",
+          "cve:CVE-2023-23397",
+          "attack:T1563.002",
+          "attack:T1021.001",
+          "cve:CVE-2020-0601",
+          "cve:CVE-2022-30190",
+          "cve:CVE-2021-26855",
+          "cve:CVE-2021-34527",
+          "cve:CVE-2017-0144",
+          "cve:CVE-2021-21972",
+          "cve:CVE-2019-11510",
+          "attack:T1505.005",
+          "cve:CVE-2023-34362",
+          "attack:T1555.006",
+          "attack:T1070.007"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "hit_rate": 1.0
+      },
+      "reranked": {
+        "retrieved_doc_ids": [
+          "cve:CVE-2019-0708",
+          "cve:CVE-2020-1472",
+          "cve:CVE-2023-23397",
+          "attack:T1563.002",
+          "attack:T1021.001"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "hit_rate": 1.0
+      },
+      "generation": {
+        "cited_doc_ids": [
+          "cve:CVE-2019-0708",
+          "cve:CVE-2020-1472",
+          "cve:CVE-2023-23397",
+          "attack:T1563.002",
+          "attack:T1021.001"
+        ],
+        "citation_correctness": 0.2,
+        "grounded": true
+      },
+      "above_relevance_floor": 8,
+      "floor_mode": "off",
+      "latency_ms": 16.3,
+      "expected_doc_ids": [
+        "cve:CVE-2019-0708"
+      ]
+    },
+    {
+      "query": "Describe the BlueKeep RDP vulnerability",
+      "strategy": "sparse",
+      "first_stage": {
+        "retrieved_doc_ids": [
+          "cve:CVE-2019-0708",
+          "attack:T1555.006",
+          "attack:T1680",
+          "attack:T1563.002",
+          "attack:T1021.001",
+          "attack:T1220",
+          "cve:CVE-2020-1472",
+          "attack:T1588.006",
+          "cve:CVE-2021-34527",
+          "cve:CVE-2023-23397",
+          "cve:CVE-2022-30190",
+          "attack:T1505.005",
+          "attack:T1070.007",
+          "attack:T1595.002",
+          "cve:CVE-2020-0601",
+          "cve:CVE-2021-26855",
+          "cve:CVE-2017-0144",
+          "attack:T1110.004",
+          "attack:T1071"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "hit_rate": 1.0
+      },
+      "reranked": {
+        "retrieved_doc_ids": [
+          "cve:CVE-2019-0708",
+          "attack:T1555.006",
+          "attack:T1680",
+          "attack:T1563.002",
+          "attack:T1021.001",
+          "attack:T1220"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "hit_rate": 1.0
+      },
+      "generation": {
+        "cited_doc_ids": [
+          "cve:CVE-2019-0708",
+          "attack:T1555.006",
+          "attack:T1680",
+          "attack:T1563.002",
+          "attack:T1021.001"
+        ],
+        "citation_correctness": 0.2,
+        "grounded": true
+      },
+      "above_relevance_floor": 8,
+      "floor_mode": "off",
+      "latency_ms": 31.8,
+      "expected_doc_ids": [
+        "cve:CVE-2019-0708"
+      ]
+    },
+    {
+      "query": "Describe the BlueKeep RDP vulnerability",
+      "strategy": "hybrid",
+      "first_stage": {
+        "retrieved_doc_ids": [
+          "cve:CVE-2019-0708",
+          "attack:T1563.002",
+          "attack:T1021.001",
+          "cve:CVE-2023-23397",
+          "cve:CVE-2020-1472",
+          "attack:T1555.006",
+          "cve:CVE-2022-30190",
+          "cve:CVE-2021-34527",
+          "cve:CVE-2020-0601",
+          "cve:CVE-2021-26855",
+          "attack:T1505.005",
+          "cve:CVE-2017-0144",
+          "attack:T1070.007",
+          "attack:T1680",
+          "attack:T1220",
+          "attack:T1588.006",
+          "cve:CVE-2021-21972",
+          "cve:CVE-2019-11510",
+          "attack:T1595.002",
+          "cve:CVE-2023-34362",
+          "attack:T1110.004",
+          "attack:T1071"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "hit_rate": 1.0
+      },
+      "reranked": {
+        "retrieved_doc_ids": [
+          "cve:CVE-2019-0708",
+          "attack:T1563.002",
+          "attack:T1021.001",
+          "cve:CVE-2023-23397",
+          "cve:CVE-2020-1472",
+          "attack:T1555.006"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "hit_rate": 1.0
+      },
+      "generation": {
+        "cited_doc_ids": [
+          "cve:CVE-2019-0708",
+          "attack:T1563.002",
+          "attack:T1021.001"
+        ],
+        "citation_correctness": 0.3333333333333333,
+        "grounded": true
+      },
+      "above_relevance_floor": 8,
+      "floor_mode": "off",
+      "latency_ms": 47.4,
+      "expected_doc_ids": [
+        "cve:CVE-2019-0708"
+      ]
+    },
+    {
+      "query": "Describe the BlueKeep RDP vulnerability",
+      "strategy": "hybrid_rerank",
+      "first_stage": {
+        "retrieved_doc_ids": [
+          "cve:CVE-2019-0708",
+          "attack:T1563.002",
+          "attack:T1021.001",
+          "cve:CVE-2023-23397",
+          "cve:CVE-2020-1472",
+          "attack:T1555.006",
+          "cve:CVE-2022-30190",
+          "cve:CVE-2021-34527",
+          "cve:CVE-2020-0601",
+          "cve:CVE-2021-26855",
+          "attack:T1505.005",
+          "cve:CVE-2017-0144",
+          "attack:T1070.007",
+          "attack:T1680",
+          "attack:T1220",
+          "attack:T1588.006",
+          "cve:CVE-2021-21972",
+          "cve:CVE-2019-11510",
+          "attack:T1595.002",
+          "cve:CVE-2023-34362",
+          "attack:T1110.004",
+          "attack:T1071"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "hit_rate": 1.0
+      },
+      "reranked": {
+        "retrieved_doc_ids": [
+          "cve:CVE-2020-1472",
+          "cve:CVE-2021-34527",
+          "cve:CVE-2019-0708",
+          "cve:CVE-2021-26855",
+          "cve:CVE-2023-23397",
+          "attack:T1563.002",
+          "cve:CVE-2019-11510",
+          "cve:CVE-2017-0144"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 0.3333333333333333,
+        "ndcg_at_k": 0.5,
+        "hit_rate": 1.0
+      },
+      "generation": {
+        "cited_doc_ids": [
+          "cve:CVE-2020-1472",
+          "cve:CVE-2021-34527",
+          "cve:CVE-2019-0708",
+          "cve:CVE-2021-26855",
+          "cve:CVE-2023-23397",
+          "attack:T1563.002"
+        ],
+        "citation_correctness": 0.16666666666666666,
+        "grounded": true
+      },
+      "above_relevance_floor": 7,
+      "floor_mode": "relative",
+      "latency_ms": 50.3,
+      "expected_doc_ids": [
+        "cve:CVE-2019-0708"
+      ]
+    },
+    {
+      "query": "What privilege escalation techniques target Windows access tokens?",
+      "strategy": "dense",
+      "first_stage": {
+        "retrieved_doc_ids": [
+          "attack:T1078.004",
+          "attack:T1134",
+          "attack:T1528",
+          "attack:T1134.005",
+          "attack:T1098",
+          "attack:T1550.001",
+          "attack:T1068",
+          "attack:T1078.003",
+          "attack:T1134.002",
+          "attack:T1078.002",
+          "attack:T1134.003",
+          "attack:T1547",
+          "attack:T1543.003",
+          "attack:T1548",
+          "attack:T1078.001"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "hit_rate": 1.0
+      },
+      "reranked": {
+        "retrieved_doc_ids": [
+          "attack:T1078.004",
+          "attack:T1134",
+          "attack:T1528",
+          "attack:T1134.005"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "hit_rate": 1.0
+      },
+      "generation": {
+        "cited_doc_ids": [
+          "attack:T1078.004",
+          "attack:T1134",
+          "attack:T1528",
+          "attack:T1134.005"
+        ],
+        "citation_correctness": 0.25,
+        "grounded": true
+      },
+      "above_relevance_floor": 8,
+      "floor_mode": "off",
+      "latency_ms": 15.8,
+      "expected_doc_ids": [
+        "attack:T1134"
+      ]
+    },
+    {
+      "query": "What privilege escalation techniques target Windows access tokens?",
+      "strategy": "sparse",
+      "first_stage": {
+        "retrieved_doc_ids": [
+          "attack:T1550.001",
+          "attack:T1528",
+          "attack:T1134",
+          "attack:T1078.004",
+          "attack:T1134.005",
+          "attack:T1518",
+          "attack:T1606.002",
+          "attack:T1134.003",
+          "attack:T1548.005",
+          "attack:T1114.002",
+          "attack:T1484",
+          "attack:T1552.008",
+          "attack:T1608.005",
+          "attack:T1098.004",
+          "attack:T1690",
+          "attack:T1111",
+          "attack:T1547.013",
+          "attack:T1606",
+          "attack:T1685.002"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 0.3333333333333333,
+        "ndcg_at_k": 0.5,
+        "hit_rate": 1.0
+      },
+      "reranked": {
+        "retrieved_doc_ids": [
+          "attack:T1550.001",
+          "attack:T1528",
+          "attack:T1134",
+          "attack:T1078.004",
+          "attack:T1134.005",
+          "attack:T1518"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 0.3333333333333333,
+        "ndcg_at_k": 0.5,
+        "hit_rate": 1.0
+      },
+      "generation": {
+        "cited_doc_ids": [
+          "attack:T1528",
+          "attack:T1134",
+          "attack:T1078.004",
+          "attack:T1134.005",
+          "attack:T1518"
+        ],
+        "citation_correctness": 0.2,
+        "grounded": true
+      },
+      "above_relevance_floor": 8,
+      "floor_mode": "off",
+      "latency_ms": 32.7,
+      "expected_doc_ids": [
+        "attack:T1134"
+      ]
+    },
+    {
+      "query": "What privilege escalation techniques target Windows access tokens?",
+      "strategy": "hybrid",
+      "first_stage": {
+        "retrieved_doc_ids": [
+          "attack:T1078.004",
+          "attack:T1134",
+          "attack:T1528",
+          "attack:T1134.005",
+          "attack:T1550.001",
+          "attack:T1134.003",
+          "attack:T1518",
+          "attack:T1606.002",
+          "attack:T1098",
+          "attack:T1068",
+          "attack:T1548.005",
+          "attack:T1078.003",
+          "attack:T1134.002",
+          "attack:T1114.002",
+          "attack:T1078.002",
+          "attack:T1484",
+          "attack:T1552.008",
+          "attack:T1608.005",
+          "attack:T1547",
+          "attack:T1098.004"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "hit_rate": 1.0
+      },
+      "reranked": {
+        "retrieved_doc_ids": [
+          "attack:T1078.004",
+          "attack:T1134",
+          "attack:T1528",
+          "attack:T1134.005",
+          "attack:T1550.001"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "hit_rate": 1.0
+      },
+      "generation": {
+        "cited_doc_ids": [
+          "attack:T1078.004",
+          "attack:T1134",
+          "attack:T1528",
+          "attack:T1134.005"
+        ],
+        "citation_correctness": 0.25,
+        "grounded": true
+      },
+      "above_relevance_floor": 8,
+      "floor_mode": "off",
+      "latency_ms": 43.7,
+      "expected_doc_ids": [
+        "attack:T1134"
+      ]
+    },
+    {
+      "query": "What privilege escalation techniques target Windows access tokens?",
+      "strategy": "hybrid_rerank",
+      "first_stage": {
+        "retrieved_doc_ids": [
+          "attack:T1078.004",
+          "attack:T1134",
+          "attack:T1528",
+          "attack:T1134.005",
+          "attack:T1550.001",
+          "attack:T1134.003",
+          "attack:T1518",
+          "attack:T1606.002",
+          "attack:T1098",
+          "attack:T1068",
+          "attack:T1548.005",
+          "attack:T1078.003",
+          "attack:T1134.002",
+          "attack:T1114.002",
+          "attack:T1078.002",
+          "attack:T1484",
+          "attack:T1552.008",
+          "attack:T1608.005",
+          "attack:T1547",
+          "attack:T1098.004"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "hit_rate": 1.0
+      },
+      "reranked": {
+        "retrieved_doc_ids": [
+          "attack:T1078.004",
+          "attack:T1134",
+          "attack:T1518",
+          "attack:T1134.002",
+          "attack:T1134.003",
+          "attack:T1078.002",
+          "attack:T1114.002",
+          "attack:T1078.003"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "hit_rate": 1.0
+      },
+      "generation": {
+        "cited_doc_ids": [
+          "attack:T1078.004",
+          "attack:T1134",
+          "attack:T1518",
+          "attack:T1078.002",
+          "attack:T1078.003"
+        ],
+        "citation_correctness": 0.2,
+        "grounded": true
+      },
+      "above_relevance_floor": 8,
+      "floor_mode": "relative",
+      "latency_ms": 45.6,
+      "expected_doc_ids": [
+        "attack:T1134"
+      ]
+    },
+    {
+      "query": "What CVSS severity was assigned to the Heartbleed bug?",
+      "strategy": "dense",
+      "first_stage": {
+        "retrieved_doc_ids": [
+          "cve:CVE-2019-19781",
+          "cve:CVE-2014-0160",
+          "cve:CVE-2018-13379",
+          "cve:CVE-2016-10033",
+          "cve:CVE-2019-11510",
+          "cve:CVE-2017-5638",
+          "cve:CVE-2021-44228",
+          "attack:T1037.001",
+          "attack:T1037.003",
+          "cve:CVE-2021-21972",
+          "cve:CVE-2017-0144",
+          "cve:CVE-2021-44832",
+          "cve:CVE-2019-0708",
+          "attack:T1557.003",
+          "attack:T1037",
+          "cve:CVE-2020-0601",
+          "cve:CVE-2022-30190",
+          "cve:CVE-2022-26134",
+          "attack:T1568.001",
+          "cve:CVE-2021-26855",
+          "cve:CVE-2021-22986",
+          "attack:T1027.005",
+          "cve:CVE-2023-34362",
+          "attack:T1608.001"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "hit_rate": 1.0
+      },
+      "reranked": {
+        "retrieved_doc_ids": [
+          "cve:CVE-2019-19781",
+          "cve:CVE-2014-0160",
+          "cve:CVE-2018-13379",
+          "cve:CVE-2016-10033",
+          "cve:CVE-2019-11510",
+          "cve:CVE-2017-5638",
+          "cve:CVE-2021-44228",
+          "attack:T1037.001"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "hit_rate": 1.0
+      },
+      "generation": {
+        "cited_doc_ids": [
+          "cve:CVE-2019-19781",
+          "cve:CVE-2014-0160",
+          "cve:CVE-2018-13379",
+          "cve:CVE-2019-11510",
+          "cve:CVE-2021-44228"
+        ],
+        "citation_correctness": 0.2,
+        "grounded": true
+      },
+      "above_relevance_floor": 8,
+      "floor_mode": "off",
+      "latency_ms": 12.8,
+      "expected_doc_ids": [
+        "cve:CVE-2014-0160"
+      ]
+    },
+    {
+      "query": "What CVSS severity was assigned to the Heartbleed bug?",
+      "strategy": "sparse",
+      "first_stage": {
+        "retrieved_doc_ids": [
+          "cve:CVE-2014-0160",
+          "cve:CVE-2021-44832",
+          "attack:T1037.003",
+          "cve:CVE-2019-11510",
+          "attack:T1588.005",
+          "cve:CVE-2021-44228",
+          "attack:T1190",
+          "cve:CVE-2023-23397",
+          "cve:CVE-2018-13379",
+          "attack:T1587.004",
+          "attack:T1590.005",
+          "cve:CVE-2021-34527",
+          "cve:CVE-2020-1472",
+          "attack:T1557.003",
+          "cve:CVE-2021-26855",
+          "cve:CVE-2022-30190",
+          "attack:T1568.001",
+          "attack:T1596.002",
+          "attack:T1595.001",
+          "attack:T1690",
+          "attack:T1592",
+          "attack:T1685.002",
+          "attack:T1613",
+          "attack:T1056"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "hit_rate": 1.0
+      },
+      "reranked": {
+        "retrieved_doc_ids": [
+          "cve:CVE-2014-0160",
+          "cve:CVE-2021-44832",
+          "attack:T1037.003",
+          "cve:CVE-2019-11510",
+          "attack:T1588.005",
+          "cve:CVE-2021-44228",
+          "attack:T1190",
+          "cve:CVE-2023-23397"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "hit_rate": 1.0
+      },
+      "generation": {
+        "cited_doc_ids": [
+          "cve:CVE-2014-0160",
+          "cve:CVE-2021-44832",
+          "attack:T1037.003",
+          "cve:CVE-2019-11510",
+          "attack:T1588.005"
+        ],
+        "citation_correctness": 0.2,
+        "grounded": true
+      },
+      "above_relevance_floor": 8,
+      "floor_mode": "off",
+      "latency_ms": 31.4,
+      "expected_doc_ids": [
+        "cve:CVE-2014-0160"
+      ]
+    },
+    {
+      "query": "What CVSS severity was assigned to the Heartbleed bug?",
+      "strategy": "hybrid",
+      "first_stage": {
+        "retrieved_doc_ids": [
+          "cve:CVE-2014-0160",
+          "cve:CVE-2019-11510",
+          "cve:CVE-2018-13379",
+          "attack:T1037.003",
+          "cve:CVE-2021-44228",
+          "cve:CVE-2021-44832",
+          "attack:T1557.003",
+          "cve:CVE-2022-30190",
+          "cve:CVE-2021-26855",
+          "attack:T1568.001",
+          "cve:CVE-2019-19781",
+          "cve:CVE-2016-10033",
+          "attack:T1588.005",
+          "cve:CVE-2017-5638",
+          "attack:T1190",
+          "attack:T1037.001",
+          "cve:CVE-2023-23397",
+          "cve:CVE-2021-21972",
+          "attack:T1587.004",
+          "cve:CVE-2017-0144",
+          "attack:T1590.005",
+          "cve:CVE-2021-34527",
+          "cve:CVE-2019-0708",
+          "cve:CVE-2020-1472",
+          "attack:T1037",
+          "cve:CVE-2020-0601",
+          "cve:CVE-2022-26134",
+          "attack:T1596.002",
+          "attack:T1595.001"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "hit_rate": 1.0
+      },
+      "reranked": {
+        "retrieved_doc_ids": [
+          "cve:CVE-2014-0160",
+          "cve:CVE-2019-11510",
+          "cve:CVE-2018-13379",
+          "attack:T1037.003",
+          "cve:CVE-2021-44228",
+          "cve:CVE-2021-44832",
+          "attack:T1557.003"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "hit_rate": 1.0
+      },
+      "generation": {
+        "cited_doc_ids": [
+          "cve:CVE-2014-0160",
+          "cve:CVE-2019-11510",
+          "cve:CVE-2018-13379",
+          "attack:T1037.003",
+          "cve:CVE-2021-44228"
+        ],
+        "citation_correctness": 0.2,
+        "grounded": true
+      },
+      "above_relevance_floor": 8,
+      "floor_mode": "off",
+      "latency_ms": 45.2,
+      "expected_doc_ids": [
+        "cve:CVE-2014-0160"
+      ]
+    },
+    {
+      "query": "What CVSS severity was assigned to the Heartbleed bug?",
+      "strategy": "hybrid_rerank",
+      "first_stage": {
+        "retrieved_doc_ids": [
+          "cve:CVE-2014-0160",
+          "cve:CVE-2019-11510",
+          "cve:CVE-2018-13379",
+          "attack:T1037.003",
+          "cve:CVE-2021-44228",
+          "cve:CVE-2021-44832",
+          "attack:T1557.003",
+          "cve:CVE-2022-30190",
+          "cve:CVE-2021-26855",
+          "attack:T1568.001",
+          "cve:CVE-2019-19781",
+          "cve:CVE-2016-10033",
+          "attack:T1588.005",
+          "cve:CVE-2017-5638",
+          "attack:T1190",
+          "attack:T1037.001",
+          "cve:CVE-2023-23397",
+          "cve:CVE-2021-21972",
+          "attack:T1587.004",
+          "cve:CVE-2017-0144",
+          "attack:T1590.005",
+          "cve:CVE-2021-34527",
+          "cve:CVE-2019-0708",
+          "cve:CVE-2020-1472",
+          "attack:T1037",
+          "cve:CVE-2020-0601",
+          "cve:CVE-2022-26134",
+          "attack:T1596.002",
+          "attack:T1595.001"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "hit_rate": 1.0
+      },
+      "reranked": {
+        "retrieved_doc_ids": [
+          "cve:CVE-2014-0160",
+          "cve:CVE-2021-26855",
+          "cve:CVE-2023-23397",
+          "cve:CVE-2019-11510",
+          "cve:CVE-2021-34527",
+          "cve:CVE-2020-1472",
+          "cve:CVE-2018-13379",
+          "attack:T1037.003"
+        ],
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "hit_rate": 1.0
+      },
+      "generation": {
+        "cited_doc_ids": [
+          "cve:CVE-2014-0160",
+          "cve:CVE-2021-26855",
+          "cve:CVE-2023-23397",
+          "cve:CVE-2019-11510",
+          "cve:CVE-2021-34527",
+          "cve:CVE-2020-1472"
+        ],
+        "citation_correctness": 0.16666666666666666,
+        "grounded": true
+      },
+      "above_relevance_floor": 8,
+      "floor_mode": "relative",
+      "latency_ms": 49.5,
+      "expected_doc_ids": [
+        "cve:CVE-2014-0160"
+      ]
+    },
+    {
+      "query": "How do adversaries perform command and control (C2) over commonly used ports?",
+      "strategy": "dense",
+      "first_stage": {
+        "retrieved_doc_ids": [
+          "attack:T1008",
+          "attack:T1041",
+          "attack:T1001",
+          "attack:T1001.001",
+          "attack:T1001.002",
+          "attack:T1568.003",
+          "attack:T1104",
+          "attack:T1568",
+          "attack:T1132.002",
+          "attack:T1132",
+          "attack:T1571",
+          "attack:T1132.001",
+          "attack:T1001.003",
+          "attack:T1219.003",
+          "attack:T1573",
+          "attack:T1219.002",
+          "attack:T1568.001",
+          "attack:T1048.003",
+          "attack:T1048",
+          "attack:T1011.001",
+          "attack:T1011",
+          "attack:T1567",
+          "attack:T1573.001",
+          "attack:T1090.001",
+          "attack:T1568.002"
+        ],
+        "recall_at_k": 0.0,
+        "precision_at_k": 0.0,
+        "mrr": 0.0,
+        "ndcg_at_k": 0.0,
+        "hit_rate": 0.0
+      },
+      "reranked": {
+        "retrieved_doc_ids": [
+          "attack:T1008",
+          "attack:T1041",
+          "attack:T1001",
+          "attack:T1001.001",
+          "attack:T1001.002",
+          "attack:T1568.003",
+          "attack:T1104",
+          "attack:T1568"
+        ],
+        "recall_at_k": 0.0,
+        "precision_at_k": 0.0,
+        "mrr": 0.0,
+        "ndcg_at_k": 0.0,
+        "hit_rate": 0.0
+      },
+      "generation": {
+        "cited_doc_ids": [
+          "attack:T1008",
+          "attack:T1041",
+          "attack:T1001",
+          "attack:T1001.001",
+          "attack:T1568.003"
+        ],
+        "citation_correctness": 0.0,
+        "grounded": true
+      },
+      "above_relevance_floor": 8,
+      "floor_mode": "off",
+      "latency_ms": 16.1,
+      "expected_doc_ids": [
+        "attack:T1071"
+      ]
+    },
+    {
+      "query": "How do adversaries perform command and control (C2) over commonly used ports?",
+      "strategy": "sparse",
+      "first_stage": {
+        "retrieved_doc_ids": [
+          "attack:T1102.003",
+          "attack:T1583.002",
+          "attack:T1041",
+          "attack:T1187",
+          "attack:T1205.001",
+          "attack:T1571",
+          "attack:T1572",
+          "attack:T1110.003",
+          "attack:T1110.001",
+          "attack:T1011.001",
+          "attack:T1011",
+          "attack:T1205",
+          "attack:T1102.001",
+          "attack:T1090.002",
+          "attack:T1095",
+          "attack:T1040",
+          "attack:T1599",
+          "attack:T1568.003",
+          "attack:T1110.004",
+          "attack:T1574",
+          "attack:T1102.002",
+          "attack:T1102",
+          "attack:T1564.008"
+        ],
+        "recall_at_k": 0.0,
+        "precision_at_k": 0.0,
+        "mrr": 0.0,
+        "ndcg_at_k": 0.0,
+        "hit_rate": 0.0
+      },
+      "reranked": {
+        "retrieved_doc_ids": [
+          "attack:T1102.003",
+          "attack:T1583.002",
+          "attack:T1041",
+          "attack:T1187",
+          "attack:T1205.001",
+          "attack:T1571",
+          "attack:T1572",
+          "attack:T1110.003"
+        ],
+        "recall_at_k": 0.0,
+        "precision_at_k": 0.0,
+        "mrr": 0.0,
+        "ndcg_at_k": 0.0,
+        "hit_rate": 0.0
+      },
+      "generation": {
+        "cited_doc_ids": [
+          "attack:T1102.003",
+          "attack:T1583.002",
+          "attack:T1041",
+          "attack:T1205.001",
+          "attack:T1110.003"
+        ],
+        "citation_correctness": 0.0,
+        "grounded": true
+      },
+      "above_relevance_floor": 8,
+      "floor_mode": "off",
+      "latency_ms": 34.6,
+      "expected_doc_ids": [
+        "attack:T1071"
+      ]
+    },
+    {
+      "query": "How do adversaries perform command and control (C2) over commonly used ports?",
+      "strategy": "hybrid",
+      "first_stage": {
+        "retrieved_doc_ids": [
+          "attack:T1041",
+          "attack:T1571",
+          "attack:T1568.003",
+          "attack:T1011.001",
+          "attack:T1011",
+          "attack:T1008",
+          "attack:T1102.003",
+          "attack:T1583.002",
+          "attack:T1001",
+          "attack:T1001.001",
+          "attack:T1187",
+          "attack:T1001.002",
+          "attack:T1205.001",
+          "attack:T1104",
+          "attack:T1572",
+          "attack:T1568",
+          "attack:T1110.003",
+          "attack:T1132.002",
+          "attack:T1110.001",
+          "attack:T1132",
+          "attack:T1132.001",
+          "attack:T1205",
+          "attack:T1001.003",
+          "attack:T1219.003",
+          "attack:T1102.001",
+          "attack:T1573",
+          "attack:T1090.002",
+          "attack:T1219.002",
+          "attack:T1095"
+        ],
+        "recall_at_k": 0.0,
+        "precision_at_k": 0.0,
+        "mrr": 0.0,
+        "ndcg_at_k": 0.0,
+        "hit_rate": 0.0
+      },
+      "reranked": {
+        "retrieved_doc_ids": [
+          "attack:T1041",
+          "attack:T1571",
+          "attack:T1568.003",
+          "attack:T1011.001",
+          "attack:T1011",
+          "attack:T1008",
+          "attack:T1102.003",
+          "attack:T1583.002"
+        ],
+        "recall_at_k": 0.0,
+        "precision_at_k": 0.0,
+        "mrr": 0.0,
+        "ndcg_at_k": 0.0,
+        "hit_rate": 0.0
+      },
+      "generation": {
+        "cited_doc_ids": [
+          "attack:T1041",
+          "attack:T1568.003",
+          "attack:T1011.001",
+          "attack:T1011",
+          "attack:T1583.002"
+        ],
+        "citation_correctness": 0.0,
+        "grounded": true
+      },
+      "above_relevance_floor": 8,
+      "floor_mode": "off",
+      "latency_ms": 49.5,
+      "expected_doc_ids": [
+        "attack:T1071"
+      ]
+    },
+    {
+      "query": "How do adversaries perform command and control (C2) over commonly used ports?",
+      "strategy": "hybrid_rerank",
+      "first_stage": {
+        "retrieved_doc_ids": [
+          "attack:T1041",
+          "attack:T1571",
+          "attack:T1568.003",
+          "attack:T1011.001",
+          "attack:T1011",
+          "attack:T1008",
+          "attack:T1102.003",
+          "attack:T1583.002",
+          "attack:T1001",
+          "attack:T1001.001",
+          "attack:T1187",
+          "attack:T1001.002",
+          "attack:T1205.001",
+          "attack:T1104",
+          "attack:T1572",
+          "attack:T1568",
+          "attack:T1110.003",
+          "attack:T1132.002",
+          "attack:T1110.001",
+          "attack:T1132",
+          "attack:T1132.001",
+          "attack:T1205",
+          "attack:T1001.003",
+          "attack:T1219.003",
+          "attack:T1102.001",
+          "attack:T1573",
+          "attack:T1090.002",
+          "attack:T1219.002",
+          "attack:T1095"
+        ],
+        "recall_at_k": 0.0,
+        "precision_at_k": 0.0,
+        "mrr": 0.0,
+        "ndcg_at_k": 0.0,
+        "hit_rate": 0.0
+      },
+      "reranked": {
+        "retrieved_doc_ids": [
+          "attack:T1041",
+          "attack:T1568.003",
+          "attack:T1583.002",
+          "attack:T1095",
+          "attack:T1572",
+          "attack:T1132.002",
+          "attack:T1132.001",
+          "attack:T1132"
+        ],
+        "recall_at_k": 0.0,
+        "precision_at_k": 0.0,
+        "mrr": 0.0,
+        "ndcg_at_k": 0.0,
+        "hit_rate": 0.0
+      },
+      "generation": {
+        "cited_doc_ids": [
+          "attack:T1041",
+          "attack:T1568.003",
+          "attack:T1583.002",
+          "attack:T1095"
+        ],
+        "citation_correctness": 0.0,
+        "grounded": true
+      },
+      "above_relevance_floor": 8,
+      "floor_mode": "relative",
+      "latency_ms": 50.6,
+      "expected_doc_ids": [
+        "attack:T1071"
+      ]
+    }
+  ]
+}

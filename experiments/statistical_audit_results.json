@@ -1,0 +1,253 @@
+{
+  "metadata": {
+    "total_in_corpus": 70,
+    "dev_in_corpus": 56,
+    "test_in_corpus": 14,
+    "dev_class_8": 8,
+    "test_class_8": 2
+  },
+  "paired_statistical_tests": {
+    "Dense BGE vs Dense LSA": {
+      "recall@5": {
+        "mean_delta": -0.04047619047619048,
+        "ci_95": [
+          -0.1261904761904762,
+          0.04285714285714286
+        ],
+        "wilcoxon_p": 0.4086949674010877,
+        "cohen_d": -0.10894562088168867,
+        "crosses_zero": true,
+        "improved": 9,
+        "degraded": 13,
+        "unchanged": 48
+      },
+      "mrr": {
+        "mean_delta": 0.04011217761319464,
+        "ci_95": [
+          -0.06397243974103416,
+          0.14027406384049487
+        ],
+        "wilcoxon_p": 0.47611019687243905,
+        "cohen_d": 0.09236889663831645,
+        "crosses_zero": true,
+        "improved": 21,
+        "degraded": 18,
+        "unchanged": 31
+      },
+      "ndcg@5": {
+        "mean_delta": 0.0728949956872756,
+        "ci_95": [
+          -0.04902884571443049,
+          0.19193737712781658
+        ],
+        "wilcoxon_p": 0.1621957960795949,
+        "cohen_d": 0.13950921067831312,
+        "crosses_zero": true,
+        "improved": 29,
+        "degraded": 20,
+        "unchanged": 21
+      }
+    },
+    "Hybrid BGE vs Sparse BM25": {
+      "recall@5": {
+        "mean_delta": 0.0380952380952381,
+        "ci_95": [
+          -0.04285714285714286,
+          0.11904761904761903
+        ],
+        "wilcoxon_p": 0.3382734359869719,
+        "cohen_d": 0.11029333175335027,
+        "crosses_zero": true,
+        "improved": 9,
+        "degraded": 5,
+        "unchanged": 56
+      },
+      "mrr": {
+        "mean_delta": 0.03218250505196318,
+        "ci_95": [
+          -0.037699812434418334,
+          0.10161442689767812
+        ],
+        "wilcoxon_p": 0.2620488536510761,
+        "cohen_d": 0.10574016133228029,
+        "crosses_zero": true,
+        "improved": 21,
+        "degraded": 10,
+        "unchanged": 39
+      },
+      "ndcg@5": {
+        "mean_delta": 0.07091074422683903,
+        "ci_95": [
+          -0.015992300859685647,
+          0.15424666089109831
+        ],
+        "wilcoxon_p": 0.03388664981060346,
+        "cohen_d": 0.19295771383668897,
+        "crosses_zero": true,
+        "improved": 28,
+        "degraded": 11,
+        "unchanged": 31
+      }
+    },
+    "Cross-Encoder vs First-Stage Hybrid BGE": {
+      "recall@5": {
+        "mean_delta": 0.0730952380952381,
+        "ci_95": [
+          0.0004761904761904761,
+          0.15166666666666667
+        ],
+        "wilcoxon_p": 0.0695429235821523,
+        "cohen_d": 0.22411825023210066,
+        "crosses_zero": false,
+        "improved": 11,
+        "degraded": 4,
+        "unchanged": 55
+      },
+      "mrr": {
+        "mean_delta": 0.0968210361067504,
+        "ci_95": [
+          0.018355333158904603,
+          0.17857600732600729
+        ],
+        "wilcoxon_p": 0.01718180437536197,
+        "cohen_d": 0.2770426123741715,
+        "crosses_zero": false,
+        "improved": 16,
+        "degraded": 10,
+        "unchanged": 44
+      },
+      "ndcg@5": {
+        "mean_delta": 0.10016011194131083,
+        "ci_95": [
+          0.00524807780192652,
+          0.19968501768436875
+        ],
+        "wilcoxon_p": 0.05189315147460297,
+        "cohen_d": 0.2384414109889154,
+        "crosses_zero": false,
+        "improved": 25,
+        "degraded": 16,
+        "unchanged": 29
+      }
+    }
+  },
+  "dev_vs_test_splits": {
+    "Dense LSA": {
+      "dev": {
+        "recall@5": 0.5705357142857144,
+        "mrr": 0.6024912743897707,
+        "ndcg@5": 0.64640013993068
+      },
+      "test": {
+        "recall@5": 0.7142857142857143,
+        "mrr": 0.7053030303030302,
+        "ndcg@5": 0.8251448357189337
+      }
+    },
+    "Dense BGE": {
+      "dev": {
+        "recall@5": 0.5318452380952381,
+        "mrr": 0.6414572539820215,
+        "ndcg@5": 0.7335444093312363
+      },
+      "test": {
+        "recall@5": 0.6666666666666666,
+        "mrr": 0.75,
+        "ndcg@5": 0.8410427365530861
+      }
+    },
+    "Sparse BM25": {
+      "dev": {
+        "recall@5": 0.5675595238095238,
+        "mrr": 0.6249275463407236,
+        "ndcg@5": 0.684671822224073
+      },
+      "test": {
+        "recall@5": 0.8571428571428571,
+        "mrr": 0.8357142857142856,
+        "ndcg@5": 1.0322626063781588
+      }
+    },
+    "Hybrid BGE": {
+      "dev": {
+        "recall@5": 0.6389880952380952,
+        "mrr": 0.6631715506715506,
+        "ndcg@5": 0.7885762560118287
+      },
+      "test": {
+        "recall@5": 0.761904761904762,
+        "mrr": 0.8436507936507935,
+        "ndcg@5": 0.9711985923613311
+      }
+    },
+    "Cross-Encoder": {
+      "dev": {
+        "recall@5": 0.7125000000000001,
+        "mrr": 0.7991071428571429,
+        "ndcg@5": 0.9268244344544776
+      },
+      "test": {
+        "recall@5": 0.8333333333333333,
+        "mrr": 0.7840136054421768,
+        "ndcg@5": 0.9190064382972906
+      }
+    },
+    "CE + AbsFloor (0.0)": {
+      "dev": {
+        "recall@5": 0.6232142857142857,
+        "mrr": 0.744047619047619,
+        "ndcg@5": 0.8228719783264685
+      },
+      "test": {
+        "recall@5": 0.738095238095238,
+        "mrr": 0.7602040816326531,
+        "ndcg@5": 0.8499939047920664
+      }
+    }
+  },
+  "class_8_abstention": {
+    "pooled_abstention_accuracy": 0.8,
+    "dev_abstention_accuracy": 0.875,
+    "test_abstention_accuracy": 0.5,
+    "failed_queries": [
+      {
+        "query_id": "q-0072",
+        "split": "dev",
+        "query": "How do threat actors execute attack pattern T9999?",
+        "top_retrieved_docs": [
+          "attack:T1677",
+          "attack:T1204.005",
+          "attack:T1489",
+          "attack:T1677",
+          "attack:T1596.004"
+        ],
+        "top_scores": [
+          4.1136,
+          2.9256,
+          2.2622,
+          1.9305,
+          1.4773
+        ]
+      },
+      {
+        "query_id": "q-0079",
+        "split": "test",
+        "query": "Details on CVE-2025-99999 remote code execution vulnerability",
+        "top_retrieved_docs": [
+          "cve:CVE-2022-30190",
+          "cve:CVE-2019-0708",
+          "cve:CVE-2021-21972",
+          "cve:CVE-2021-34527",
+          "cve:CVE-2021-34527"
+        ],
+        "top_scores": [
+          6.9239,
+          6.7347,
+          6.2808,
+          6.1954,
+          5.998
+        ]
+      }
+    ]
+  }
+}

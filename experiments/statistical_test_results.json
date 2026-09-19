@@ -1,0 +1,956 @@
+{
+  "metadata": {
+    "dev_in_corpus_count": 56,
+    "test_in_corpus_count": 14,
+    "dev_class_8_count": 8,
+    "test_class_8_count": 2
+  },
+  "paired_statistics_dev": {
+    "Dense BGE vs Dense LSA": {
+      "recall@5": {
+        "mean_delta": -0.03869047619047618,
+        "ci_95": [
+          -0.14285714285714285,
+          0.06547619047619047
+        ],
+        "wilcoxon_p": 0.5528414770766905,
+        "cohen_d": -0.09778412005761616,
+        "crosses_zero": true,
+        "improved": 8,
+        "degraded": 11,
+        "unchanged": 37
+      },
+      "mrr": {
+        "mean_delta": 0.038965979592250885,
+        "ci_95": [
+          -0.08207997484424141,
+          0.16006177092160784
+        ],
+        "wilcoxon_p": 0.5791528882826775,
+        "cohen_d": 0.08482244566611329,
+        "crosses_zero": true,
+        "improved": 18,
+        "degraded": 15,
+        "unchanged": 23
+      },
+      "ndcg@5": {
+        "mean_delta": 0.08714426940055638,
+        "ci_95": [
+          -0.06117412547680391,
+          0.234762846338826
+        ],
+        "wilcoxon_p": 0.1594990439639712,
+        "cohen_d": 0.15380567301649575,
+        "crosses_zero": true,
+        "improved": 25,
+        "degraded": 17,
+        "unchanged": 14
+      }
+    },
+    "Hybrid BGE vs Sparse BM25": {
+      "recall@5": {
+        "mean_delta": 0.07142857142857142,
+        "ci_95": [
+          -0.017857142857142856,
+          0.16369047619047622
+        ],
+        "wilcoxon_p": 0.13950478640090946,
+        "cohen_d": 0.20113278415444735,
+        "crosses_zero": true,
+        "improved": 9,
+        "degraded": 3,
+        "unchanged": 44
+      },
+      "mrr": {
+        "mean_delta": 0.03824400433082699,
+        "ci_95": [
+          -0.041610901549132745,
+          0.11634025161830734
+        ],
+        "wilcoxon_p": 0.2441530303589743,
+        "cohen_d": 0.12568919879100587,
+        "crosses_zero": true,
+        "improved": 19,
+        "degraded": 9,
+        "unchanged": 28
+      },
+      "ndcg@5": {
+        "mean_delta": 0.10390443378775573,
+        "ci_95": [
+          0.005198811468753632,
+          0.19921130887659821
+        ],
+        "wilcoxon_p": 0.013562845303016264,
+        "cohen_d": 0.2780862620298539,
+        "crosses_zero": false,
+        "improved": 24,
+        "degraded": 8,
+        "unchanged": 24
+      }
+    },
+    "Hybrid BGE vs Hybrid LSA": {
+      "recall@5": {
+        "mean_delta": 0.011904761904761902,
+        "ci_95": [
+          -0.06547619047619048,
+          0.08928571428571429
+        ],
+        "wilcoxon_p": 0.8871157967199846,
+        "cohen_d": 0.03929694358829768,
+        "crosses_zero": true,
+        "improved": 5,
+        "degraded": 3,
+        "unchanged": 48
+      },
+      "mrr": {
+        "mean_delta": -0.015455150008721445,
+        "ci_95": [
+          -0.08889516559829058,
+          0.05256725590877374
+        ],
+        "wilcoxon_p": 0.9635352670320201,
+        "cohen_d": -0.056794897125874044,
+        "crosses_zero": true,
+        "improved": 13,
+        "degraded": 10,
+        "unchanged": 33
+      },
+      "ndcg@5": {
+        "mean_delta": 0.01641979395383406,
+        "ci_95": [
+          -0.0705611525080147,
+          0.09772333800273379
+        ],
+        "wilcoxon_p": 0.26077095835857833,
+        "cohen_d": 0.05028260628572803,
+        "crosses_zero": true,
+        "improved": 20,
+        "degraded": 9,
+        "unchanged": 27
+      }
+    },
+    "Hybrid Router vs Hybrid BGE": {
+      "recall@5": {
+        "mean_delta": 0.0,
+        "ci_95": [
+          0.0,
+          0.0
+        ],
+        "wilcoxon_p": 1.0,
+        "cohen_d": 0.0,
+        "crosses_zero": true,
+        "improved": 0,
+        "degraded": 0,
+        "unchanged": 56
+      },
+      "mrr": {
+        "mean_delta": 0.02380952380952381,
+        "ci_95": [
+          0.0,
+          0.059523809523809534
+        ],
+        "wilcoxon_p": 0.15729920705028505,
+        "cohen_d": 0.1907240450904431,
+        "crosses_zero": true,
+        "improved": 2,
+        "degraded": 0,
+        "unchanged": 54
+      },
+      "ndcg@5": {
+        "mean_delta": 0.015283556839277087,
+        "ci_95": [
+          -0.01586158232309462,
+          0.06529237156402977
+        ],
+        "wilcoxon_p": 1.0,
+        "cohen_d": 0.094432231063488,
+        "crosses_zero": true,
+        "improved": 3,
+        "degraded": 4,
+        "unchanged": 49
+      }
+    },
+    "Cross-Encoder vs First-Stage Hybrid": {
+      "recall@5": {
+        "mean_delta": 0.07351190476190476,
+        "ci_95": [
+          -0.008928571428571426,
+          0.16072916666666645
+        ],
+        "wilcoxon_p": 0.10372958600695624,
+        "cohen_d": 0.22423789852451265,
+        "crosses_zero": true,
+        "improved": 9,
+        "degraded": 3,
+        "unchanged": 44
+      },
+      "mrr": {
+        "mean_delta": 0.13898809523809524,
+        "ci_95": [
+          0.04612351190476197,
+          0.2398809523809524
+        ],
+        "wilcoxon_p": 0.0055490480266944175,
+        "cohen_d": 0.37317119556552386,
+        "crosses_zero": false,
+        "improved": 15,
+        "degraded": 6,
+        "unchanged": 35
+      },
+      "ndcg@5": {
+        "mean_delta": 0.13824817844264867,
+        "ci_95": [
+          0.030354612056403017,
+          0.257700218386339
+        ],
+        "wilcoxon_p": 0.015832966674049688,
+        "cohen_d": 0.31866706153559865,
+        "crosses_zero": false,
+        "improved": 22,
+        "degraded": 10,
+        "unchanged": 24
+      }
+    },
+    "CE AbsFloor 0.0 vs First-Stage Hybrid": {
+      "recall@5": {
+        "mean_delta": -0.01577380952380952,
+        "ci_95": [
+          -0.11041666666666665,
+          0.0794717261904761
+        ],
+        "wilcoxon_p": 0.6762420824982585,
+        "cohen_d": -0.04343024214668208,
+        "crosses_zero": true,
+        "improved": 7,
+        "degraded": 9,
+        "unchanged": 40
+      },
+      "mrr": {
+        "mean_delta": 0.08392857142857145,
+        "ci_95": [
+          -0.007142857142857141,
+          0.18244047619047618
+        ],
+        "wilcoxon_p": 0.06506609512087565,
+        "cohen_d": 0.23238840399486266,
+        "crosses_zero": true,
+        "improved": 12,
+        "degraded": 11,
+        "unchanged": 33
+      },
+      "ndcg@5": {
+        "mean_delta": 0.03429572231463967,
+        "ci_95": [
+          -0.0835734757756721,
+          0.1584610836108059
+        ],
+        "wilcoxon_p": 0.7517638643709301,
+        "cohen_d": 0.07382773173795812,
+        "crosses_zero": true,
+        "improved": 18,
+        "degraded": 16,
+        "unchanged": 22
+      }
+    },
+    "Lexical Reranker vs First-Stage Hybrid": {
+      "recall@5": {
+        "mean_delta": 0.0029761904761904817,
+        "ci_95": [
+          -0.08333333333333333,
+          0.09226190476190477
+        ],
+        "wilcoxon_p": 0.753885514086633,
+        "cohen_d": 0.00886866551001189,
+        "crosses_zero": true,
+        "improved": 5,
+        "degraded": 6,
+        "unchanged": 45
+      },
+      "mrr": {
+        "mean_delta": -0.0822704081632653,
+        "ci_95": [
+          -0.17659810799319722,
+          0.012057291666666622
+        ],
+        "wilcoxon_p": 0.07521158360291445,
+        "cohen_d": -0.2279190326162603,
+        "crosses_zero": true,
+        "improved": 9,
+        "degraded": 19,
+        "unchanged": 28
+      },
+      "ndcg@5": {
+        "mean_delta": -0.1535050693437033,
+        "ci_95": [
+          -0.27937757102926375,
+          -0.03128924257746516
+        ],
+        "wilcoxon_p": 0.018332361932953734,
+        "cohen_d": -0.3255411368234313,
+        "crosses_zero": false,
+        "improved": 11,
+        "degraded": 22,
+        "unchanged": 23
+      }
+    },
+    "Acronym Expansion vs Baseline": {
+      "recall@5": {
+        "mean_delta": 0.004464285714285714,
+        "ci_95": [
+          0.0,
+          0.013392857142857142
+        ],
+        "wilcoxon_p": 0.31731050786291415,
+        "cohen_d": 0.13363062095621217,
+        "crosses_zero": true,
+        "improved": 1,
+        "degraded": 0,
+        "unchanged": 55
+      },
+      "mrr": {
+        "mean_delta": 0.0020018424036281177,
+        "ci_95": [
+          -0.00037202380952380967,
+          0.0063775510204081625
+        ],
+        "wilcoxon_p": 0.6547208460185769,
+        "cohen_d": 0.12548937771062843,
+        "crosses_zero": true,
+        "improved": 1,
+        "degraded": 1,
+        "unchanged": 54
+      },
+      "ndcg@5": {
+        "mean_delta": 0.004398256941798751,
+        "ci_95": [
+          0.0,
+          0.01319477082539625
+        ],
+        "wilcoxon_p": 0.31731050786291415,
+        "cohen_d": 0.1336306209562122,
+        "crosses_zero": true,
+        "improved": 1,
+        "degraded": 0,
+        "unchanged": 55
+      }
+    },
+    "Identifier Autofilter vs Baseline": {
+      "recall@5": {
+        "mean_delta": -0.044642857142857144,
+        "ci_95": [
+          -0.08928571428571429,
+          -0.008928571428571428
+        ],
+        "wilcoxon_p": 0.025347318677468256,
+        "cohen_d": -0.3103039081387189,
+        "crosses_zero": false,
+        "improved": 0,
+        "degraded": 5,
+        "unchanged": 51
+      },
+      "mrr": {
+        "mean_delta": -0.008928571428571428,
+        "ci_95": [
+          -0.026785714285714284,
+          0.0
+        ],
+        "wilcoxon_p": 0.31731050786291415,
+        "cohen_d": -0.13363062095621217,
+        "crosses_zero": true,
+        "improved": 0,
+        "degraded": 1,
+        "unchanged": 55
+      },
+      "ndcg@5": {
+        "mean_delta": -0.033248062176887465,
+        "ci_95": [
+          -0.061780622164978656,
+          -0.010000886112347016
+        ],
+        "wilcoxon_p": 0.025596805385948558,
+        "cohen_d": -0.3305266498836466,
+        "crosses_zero": false,
+        "improved": 0,
+        "degraded": 6,
+        "unchanged": 50
+      }
+    },
+    "Identifier Router vs Baseline": {
+      "recall@5": {
+        "mean_delta": 0.0,
+        "ci_95": [
+          0.0,
+          0.0
+        ],
+        "wilcoxon_p": 1.0,
+        "cohen_d": 0.0,
+        "crosses_zero": true,
+        "improved": 0,
+        "degraded": 0,
+        "unchanged": 56
+      },
+      "mrr": {
+        "mean_delta": 0.017857142857142856,
+        "ci_95": [
+          0.0,
+          0.044642857142857144
+        ],
+        "wilcoxon_p": 0.15729920705028505,
+        "cohen_d": 0.19072404509044308,
+        "crosses_zero": true,
+        "improved": 2,
+        "degraded": 0,
+        "unchanged": 54
+      },
+      "ndcg@5": {
+        "mean_delta": 0.005958674379714396,
+        "ci_95": [
+          -0.004877918578320662,
+          0.022808560884142716
+        ],
+        "wilcoxon_p": 0.4614509878333607,
+        "cohen_d": 0.10952848657302859,
+        "crosses_zero": true,
+        "improved": 2,
+        "degraded": 2,
+        "unchanged": 52
+      }
+    }
+  },
+  "paired_statistics_test": {
+    "Dense BGE vs Dense LSA": {
+      "recall@5": {
+        "mean_delta": -0.04761904761904762,
+        "ci_95": [
+          -0.17857142857142858,
+          0.07142857142857142
+        ],
+        "wilcoxon_p": 0.4142161782425251,
+        "cohen_d": -0.1797168234917442,
+        "crosses_zero": true,
+        "improved": 1,
+        "degraded": 2,
+        "unchanged": 11
+      },
+      "mrr": {
+        "mean_delta": 0.04469696969696969,
+        "ci_95": [
+          -0.12012987012987013,
+          0.2166666666666667
+        ],
+        "wilcoxon_p": 0.6001794871405538,
+        "cohen_d": 0.13595930423793015,
+        "crosses_zero": true,
+        "improved": 3,
+        "degraded": 3,
+        "unchanged": 8
+      },
+      "ndcg@5": {
+        "mean_delta": 0.015897900834152507,
+        "ci_95": [
+          -0.13204677997908312,
+          0.16579818267279092
+        ],
+        "wilcoxon_p": 0.8657723749926214,
+        "cohen_d": 0.054038028216728234,
+        "crosses_zero": true,
+        "improved": 4,
+        "degraded": 3,
+        "unchanged": 7
+      }
+    },
+    "Hybrid BGE vs Sparse BM25": {
+      "recall@5": {
+        "mean_delta": -0.09523809523809525,
+        "ci_95": [
+          -0.2619047619047619,
+          0.0
+        ],
+        "wilcoxon_p": 0.17971249487899976,
+        "cohen_d": -0.3461439992297497,
+        "crosses_zero": true,
+        "improved": 0,
+        "degraded": 2,
+        "unchanged": 12
+      },
+      "mrr": {
+        "mean_delta": 0.00793650793650794,
+        "ci_95": [
+          -0.15476190476190474,
+          0.14285714285714285
+        ],
+        "wilcoxon_p": 1.0,
+        "cohen_d": 0.025201939926137614,
+        "crosses_zero": true,
+        "improved": 2,
+        "degraded": 1,
+        "unchanged": 11
+      },
+      "ndcg@5": {
+        "mean_delta": -0.061064014016827865,
+        "ci_95": [
+          -0.24193915533488328,
+          0.0787990461153477
+        ],
+        "wilcoxon_p": 0.7353166906373405,
+        "cohen_d": -0.19052901566710606,
+        "crosses_zero": true,
+        "improved": 4,
+        "degraded": 3,
+        "unchanged": 7
+      }
+    },
+    "Hybrid BGE vs Hybrid LSA": {
+      "recall@5": {
+        "mean_delta": -0.09523809523809525,
+        "ci_95": [
+          -0.2619047619047619,
+          0.0
+        ],
+        "wilcoxon_p": 0.17971249487899976,
+        "cohen_d": -0.3461439992297497,
+        "crosses_zero": true,
+        "improved": 0,
+        "degraded": 2,
+        "unchanged": 12
+      },
+      "mrr": {
+        "mean_delta": -0.03134920634920635,
+        "ci_95": [
+          -0.19404761904761905,
+          0.10357142857142856
+        ],
+        "wilcoxon_p": 0.5929800980174267,
+        "cohen_d": -0.11143435564591705,
+        "crosses_zero": true,
+        "improved": 1,
+        "degraded": 2,
+        "unchanged": 11
+      },
+      "ndcg@5": {
+        "mean_delta": -0.09126480444790867,
+        "ci_95": [
+          -0.26610269348295684,
+          0.03579820272084515
+        ],
+        "wilcoxon_p": 0.6744240722352938,
+        "cohen_d": -0.300923995288088,
+        "crosses_zero": true,
+        "improved": 4,
+        "degraded": 4,
+        "unchanged": 6
+      }
+    },
+    "Hybrid Router vs Hybrid BGE": {
+      "recall@5": {
+        "mean_delta": 0.0,
+        "ci_95": [
+          0.0,
+          0.0
+        ],
+        "wilcoxon_p": 1.0,
+        "cohen_d": 0.0,
+        "crosses_zero": true,
+        "improved": 0,
+        "degraded": 0,
+        "unchanged": 14
+      },
+      "mrr": {
+        "mean_delta": 0.0,
+        "ci_95": [
+          0.0,
+          0.0
+        ],
+        "wilcoxon_p": 1.0,
+        "cohen_d": 0.0,
+        "crosses_zero": true,
+        "improved": 0,
+        "degraded": 0,
+        "unchanged": 14
+      },
+      "ndcg@5": {
+        "mean_delta": 0.022676923115793477,
+        "ci_95": [
+          -0.014866260774307083,
+          0.08289703012168752
+        ],
+        "wilcoxon_p": 0.6547208460185769,
+        "cohen_d": 0.21305933420607676,
+        "crosses_zero": true,
+        "improved": 1,
+        "degraded": 1,
+        "unchanged": 12
+      }
+    },
+    "Cross-Encoder vs First-Stage Hybrid": {
+      "recall@5": {
+        "mean_delta": 0.07142857142857142,
+        "ci_95": [
+          -0.07142857142857142,
+          0.25
+        ],
+        "wilcoxon_p": 0.4142161782425251,
+        "cohen_d": 0.2154729018428337,
+        "crosses_zero": true,
+        "improved": 2,
+        "degraded": 1,
+        "unchanged": 11
+      },
+      "mrr": {
+        "mean_delta": -0.05170068027210885,
+        "ci_95": [
+          -0.15884353741496599,
+          0.04761904761904761
+        ],
+        "wilcoxon_p": 0.2692941367197367,
+        "cohen_d": -0.24541266600251108,
+        "crosses_zero": true,
+        "improved": 1,
+        "degraded": 3,
+        "unchanged": 10
+      },
+      "ndcg@5": {
+        "mean_delta": -0.05219215406404044,
+        "ci_95": [
+          -0.2202131127955419,
+          0.10742850942410236
+        ],
+        "wilcoxon_p": 0.5939546753269146,
+        "cohen_d": -0.15806376292658708,
+        "crosses_zero": true,
+        "improved": 3,
+        "degraded": 6,
+        "unchanged": 5
+      }
+    },
+    "CE AbsFloor 0.0 vs First-Stage Hybrid": {
+      "recall@5": {
+        "mean_delta": -0.023809523809523808,
+        "ci_95": [
+          -0.13095238095238096,
+          0.08333333333333334
+        ],
+        "wilcoxon_p": 0.7854947471183542,
+        "cohen_d": -0.11053526637585834,
+        "crosses_zero": true,
+        "improved": 1,
+        "degraded": 2,
+        "unchanged": 11
+      },
+      "mrr": {
+        "mean_delta": -0.07551020408163266,
+        "ci_95": [
+          -0.17857142857142858,
+          0.0
+        ],
+        "wilcoxon_p": 0.10247043485974941,
+        "cohen_d": -0.41838996555432256,
+        "crosses_zero": true,
+        "improved": 0,
+        "degraded": 3,
+        "unchanged": 11
+      },
+      "ndcg@5": {
+        "mean_delta": -0.12120468756926461,
+        "ci_95": [
+          -0.26634220198539726,
+          0.00765811281421813
+        ],
+        "wilcoxon_p": 0.12348527214454895,
+        "cohen_d": -0.44895766048644453,
+        "crosses_zero": true,
+        "improved": 2,
+        "degraded": 6,
+        "unchanged": 6
+      }
+    },
+    "Lexical Reranker vs First-Stage Hybrid": {
+      "recall@5": {
+        "mean_delta": 0.09523809523809525,
+        "ci_95": [
+          0.0,
+          0.2619047619047619
+        ],
+        "wilcoxon_p": 0.17971249487899976,
+        "cohen_d": 0.3461439992297497,
+        "crosses_zero": true,
+        "improved": 2,
+        "degraded": 0,
+        "unchanged": 12
+      },
+      "mrr": {
+        "mean_delta": -0.014285714285714282,
+        "ci_95": [
+          -0.25,
+          0.23928571428571427
+        ],
+        "wilcoxon_p": 0.6844698210251553,
+        "cohen_d": -0.02967808357360329,
+        "crosses_zero": true,
+        "improved": 2,
+        "degraded": 3,
+        "unchanged": 9
+      },
+      "ndcg@5": {
+        "mean_delta": -0.099353127618256,
+        "ci_95": [
+          -0.3620079694040619,
+          0.16132505278891554
+        ],
+        "wilcoxon_p": 0.44126813332892967,
+        "cohen_d": -0.19376300281810693,
+        "crosses_zero": true,
+        "improved": 4,
+        "degraded": 5,
+        "unchanged": 5
+      }
+    },
+    "Acronym Expansion vs Baseline": {
+      "recall@5": {
+        "mean_delta": 0.0,
+        "ci_95": [
+          0.0,
+          0.0
+        ],
+        "wilcoxon_p": 1.0,
+        "cohen_d": 0.0,
+        "crosses_zero": true,
+        "improved": 0,
+        "degraded": 0,
+        "unchanged": 14
+      },
+      "mrr": {
+        "mean_delta": 0.0,
+        "ci_95": [
+          0.0,
+          0.0
+        ],
+        "wilcoxon_p": 1.0,
+        "cohen_d": 0.0,
+        "crosses_zero": true,
+        "improved": 0,
+        "degraded": 0,
+        "unchanged": 14
+      },
+      "ndcg@5": {
+        "mean_delta": 0.0,
+        "ci_95": [
+          0.0,
+          0.0
+        ],
+        "wilcoxon_p": 1.0,
+        "cohen_d": 0.0,
+        "crosses_zero": true,
+        "improved": 0,
+        "degraded": 0,
+        "unchanged": 14
+      }
+    },
+    "Identifier Autofilter vs Baseline": {
+      "recall@5": {
+        "mean_delta": -0.03571428571428571,
+        "ci_95": [
+          -0.10714285714285714,
+          0.0
+        ],
+        "wilcoxon_p": 0.31731050786291415,
+        "cohen_d": -0.2672612419124244,
+        "crosses_zero": true,
+        "improved": 0,
+        "degraded": 1,
+        "unchanged": 13
+      },
+      "mrr": {
+        "mean_delta": 0.0,
+        "ci_95": [
+          0.0,
+          0.0
+        ],
+        "wilcoxon_p": 1.0,
+        "cohen_d": 0.0,
+        "crosses_zero": true,
+        "improved": 0,
+        "degraded": 0,
+        "unchanged": 14
+      },
+      "ndcg@5": {
+        "mean_delta": -0.03336657272045386,
+        "ci_95": [
+          -0.09436548881480356,
+          0.0
+        ],
+        "wilcoxon_p": 0.17971249487899976,
+        "cohen_d": -0.3209405806644754,
+        "crosses_zero": true,
+        "improved": 0,
+        "degraded": 2,
+        "unchanged": 12
+      }
+    },
+    "Identifier Router vs Baseline": {
+      "recall@5": {
+        "mean_delta": 0.0,
+        "ci_95": [
+          0.0,
+          0.0
+        ],
+        "wilcoxon_p": 1.0,
+        "cohen_d": 0.0,
+        "crosses_zero": true,
+        "improved": 0,
+        "degraded": 0,
+        "unchanged": 14
+      },
+      "mrr": {
+        "mean_delta": 0.0,
+        "ci_95": [
+          0.0,
+          0.0
+        ],
+        "wilcoxon_p": 1.0,
+        "cohen_d": 0.0,
+        "crosses_zero": true,
+        "improved": 0,
+        "degraded": 0,
+        "unchanged": 14
+      },
+      "ndcg@5": {
+        "mean_delta": 0.0,
+        "ci_95": [
+          0.0,
+          0.0
+        ],
+        "wilcoxon_p": 1.0,
+        "cohen_d": 0.0,
+        "crosses_zero": true,
+        "improved": 0,
+        "degraded": 0,
+        "unchanged": 14
+      }
+    }
+  },
+  "split_stability_b1": {
+    "dense_lsa": {
+      "dev": {
+        "recall@5": 0.5705357142857143,
+        "mrr": 0.5271798650910493,
+        "ndcg@5": 0.565600122439345
+      },
+      "test": {
+        "recall@5": 0.7142857142857143,
+        "mrr": 0.6171401515151516,
+        "ndcg@5": 0.7220017312540669
+      },
+      "delta_test_minus_dev": {
+        "recall@5": 0.14375000000000004,
+        "mrr": 0.08996028642410225,
+        "ndcg@5": 0.15640160881472187
+      }
+    },
+    "dense_bge": {
+      "dev": {
+        "recall@5": 0.5318452380952381,
+        "mrr": 0.5612750972342688,
+        "ndcg@5": 0.6418513581648319
+      },
+      "test": {
+        "recall@5": 0.6666666666666667,
+        "mrr": 0.65625,
+        "ndcg@5": 0.7359123944839503
+      },
+      "delta_test_minus_dev": {
+        "recall@5": 0.13482142857142865,
+        "mrr": 0.09497490276573117,
+        "ndcg@5": 0.09406103631911844
+      }
+    },
+    "sparse_bm25": {
+      "dev": {
+        "recall@5": 0.5675595238095238,
+        "mrr": 0.5468116030481333,
+        "ndcg@5": 0.5990878444460639
+      },
+      "test": {
+        "recall@5": 0.8571428571428571,
+        "mrr": 0.73125,
+        "ndcg@5": 0.903229780580889
+      },
+      "delta_test_minus_dev": {
+        "recall@5": 0.2895833333333333,
+        "mrr": 0.1844383969518667,
+        "ndcg@5": 0.3041419361348251
+      }
+    },
+    "hybrid_lsa": {
+      "dev": {
+        "recall@5": 0.6270833333333333,
+        "mrr": 0.5937983630952381,
+        "ndcg@5": 0.6756369043007454
+      },
+      "test": {
+        "recall@5": 0.8571428571428571,
+        "mrr": 0.765625,
+        "ndcg@5": 0.9296554722080848
+      },
+      "delta_test_minus_dev": {
+        "recall@5": 0.23005952380952377,
+        "mrr": 0.17182663690476185,
+        "ndcg@5": 0.25401856790733934
+      }
+    },
+    "hybrid_bge": {
+      "dev": {
+        "recall@5": 0.6389880952380952,
+        "mrr": 0.5802751068376069,
+        "ndcg@5": 0.6900042240103502
+      },
+      "test": {
+        "recall@5": 0.7619047619047619,
+        "mrr": 0.7381944444444445,
+        "ndcg@5": 0.8497987683161646
+      },
+      "delta_test_minus_dev": {
+        "recall@5": 0.12291666666666667,
+        "mrr": 0.15791933760683763,
+        "ndcg@5": 0.1597945443058144
+      }
+    },
+    "hybrid_bge_router": {
+      "dev": {
+        "recall@5": 0.6389880952380952,
+        "mrr": 0.6011084401709401,
+        "ndcg@5": 0.7033773362447177
+      },
+      "test": {
+        "recall@5": 0.7619047619047619,
+        "mrr": 0.7381944444444445,
+        "ndcg@5": 0.869641076042484
+      },
+      "delta_test_minus_dev": {
+        "recall@5": 0.12291666666666667,
+        "mrr": 0.13708600427350437,
+        "ndcg@5": 0.16626373979776632
+      }
+    }
+  },
+  "b2_abstention_evaluation": {
+    "class_8_standard": {
+      "dev_abstention_acc": 0.875,
+      "test_abstention_acc": 0.5
+    },
+    "expanded_ood_calibration": {
+      "dev_abstention_acc": 0.48,
+      "test_abstention_acc": 0.5,
+      "dev_counts": {
+        "abstention_accuracy": 0.48,
+        "correct": 24,
+        "total": 50
+      },
+      "test_counts": {
+        "abstention_accuracy": 0.5,
+        "correct": 10,
+        "total": 20
+      }
+    }
+  }
+}
