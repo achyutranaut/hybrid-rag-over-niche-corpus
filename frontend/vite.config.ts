@@ -13,7 +13,19 @@ export default defineConfig({
       }
     }
   },
-  // @ts-expect-error vitest types
+  build: {
+    chunkSizeWarningLimit: 1200,
+    rollupOptions: {
+      output: {
+        manualChunks(id: string) {
+          if (id.includes('node_modules/three')) {
+            return 'three-vendor';
+          }
+        },
+      },
+    },
+  },
+  // @ts-ignore vitest config
   test: {
     globals: true,
     environment: 'jsdom',

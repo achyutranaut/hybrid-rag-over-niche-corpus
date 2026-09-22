@@ -39,7 +39,9 @@ export const App: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-canvas text-ink-primary flex flex-col font-sans selection:bg-surface-3 selection:text-ink-primary">
+    <div className="min-h-screen bg-canvas text-ink-primary flex flex-col font-sans selection:bg-surface-3 selection:text-ink-primary lab-grid-bg relative">
+      <div className="absolute inset-0 lab-vignette pointer-events-none" />
+
       {/* Top Scientific Masthead & Sequential Pipeline Navigation */}
       <Navbar
         activeTab={activeTab}
@@ -49,7 +51,7 @@ export const App: React.FC = () => {
       />
 
       {/* Main Research Console Workspace */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 relative z-10">
         {activeTab === 'overview' && (
           <OverviewDashboard overview={overview} onNavigate={setActiveTab} />
         )}
@@ -77,7 +79,7 @@ export const App: React.FC = () => {
       <DocumentModal docId={activeDocId} onClose={() => setActiveDocId(null)} />
 
       {/* Provenance & Reproducibility Footer */}
-      <footer className="border-t border-border bg-[#070708] py-4 text-xs font-mono text-ink-muted">
+      <footer className="border-t border-border bg-[#070709]/90 backdrop-blur-sm py-4 text-xs font-mono text-ink-muted relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-2">
           <div className="flex items-center space-x-2">
             <span className="font-semibold text-ink-primary">Hybrid RAG Research Console</span>
@@ -86,11 +88,11 @@ export const App: React.FC = () => {
           </div>
 
           <div className="flex items-center space-x-3 text-[11px] text-ink-faint">
-            <span>sha256:{overview?.corpus.sha256 ? overview.corpus.sha256.slice(0, 10) : 'cdcc725809'}...</span>
+            <span>sha256:{overview?.corpus?.sha256 ? overview.corpus.sha256.slice(0, 10) : 'cdcc725809'}...</span>
             <span>•</span>
             <span>Qdrant Local Engine</span>
             <span>•</span>
-            <span>Extractive Zero Hallucination Grounding</span>
+            <span>Extractive Zero-Hallucination Grounding</span>
           </div>
         </div>
       </footer>

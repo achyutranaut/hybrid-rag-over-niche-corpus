@@ -1,5 +1,6 @@
 import React from 'react';
 import { formatScore } from '../utils/format';
+import { Badge } from './ui/Badge';
 
 interface HeroMetricProps {
   split?: 'test' | 'dev';
@@ -23,13 +24,13 @@ export const HeroMetric: React.FC<HeroMetricProps> = ({
   const isTest = split === 'test';
 
   return (
-    <div className="border border-border bg-surface-1 p-6 relative overflow-hidden">
+    <div className="border border-border bg-surface-1 p-6 relative overflow-hidden rounded-sm shadow-card-elevated">
       {/* Top Editorial Rule & Context */}
       <div className="flex flex-col sm:flex-row sm:items-baseline justify-between border-b border-border pb-3 mb-6 gap-2">
         <div className="flex items-center space-x-2">
-          <span className="font-mono text-[11px] uppercase tracking-wider text-ink-muted">
+          <Badge variant="attack" size="sm">
             Benchmark Protocol
-          </span>
+          </Badge>
           <span className="text-border text-xs">/</span>
           <span className="font-mono text-[11px] font-semibold text-ink-primary">
             {isTest ? 'Frozen Held-Out Evaluation' : 'Development Parameter Calibration'}
@@ -37,13 +38,17 @@ export const HeroMetric: React.FC<HeroMetricProps> = ({
         </div>
 
         <div className="flex items-center space-x-3 text-[11px] font-mono text-ink-muted">
-          <span>split: <strong className="text-ink-primary font-normal">{split.toUpperCase()} (n={queryCount})</strong></span>
+          <span>
+            split: <strong className="text-ink-primary font-normal">{split.toUpperCase()} (n={queryCount})</strong>
+          </span>
           <span>•</span>
-          <span>hash: <strong className="text-ink-primary font-normal">{corpusSha.slice(0, 10)}</strong></span>
+          <span>
+            hash: <strong className="text-ink-primary font-normal font-tabular">{corpusSha.slice(0, 10)}</strong>
+          </span>
         </div>
       </div>
 
-      {/* Main Metric Presentation */}
+      {/* Main Scientific Metrics Grid */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
         {/* Metric 1: MRR */}
         <div className="space-y-1">
@@ -53,7 +58,7 @@ export const HeroMetric: React.FC<HeroMetricProps> = ({
             </span>
             <span className="text-[10px] font-mono text-ink-faint">primary</span>
           </div>
-          <div className="text-4xl sm:text-5xl font-serif font-normal text-ink-primary tracking-tight">
+          <div className="text-4xl sm:text-5xl font-serif font-normal text-ink-primary tracking-tight font-tabular">
             {formatScore(mrr, 3)}
           </div>
           <p className="text-xs text-ink-muted font-sans pt-1">
@@ -69,7 +74,7 @@ export const HeroMetric: React.FC<HeroMetricProps> = ({
             </span>
             <span className="text-[10px] font-mono text-valid font-medium">stat sig</span>
           </div>
-          <div className="text-4xl sm:text-5xl font-serif font-normal text-ink-primary tracking-tight">
+          <div className="text-4xl sm:text-5xl font-serif font-normal text-ink-primary tracking-tight font-tabular">
             {formatScore(ndcg, 3)}
           </div>
           <p className="text-xs text-ink-muted font-sans pt-1">
@@ -85,7 +90,7 @@ export const HeroMetric: React.FC<HeroMetricProps> = ({
             </span>
             <span className="text-[10px] font-mono text-ink-faint">k=5 budget</span>
           </div>
-          <div className="text-4xl sm:text-5xl font-serif font-normal text-ink-primary tracking-tight">
+          <div className="text-4xl sm:text-5xl font-serif font-normal text-ink-primary tracking-tight font-tabular">
             {formatScore(recall, 3)}
           </div>
           <p className="text-xs text-ink-muted font-sans pt-1">
@@ -97,7 +102,7 @@ export const HeroMetric: React.FC<HeroMetricProps> = ({
       {/* Verification Notice */}
       <div className="mt-6 pt-4 border-t border-border flex flex-col sm:flex-row items-start sm:items-center justify-between text-xs text-ink-muted font-mono gap-2">
         <div className="flex items-center space-x-2">
-          <span className="w-1.5 h-1.5 rounded-full bg-valid" />
+          <span className="w-1.5 h-1.5 rounded-full bg-valid shadow-glow-valid" />
           <span>Single-pass execution; zero post-hoc parameter adjustments</span>
         </div>
         <div className="text-ink-faint text-[11px]">

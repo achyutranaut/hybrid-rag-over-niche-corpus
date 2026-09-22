@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { OverviewResponse } from '../types/api';
+import { Badge } from './ui/Badge';
 
 interface ResearchHeaderProps {
   overview: OverviewResponse | null;
@@ -12,50 +13,89 @@ export const ResearchHeader: React.FC<ResearchHeaderProps> = ({ overview, backen
   const attackCount = overview?.corpus?.mitre_attack_techniques ?? 697;
   const cveCount = overview?.corpus?.cve_records ?? 20;
 
+  const [copiedSha, setCopiedSha] = useState(false);
+
+  const copySha = () => {
+    navigator.clipboard.writeText(sha);
+    setCopiedSha(true);
+    setTimeout(() => setCopiedSha(false), 1800);
+  };
+
   return (
-    <header className="border-b border-border bg-[#0D0D0F]/90 backdrop-blur-md sticky top-0 z-40">
+    <header className="border-b border-border bg-[#08080B]/95 backdrop-blur-md sticky top-0 z-40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-14">
-          {/* Scientific Title & Corpus ID */}
-          <div className="flex items-center space-x-3">
-            <div className="flex flex-col">
-              <div className="flex items-center space-x-2">
-                <span className="font-serif font-semibold text-sm tracking-tight text-ink-primary">
-                  Hybrid RAG
-                </span>
-                <span className="text-border text-xs">•</span>
-                <span className="text-xs text-ink-muted font-sans hidden sm:inline">
-                  Information Retrieval &amp; Forensic Evaluation Console
-                </span>
+          {/* Scientific Title & Corpus Provenance */}
+          <div className="flex items-center space-x-3 sm:space-x-4 min-w-0">
+            <div className="flex items-center space-x-2.5">
+              <div className="w-7 h-7 rounded-sm bg-surface-2 border border-attack-border flex items-center justify-center shadow-glow-sm">
+                <span className="font-mono text-xs font-bold text-attack">HR</span>
               </div>
-              <div className="flex items-center space-x-2 text-[11px] font-mono text-ink-muted">
-                <span>corpus</span>
-                <span className="text-ink-primary select-all" title={`Full SHA256: ${sha}`}>
-                  sha256:{sha.slice(0, 10)}
-                </span>
-                <span>•</span>
-                <span>{totalChunks} chunks ({attackCount} ATT&amp;CK, {cveCount} CVE)</span>
+              <div className="flex flex-col min-w-0">
+                <div className="flex items-center space-x-2">
+                  <span className="font-serif font-semibold text-sm tracking-tight text-ink-primary whitespace-nowrap">
+                    HYBRID RAG
+                  </span>
+                  <span className="text-border-strong text-xs hidden sm:inline">•</span>
+                  <span className="text-[11px] text-ink-muted font-sans hidden md:inline truncate">
+                    Cybersecurity Retrieval-Forensics Laboratory
+                  </span>
+                </div>
+                <div className="flex items-center space-x-2 text-[10px] font-mono text-ink-faint">
+                  <span>MITRE ATT&amp;CK v14.1 &amp; NVD CVE</span>
+                </div>
               </div>
             </div>
+
+            {/* Corpus Hash Tag with Instant Copy */}
+            <button
+              type="button"
+              onClick={copySha}
+              title={`Click to copy verified corpus SHA256: ${sha}`}
+              className="hidden lg:flex items-center space-x-1.5 px-2 py-0.5 rounded-sm bg-surface-1 hover:bg-surface-2 border border-border text-[11px] font-mono text-ink-muted transition-colors cursor-pointer"
+            >
+              <span className="text-ink-faint">sha256:</span>
+              <span className="text-ink-primary font-tabular">{sha.slice(0, 8)}...</span>
+              <span className="text-[9px] text-ink-faint">{copiedSha ? '✓' : '⧉'}</span>
+            </button>
           </div>
 
-          {/* Precision Status Indicator */}
-          <div className="flex items-center space-x-3 text-xs font-mono">
-            {/* Active Stack Tier */}
-            <div className="hidden md:flex items-center space-x-2 px-2.5 py-1 rounded bg-surface-2 border border-border">
-              <span className="text-ink-muted">Engine:</span>
-              <span className="text-ink-primary font-medium">Tier A (Local Qdrant Dual-Vector)</span>
+          {/* Corpus Statistics & System Telemetry */}
+          <div className="flex items-center space-x-2 sm:space-x-3 text-xs font-mono">
+            {/* Technique & CVE Pill Count */}
+            <div className="hidden sm:flex items-center space-x-1.5">
+              <Badge variant="attack" size="sm">
+                {attackCount} ATT&amp;CK
+              </Badge>
+              <Badge variant="cve" size="sm">
+                {cveCount} CVE
+              </Badge>
+              <span className="text-[11px] text-ink-muted px-1.5 py-0.5 bg-surface-2 border border-border rounded-sm font-tabular">
+                {totalChunks} Chunks
+              </span>
             </div>
 
-            {/* Heartbeat Status */}
-            <div className="flex items-center space-x-1.5 px-2.5 py-1 rounded bg-surface-2 border border-border">
+            {/* Active Stack Tier Badge */}
+            <div className="hidden xl:flex items-center space-x-1.5 px-2 py-1 rounded-sm bg-surface-2 border border-border text-[11px]">
+              <span className="text-ink-faint">Stack:</span>
+              <span className="text-ink-primary font-medium">Tier A (Local Dual-Vector)</span>
+            </div>
+
+            {/* Engine Heartbeat */}
+            <div
+              className={`flex items-center space-x-1.5 px-2.5 py-1 rounded-sm border ${
+                backendOnline
+                  ? 'bg-valid-surface border-valid-border text-valid-ink'
+                  : 'bg-red-950/30 border-red-800/50 text-red-400'
+              }`}
+            >
               <span
                 className={`w-1.5 h-1.5 rounded-full ${
-                  backendOnline ? 'bg-valid' : 'bg-cve-crit'
+                  backendOnline ? 'bg-valid animate-pulse' : 'bg-red-500'
                 }`}
               />
-              <span className={backendOnline ? 'text-ink-primary' : 'text-cve-crit'}>
-                {backendOnline ? 'online' : 'offline'}
+              <span className="text-[11px] font-semibold uppercase tracking-wider">
+                {backendOnline ? 'ENGINE ONLINE' : 'ENGINE OFFLINE'}
               </span>
             </div>
           </div>

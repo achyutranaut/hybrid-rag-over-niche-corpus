@@ -1,5 +1,7 @@
 import React from 'react';
 import { CodeBlock } from './CodeBlock';
+import { Badge } from './ui/Badge';
+import { Panel } from './ui/Panel';
 
 export const MethodologyView: React.FC = () => {
   const rrfSnippet = `# Reciprocal Rank Fusion (Qdrant Server-Side)
@@ -59,117 +61,140 @@ point = models.PointStruct(
 
   return (
     <div className="space-y-6">
-      {/* Header */}
-      <div className="border border-border bg-surface-1 p-5 space-y-2">
-        <div className="flex items-center space-x-2">
-          <span className="font-mono text-[11px] uppercase tracking-wider text-ink-muted">
-            Pipeline Stage 06
-          </span>
-          <span className="text-border text-xs">/</span>
-          <h2 className="text-base font-serif font-semibold text-ink-primary">
-            Research Methodology &amp; Experimental Record
-          </h2>
-        </div>
-        <p className="text-xs text-ink-muted">
-          Forensic documentation of corpus formulation, frozen benchmark splits, experiment sequences, statistical test procedures, and known architectural limitations.
+      {/* Header Panel */}
+      <Panel
+        header={
+          <div className="flex items-center justify-between w-full">
+            <div className="flex items-center space-x-2">
+              <Badge variant="attack" size="sm">
+                Stage 07
+              </Badge>
+              <span className="text-border text-xs">/</span>
+              <h2 className="text-sm font-serif font-semibold text-ink-primary">
+                Research Methodology &amp; Experimental Record
+              </h2>
+            </div>
+            <span className="font-mono text-[11px] text-ink-faint hidden sm:inline">
+              Scientific Reproducibility Ledger
+            </span>
+          </div>
+        }
+      >
+        <p className="text-xs text-ink-muted leading-relaxed">
+          Forensic documentation of corpus formulation, frozen benchmark splits, experiment sequences, statistical test procedures, and verified empirical negative results.
         </p>
-      </div>
+      </Panel>
 
       {/* Experimental Record Ledger */}
-      <div className="border border-border bg-surface-1 p-5 space-y-4">
-        <div className="border-b border-border pb-2 flex items-center justify-between">
-          <h3 className="font-serif font-semibold text-sm text-ink-primary">
-            Experimental Record
-          </h3>
-          <span className="font-mono text-[11px] text-ink-muted">
-            reproducibility ledger
-          </span>
-        </div>
-
+      <Panel
+        header={
+          <div className="flex items-center justify-between w-full">
+            <h3 className="font-serif font-semibold text-sm text-ink-primary">
+              Reproducibility Ledger
+            </h3>
+            <Badge variant="valid" size="sm">
+              sha256:cdcc7258098ffa61
+            </Badge>
+          </div>
+        }
+      >
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
-          <div className="space-y-1 p-3 bg-surface-2 border border-border">
-            <div className="font-mono text-[11px] text-ink-muted uppercase">Corpus Formulation</div>
+          <div className="space-y-1.5 p-3.5 bg-surface-2 border border-border rounded-sm">
+            <div className="font-mono text-[10px] text-ink-faint uppercase tracking-wider">Corpus Formulation</div>
             <div className="font-sans font-semibold text-ink-primary">MITRE ATT&amp;CK v14.1 + CVE</div>
-            <div className="font-mono text-[11px] text-ink-muted pt-1">
+            <div className="font-mono text-[11px] text-ink-muted pt-1 leading-relaxed">
               697 Enterprise Techniques<br />
               20 Curated Critical CVEs<br />
               1,162 Total Chunks
             </div>
           </div>
 
-          <div className="space-y-1 p-3 bg-surface-2 border border-border">
-            <div className="font-mono text-[11px] text-ink-muted uppercase">Benchmark Integrity</div>
-            <div className="font-mono text-ink-primary font-bold">sha256:cdcc7258098ffa61</div>
-            <div className="font-mono text-[11px] text-ink-muted pt-1">
+          <div className="space-y-1.5 p-3.5 bg-surface-2 border border-border rounded-sm">
+            <div className="font-mono text-[10px] text-ink-faint uppercase tracking-wider">Benchmark Integrity</div>
+            <div className="font-mono text-ink-primary font-bold">sha256:cdcc725809...</div>
+            <div className="font-mono text-[11px] text-ink-muted pt-1 leading-relaxed">
               DEV split: <strong className="text-ink-primary font-normal">n=64</strong> queries<br />
               TEST split: <strong className="text-ink-primary font-normal">n=16</strong> queries<br />
               OOD probes: <strong className="text-ink-primary font-normal">n=70</strong> queries
             </div>
           </div>
 
-          <div className="space-y-1 p-3 bg-surface-2 border border-border">
-            <div className="font-mono text-[11px] text-ink-muted uppercase">Active Engine (Tier A)</div>
+          <div className="space-y-1.5 p-3.5 bg-surface-2 border border-border rounded-sm">
+            <div className="font-mono text-[10px] text-ink-faint uppercase tracking-wider">Active Engine (Tier A)</div>
             <div className="font-sans font-semibold text-ink-primary">Local Stand-in Stack</div>
-            <div className="font-mono text-[11px] text-ink-muted pt-1">
+            <div className="font-mono text-[11px] text-ink-muted pt-1 leading-relaxed">
               Dense: <code className="text-ink-primary">LSA (SVD 128d)</code><br />
               Sparse: <code className="text-ink-primary">BM25 (alphanumeric)</code><br />
               Fusion: <code className="text-ink-primary">Qdrant RRF (k=60)</code>
             </div>
           </div>
 
-          <div className="space-y-1 p-3 bg-surface-2 border border-border">
-            <div className="font-mono text-[11px] text-ink-muted uppercase">Target Spec (Tier B)</div>
+          <div className="space-y-1.5 p-3.5 bg-surface-2 border border-border rounded-sm">
+            <div className="font-mono text-[10px] text-ink-faint uppercase tracking-wider">Target Spec (Tier B)</div>
             <div className="font-sans font-semibold text-ink-primary">Target Neural Spec</div>
-            <div className="font-mono text-[11px] text-ink-muted pt-1">
+            <div className="font-mono text-[11px] text-ink-muted pt-1 leading-relaxed">
               Dense: <code className="text-ink-primary">bge-small-en-v1.5</code><br />
               Reranker: <code className="text-ink-primary">ms-marco-MiniLM-L-6-v2</code><br />
               Generator: <code className="text-ink-primary">Extractive Grounded</code>
             </div>
           </div>
         </div>
-      </div>
+      </Panel>
 
       {/* Core Research Question & Technical Rationale */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="border border-border bg-surface-1 p-5 space-y-3">
-          <h3 className="font-serif font-semibold text-sm text-ink-primary">
-            Research Question (RQ)
-          </h3>
-          <blockquote className="p-3 bg-surface-2 border-l-2 border-ink-primary text-xs italic text-ink-primary leading-relaxed font-serif">
-            &ldquo;For which classes of cybersecurity query does dense, sparse, or hybrid retrieval perform best — and how much do reranking, query understanding, and metadata filtering change that answer?&rdquo;
-          </blockquote>
-          <p className="text-xs text-ink-muted leading-relaxed font-sans">
-            Specialized cybersecurity corpora present unique information retrieval failure modes: exact alphanumeric identifiers (like <code className="font-mono text-cve-warn">CVE-2021-44228</code> or <code className="font-mono text-attack">T1059.001</code>) are fractured by subword tokenizers, while behavioral attack tactics require semantic generalization.
-          </p>
-        </div>
+        <Panel
+          header={
+            <h3 className="font-serif font-semibold text-sm text-ink-primary">
+              Primary Research Question (RQ)
+            </h3>
+          }
+        >
+          <div className="space-y-3">
+            <blockquote className="p-3.5 bg-surface-2 border-l-2 border-attack text-xs italic text-ink-primary leading-relaxed font-serif rounded-r-sm">
+              &ldquo;For which classes of cybersecurity query does dense, sparse, or hybrid retrieval perform best — and how much do reranking, query understanding, and metadata filtering change that answer?&rdquo;
+            </blockquote>
+            <p className="text-xs text-ink-muted leading-relaxed font-sans">
+              Specialized cybersecurity corpora present unique information retrieval failure modes: exact alphanumeric identifiers (like <code className="font-mono text-cve-warn">CVE-2021-44228</code> or <code className="font-mono text-attack">T1059.001</code>) are fractured by subword tokenizers, while behavioral attack tactics require semantic generalization.
+            </p>
+          </div>
+        </Panel>
 
-        <div className="border border-border bg-surface-1 p-5 space-y-3">
-          <h3 className="font-serif font-semibold text-sm text-ink-primary">
-            Key Empirical Findings &amp; Negative Results
-          </h3>
-          <ul className="text-xs space-y-2 text-ink-muted list-disc pl-4 leading-relaxed font-sans">
+        <Panel
+          header={
+            <h3 className="font-serif font-semibold text-sm text-ink-primary">
+              Key Empirical Findings &amp; Negative Results
+            </h3>
+          }
+        >
+          <ul className="text-xs space-y-2.5 text-ink-muted list-disc pl-4 leading-relaxed font-sans">
             <li>
               <strong className="text-ink-primary">Sparse BM25 strictly dominates exact identifiers:</strong> BM25 achieved MRR 1.000 on Class 1 vs 0.365 for Dense embeddings.
             </li>
             <li>
-              <strong className="text-ink-primary">Cross-Encoder significance:</strong> Adding a cross-encoder reranker yielded $+0.1382$ nDCG@5 (<span className="font-mono text-valid">p=0.0158</span>) over first-stage retrieval.
+              <strong className="text-ink-primary">Cross-Encoder significance:</strong> Adding a cross-encoder reranker yielded $+0.1382$ nDCG@5 (<span className="font-mono text-valid font-bold">p=0.0158</span>) over first-stage retrieval.
             </li>
             <li>
-              <strong className="text-cve-warn">Harmful negative result:</strong> Hard metadata auto-filtering on detected tokens degraded DEV Recall@5 by $-0.0446$ (<span className="font-mono text-cve-warn">p=0.0253</span>) due to cross-corpus false-positive collisions.
+              <strong className="text-cve-warn">Harmful negative result:</strong> Hard metadata auto-filtering on detected tokens degraded DEV Recall@5 by $-0.0446$ (<span className="font-mono text-cve-warn font-bold">p=0.0253</span>) due to cross-corpus false-positive collisions.
             </li>
           </ul>
-        </div>
+        </Panel>
       </div>
 
       {/* Code & Formula Implementation Snippets */}
       <div className="space-y-4">
-        <div className="border-b border-border pb-2">
-          <h3 className="font-serif font-semibold text-sm text-ink-primary">
-            Implementation Specifications &amp; Formulas
-          </h3>
-          <p className="text-xs text-ink-muted mt-0.5">
-            Key mathematical formulations and concrete Python implementation patterns.
-          </p>
+        <div className="border-b border-border pb-2 flex items-center justify-between">
+          <div>
+            <h3 className="font-serif font-semibold text-sm text-ink-primary">
+              Implementation Specifications &amp; Formulas
+            </h3>
+            <p className="text-xs text-ink-muted mt-0.5">
+              Key mathematical formulations and concrete Python implementation patterns.
+            </p>
+          </div>
+          <Badge variant="neutral" size="sm">
+            src/retrieval
+          </Badge>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">

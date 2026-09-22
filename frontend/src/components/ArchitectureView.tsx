@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { CodeBlock } from './CodeBlock';
+import { Pipeline3DCanvas } from './Pipeline3DCanvas';
+import { Badge } from './ui/Badge';
+import { Panel } from './ui/Panel';
 
 interface StageDetail {
   id: string;
@@ -59,15 +62,24 @@ export const ArchitectureView: React.FC = () => {
 )`
     },
     {
-      id: 'retrieval',
-      name: '4. Parallel Retrieval',
-      subhead: 'Simultaneous Semantic & Lexical Search',
+      id: 'retrieval_dense',
+      name: '4a. Dense Retrieval (Cosine)',
+      subhead: 'LSA / BGE Semantic Candidate Pool',
       sourceFile: 'src/retrieval/qdrant_store.py',
-      tierA: 'Executes dense vector cosine query and sparse BM25 query concurrently against Qdrant.',
-      tierB: 'Dense BGE-small-en query with instruction prefix + sparse BM25.',
+      tierA: 'Executes dense vector cosine query against Qdrant collection.',
+      tierB: 'Dense BGE-small-en query with instruction prefix.',
       description: 'First stage queries both vector indexes independently, fetching top-k candidate pools for reciprocal rank fusion.',
-      codeSnippet: `res_dense = store.search_dense(query, top_k=25)
-res_sparse = store.search_sparse(query, top_k=25)`
+      codeSnippet: `res_dense = store.search_dense(query, top_k=25)`
+    },
+    {
+      id: 'retrieval_sparse',
+      name: '4b. Sparse Retrieval (BM25)',
+      subhead: 'Lexical Identifier Search',
+      sourceFile: 'src/retrieval/qdrant_store.py',
+      tierA: 'Executes sparse BM25 query concurrently against Qdrant.',
+      tierB: 'BM25 on server deployment.',
+      description: 'Fetches high-precision lexical matches for exact alphanumeric codes (CVE-*, T*, CWE-*).',
+      codeSnippet: `res_sparse = store.search_sparse(query, top_k=25)`
     },
     {
       id: 'rrf',
@@ -138,106 +150,109 @@ res_sparse = store.search_sparse(query, top_k=25)`
 
   return (
     <div className="space-y-6">
-      {/* Header */}
-      <div className="border border-border bg-surface-1 p-5 space-y-2">
-        <div className="flex items-center space-x-2">
-          <span className="font-mono text-[11px] uppercase tracking-wider text-ink-muted">
-            Architecture Specification
-          </span>
-          <span className="text-border text-xs">/</span>
-          <h2 className="text-base font-serif font-semibold text-ink-primary">
-            End-to-End System Architecture
-          </h2>
-        </div>
-        <p className="text-xs text-ink-muted">
-          Pipeline walkthrough matching ARCHITECTURE.md §6. Click any stage to inspect design rationale, source code location, and Tier A vs Tier B implementations.
+      {/* Header Panel */}
+      <Panel
+        header={
+          <div className="flex items-center justify-between w-full">
+            <div className="flex items-center space-x-2">
+              <Badge variant="attack" size="sm">
+                Stage 06
+              </Badge>
+              <span className="text-border text-xs">/</span>
+              <h2 className="text-sm font-serif font-semibold text-ink-primary">
+                End-to-End System Architecture
+              </h2>
+            </div>
+            <span className="font-mono text-[11px] text-ink-faint hidden sm:inline">
+              Dual-Vector Qdrant Core Architecture
+            </span>
+          </div>
+        }
+      >
+        <p className="text-xs text-ink-muted leading-relaxed">
+          Interactive spatial visualization matching ARCHITECTURE.md §6. Click or hover any stage node in the 3D WebGL scene to focus the camera, inspect parameters, and view Tier A vs Tier B source implementations.
         </p>
-      </div>
+      </Panel>
 
-      {/* Stepper Buttons */}
-      <div className="border border-border bg-surface-1 p-3 overflow-x-auto no-scrollbar">
-        <div className="flex items-center space-x-2 min-w-[700px]">
-          {stages.map((stage, idx) => {
-            const isActive = activeStageId === stage.id;
-            return (
-              <button
-                key={stage.id}
-                type="button"
-                onClick={() => setActiveStageId(stage.id)}
-                className={`flex-1 p-2 text-left border transition-colors ${
-                  isActive
-                    ? 'border-ink-primary bg-surface-2 text-ink-primary'
-                    : 'border-border bg-surface-1 text-ink-muted hover:text-ink-primary hover:border-border-strong'
-                }`}
-              >
-                <div className="font-mono text-[10px] text-ink-muted uppercase">
-                  Step {idx + 1}
-                </div>
-                <div className="font-semibold text-xs truncate mt-0.5" title={stage.name}>
-                  {stage.name.split('. ')[1] || stage.name}
-                </div>
-              </button>
-            );
-          })}
-        </div>
-      </div>
+      {/* Interactive Three.js 3D Pipeline Canvas */}
+      <Pipeline3DCanvas
+        activeStageId={activeStageId}
+        onSelectStage={setActiveStageId}
+      />
 
-      {/* Selected Stage Detail */}
+      {/* Selected Stage Detail Inspector */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         <div className="lg:col-span-7 space-y-4">
-          <div className="border border-border bg-surface-1 p-5 space-y-4">
-            <div className="flex items-center justify-between border-b border-border pb-3">
-              <div>
-                <span className="font-mono text-[11px] text-ink-muted uppercase">
-                  {activeStage.subhead}
+          <Panel
+            header={
+              <div className="flex items-center justify-between w-full">
+                <div>
+                  <span className="font-mono text-[10px] text-attack uppercase font-semibold">
+                    {activeStage.subhead}
+                  </span>
+                  <h3 className="font-serif font-semibold text-base text-ink-primary mt-0.5">
+                    {activeStage.name}
+                  </h3>
+                </div>
+                <span className="font-mono text-[11px] text-ink-muted px-2 py-0.5 bg-surface-2 border border-border rounded-sm">
+                  {activeStage.sourceFile.split(',')[0]}
                 </span>
-                <h3 className="font-serif font-semibold text-base text-ink-primary mt-0.5">
-                  {activeStage.name}
-                </h3>
               </div>
-              <span className="font-mono text-[11px] text-ink-muted px-2 py-0.5 bg-surface-2 border border-border">
-                {activeStage.sourceFile}
-              </span>
-            </div>
+            }
+          >
+            <div className="space-y-4">
+              <p className="text-xs text-ink-muted leading-relaxed font-sans">
+                {activeStage.description}
+              </p>
 
-            <p className="text-xs text-ink-muted leading-relaxed font-sans">
-              {activeStage.description}
-            </p>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-              <div className="p-3 bg-surface-2 border border-border space-y-1">
-                <div className="text-xs font-mono font-semibold text-ink-primary">
-                  Tier A (Active Local)
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                <div className="p-3 bg-surface-2 border border-valid-border/40 rounded-sm space-y-1">
+                  <div className="text-xs font-mono font-semibold text-valid flex items-center space-x-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-valid" />
+                    <span>Tier A (Active Local)</span>
+                  </div>
+                  <p className="text-[11px] text-ink-muted font-mono leading-relaxed">
+                    {activeStage.tierA}
+                  </p>
                 </div>
-                <p className="text-[11px] text-ink-muted font-mono leading-relaxed">
-                  {activeStage.tierA}
-                </p>
-              </div>
 
-              <div className="p-3 bg-surface-2 border border-border space-y-1">
-                <div className="text-xs font-mono font-semibold text-ink-primary">
-                  Tier B (Target Spec)
+                <div className="p-3 bg-surface-2 border border-border rounded-sm space-y-1 opacity-85">
+                  <div className="text-xs font-mono font-semibold text-ink-muted flex items-center space-x-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-ink-faint" />
+                    <span>Tier B (Target Spec)</span>
+                  </div>
+                  <p className="text-[11px] text-ink-muted font-mono leading-relaxed">
+                    {activeStage.tierB}
+                  </p>
                 </div>
-                <p className="text-[11px] text-ink-muted font-mono leading-relaxed">
-                  {activeStage.tierB}
-                </p>
               </div>
             </div>
-          </div>
+          </Panel>
         </div>
 
         <div className="lg:col-span-5">
-          <div className="border border-border bg-surface-1 p-5 space-y-3 h-full flex flex-col justify-between">
-            <div>
-              <div className="font-mono text-xs font-semibold text-ink-primary border-b border-border pb-2">
-                Implementation Pattern
+          <Panel
+            header={
+              <div className="flex items-center justify-between w-full">
+                <span className="font-mono text-xs font-semibold text-ink-primary">
+                  Implementation Pattern
+                </span>
+                <Badge variant="neutral" size="sm">
+                  src/
+                </Badge>
               </div>
-              <CodeBlock code={activeStage.codeSnippet} filename={activeStage.sourceFile.split(',')[0]} />
-            </div>
-            <div className="text-[11px] font-mono text-ink-faint pt-2 border-t border-border">
-              Configured via <code className="text-ink-muted">src/config.py</code>.
-            </div>
-          </div>
+            }
+            footer={
+              <div className="text-[11px] font-mono text-ink-faint">
+                Configured via <code className="text-ink-muted">src/config.py</code>.
+              </div>
+            }
+          >
+            <CodeBlock
+              code={activeStage.codeSnippet}
+              filename={activeStage.sourceFile.split(',')[0]}
+            />
+          </Panel>
         </div>
       </div>
     </div>

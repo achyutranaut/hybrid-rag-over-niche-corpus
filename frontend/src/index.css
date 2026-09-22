@@ -4,14 +4,17 @@
 
 :root {
   color-scheme: dark;
-  --color-base: #0A0A0B;
-  --color-surface-1: #111113;
-  --color-surface-2: #18181B;
-  --color-surface-3: #202024;
-  --color-border: #232326;
-  --color-border-subtle: #1C1C1F;
-  --color-text-primary: #F5F3EE;
-  --color-text-muted: #9A9A9F;
+  --color-base: #070709;
+  --color-surface-1: #0D0D11;
+  --color-surface-2: #14141A;
+  --color-surface-3: #1C1C24;
+  --color-surface-4: #242430;
+  --color-border: #22222C;
+  --color-border-subtle: #181820;
+  --color-border-strong: #363644;
+  --color-text-primary: #F4F4F6;
+  --color-text-muted: #8E8E98;
+  --color-text-faint: #52525C;
   --color-paper: #F3F0E8;
   --color-paper-ink: #1A1915;
   --color-paper-muted: #636159;
@@ -31,6 +34,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Tabular figures for numbers, scores, latency, hashes */
+.font-tabular {
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
 /* Subtle scientific scrollbar */
 ::-webkit-scrollbar {
   width: 5px;
@@ -38,19 +46,19 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #0D0D0F;
+  background: #09090C;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #232326;
+  background: #22222C;
   border-radius: 2px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #36363B;
+  background: #363644;
 }
 
-/* Research Table Architecture */
+/* Precision Research Table Styling */
 .research-table, .cyber-table {
   width: 100%;
   border-collapse: collapse;
@@ -59,34 +67,42 @@ body {
 }
 
 .research-table th, .cyber-table th {
-  background-color: #111113;
-  color: #9A9A9F;
+  background-color: #0D0D11;
+  color: #8E8E98;
   font-weight: 600;
   text-align: left;
-  padding: 0.5rem 0.75rem;
-  border-bottom: 1px solid #232326;
+  padding: 0.625rem 0.875rem;
+  border-bottom: 1px solid #22222C;
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   font-family: 'JetBrains Mono', ui-monospace, monospace;
+  white-space: nowrap;
 }
 
 .research-table td, .cyber-table td {
-  padding: 0.5rem 0.75rem;
-  border-bottom: 1px solid #18181B;
+  padding: 0.625rem 0.875rem;
+  border-bottom: 1px solid #14141A;
   color: #E2E2E6;
+  font-variant-numeric: tabular-nums;
 }
 
 .research-table tr:hover, .cyber-table tr:hover {
-  background-color: rgba(24, 24, 27, 0.6);
+  background-color: rgba(20, 20, 26, 0.7);
 }
 
-/* Warm Archival Evidence Paper */
+/* Warm Archival Forensic Evidence Paper Surface */
 .evidence-paper {
   background-color: #F3F0E8;
   color: #1A1915;
   border: 1px solid #E2DDD0;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.22), 0 0 1px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.evidence-paper:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .evidence-paper-header {
@@ -98,8 +114,21 @@ body {
   background-color: #E8E3D5;
   color: #111111;
   font-family: 'JetBrains Mono', ui-monospace, monospace;
-  padding: 0.1rem 0.3rem;
+  padding: 0.1rem 0.35rem;
   border-radius: 2px;
+}
+
+/* Ambient Laboratory Grid Backdrop */
+.lab-grid-bg {
+  background-image: 
+    linear-gradient(to right, rgba(34, 34, 44, 0.35) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(34, 34, 44, 0.35) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Radial Vignette */
+.lab-vignette {
+  background: radial-gradient(circle at 50% 0%, rgba(139, 126, 248, 0.05) 0%, transparent 70%);
 }
 
 /* Respect user motion preferences */

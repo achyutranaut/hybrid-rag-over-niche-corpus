@@ -27,9 +27,9 @@ export const PipelineStepper: React.FC<PipelineStepperProps> = ({
   return (
     <nav
       aria-label="Retrieval Pipeline Stages"
-      className="w-full bg-[#0D0D0F] border-b border-border py-2 px-4 sm:px-6 lg:px-8"
+      className="w-full bg-[#0A0A0D] border-b border-border py-1.5 px-4 sm:px-6 lg:px-8"
     >
-      <div className="max-w-7xl mx-auto flex items-center justify-between overflow-x-auto no-scrollbar gap-1 sm:gap-2">
+      <div className="max-w-7xl mx-auto flex items-center justify-between overflow-x-auto no-scrollbar gap-1.5 sm:gap-2">
         {STAGES.map((stage, idx) => {
           const isActive = activeStage === stage.id;
           const isComplete = idx < activeIndex;
@@ -47,48 +47,64 @@ export const PipelineStepper: React.FC<PipelineStepperProps> = ({
                 onClick={() => onStageChange(stage.id)}
                 onKeyDown={(e) => handleKeyDown(e, idx)}
                 aria-current={isActive ? 'step' : undefined}
-                className="group relative flex items-center space-x-2 px-2.5 py-1.5 rounded text-left transition-all flex-shrink-0 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ink-primary data-[stage=active]:bg-surface-2 data-[stage=active]:border-b-2 data-[stage=active]:border-ink-primary data-[stage=complete]:opacity-85 hover:bg-surface-2/60"
+                className={`group relative flex items-center space-x-2.5 px-3 py-1.5 rounded-sm text-left transition-all duration-150 flex-shrink-0 cursor-pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ink-primary ${
+                  isActive
+                    ? 'bg-surface-2 border border-border-strong shadow-glow-sm'
+                    : isComplete
+                    ? 'bg-transparent border border-transparent hover:bg-surface-2/50 text-ink-muted'
+                    : 'bg-transparent border border-transparent hover:bg-surface-2/30 text-ink-faint'
+                }`}
               >
-                {/* Step indicator */}
-                <div className="flex items-center justify-center font-mono text-[11px] font-semibold tracking-wider">
+                {/* Step indicator box */}
+                <div className="flex items-center justify-center font-mono text-[11px] font-semibold tracking-wider flex-shrink-0">
                   <span
-                    className={`w-5 h-5 rounded-sm flex items-center justify-center border ${
+                    className={`w-5 h-5 rounded-sm flex items-center justify-center border transition-colors ${
                       isActive
-                        ? 'border-ink-primary bg-ink-primary text-canvas font-bold'
+                        ? 'border-ink-primary bg-ink-primary text-canvas font-bold shadow-sm'
                         : isComplete
-                        ? 'border-border-strong bg-surface-2 text-ink-muted'
-                        : 'border-border text-ink-faint'
+                        ? 'border-border-strong bg-surface-3 text-ink-muted'
+                        : 'border-border bg-surface-1 text-ink-faint group-hover:border-border-strong'
                     }`}
                   >
                     {isComplete ? '✓' : stage.step}
                   </span>
                 </div>
 
-                {/* Stage titles */}
+                {/* Stage names and subheads */}
                 <div className="flex flex-col min-w-0">
-                  <span
-                    className={`text-xs font-semibold tracking-tight whitespace-nowrap ${
-                      isActive
-                        ? 'text-ink-primary'
-                        : isComplete
-                        ? 'text-ink-primary/90'
-                        : 'text-ink-muted'
-                    }`}
-                  >
-                    {stage.name}
-                  </span>
-                  <span className="text-[10px] font-mono text-ink-muted hidden xl:inline truncate">
+                  <div className="flex items-center space-x-1.5">
+                    <span
+                      className={`text-xs font-semibold tracking-tight whitespace-nowrap transition-colors ${
+                        isActive
+                          ? 'text-ink-primary'
+                          : isComplete
+                          ? 'text-ink-primary/80 group-hover:text-ink-primary'
+                          : 'text-ink-muted group-hover:text-ink-primary/70'
+                      }`}
+                    >
+                      {stage.name}
+                    </span>
+                  </div>
+                  <span className="text-[10px] font-mono text-ink-faint hidden xl:inline truncate">
                     {stage.subhead}
                   </span>
                 </div>
+
+                {/* Subtle active line underneath */}
+                {isActive && (
+                  <div
+                    aria-hidden="true"
+                    className="absolute -bottom-1.5 left-2 right-2 h-0.5 bg-attack rounded-full shadow-glow-accent"
+                  />
+                )}
               </button>
 
-              {/* Connecting Pipeline Line */}
+              {/* Connecting Pipeline Conduit */}
               {idx < STAGES.length - 1 && (
                 <div
                   aria-hidden="true"
-                  className={`hidden md:block flex-1 h-[1px] min-w-2 max-w-8 ${
-                    idx < activeIndex ? 'bg-ink-muted/40' : 'bg-border'
+                  className={`hidden lg:block flex-1 h-[1px] min-w-3 max-w-7 transition-colors ${
+                    idx < activeIndex ? 'bg-attack/40' : 'bg-border'
                   }`}
                 />
               )}
