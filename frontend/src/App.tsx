@@ -82,9 +82,9 @@ export const App: React.FC = () => {
       <footer className="border-t border-border bg-[#070709]/90 backdrop-blur-sm py-4 text-xs font-mono text-ink-muted relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-2">
           <div className="flex items-center space-x-2">
-            <span className="font-semibold text-ink-primary">Hybrid RAG Research Console</span>
+            <span className="font-semibold text-ink-primary">CYBER-RAG LAB</span>
             <span>•</span>
-            <span>MITRE ATT&amp;CK v14.1 &amp; NVD CVE</span>
+            <span>Advanced Threat Intelligence &amp; Retrieval Engine</span>
           </div>
 
           <div className="flex items-center space-x-3 text-[11px] text-ink-faint">
